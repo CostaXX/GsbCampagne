@@ -15,6 +15,30 @@ namespace GsbCampagneGUI
         public FrmAccueil()
         {
             InitializeComponent();
+            desactiveMenus();
+        }
+
+
+        public void desactiveMenus()
+        {
+            btnGestionAgences.Enabled = false;
+            btnGestionVIP.Enabled = false;
+            btnGestionCampagnes.Enabled = false;
+            btnGestionEvenements.Enabled = false;
+        }
+        private void btnGestionAgences_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FrmAccueil_Shown(object sender, EventArgs e)
+        {
+            using (FrmAuthentification formLogin = new FrmAuthentification())
+            {
+                // Affiche le formulaire de connexion qui va se charger de récupérer les
+                // les informations de l’utilisateur authentifié
+                formLogin.ShowDialog();
+            }
         }
     }
 }
