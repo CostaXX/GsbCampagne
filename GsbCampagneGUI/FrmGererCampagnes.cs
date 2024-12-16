@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace GsbCampagneGUI
 {
-    public partial class FrmAccueil : Form
+    public partial class FrmGererCampagnes : Form
     {
-        public FrmAccueil()
+        public FrmGererCampagnes()
         {
             InitializeComponent();
         }
 
-        private void btnCampagnes_Click(object sender, EventArgs e)
+        private void btnModifier_Click(object sender, EventArgs e)
         {
-            FrmGestionCampagnes frmGestionCampagnes = new FrmGestionCampagnes();
-            frmGestionCampagnes.Show();
+
+        }
+
+        private void btnFermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
