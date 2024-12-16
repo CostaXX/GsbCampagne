@@ -16,5 +16,11 @@ namespace GsbCampagneGUI
         {
             InitializeComponent();
         }
+
+        private void btnVip_Click(object sender, EventArgs e)
+        {
+            FrmGestionsVip form = new FrmGestionsVip();
+            form.ShowDialog();
+        }
     }
 }
