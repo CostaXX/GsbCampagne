@@ -59,6 +59,7 @@
     <Compile Include="AgenceCommunication.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AgenceDAO.cs" />
     <Compile Include="AgenceEvenementiel.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
@@ -86,6 +87,9 @@
     <Compile Include="CategorieVIP.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Convier.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="CourantArtistique.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
@@ -95,6 +99,9 @@
     <Compile Include="JournalIntervention.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Participer.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
@@ -102,6 +109,7 @@
     <Compile Include="Salarie.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SalarieDAO.cs" />
     <Compile Include="sp_agence_getAll_Result.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>

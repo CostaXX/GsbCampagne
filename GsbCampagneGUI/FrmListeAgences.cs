@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace GsbCampagneGUI
 {
-    public partial class FrmGestionAgences : Form
+    public partial class FrmListeAgences : Form
     {
-        public FrmGestionAgences()
+        public FrmListeAgences()
         {
             InitializeComponent();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
 
         }
     }

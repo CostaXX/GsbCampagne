@@ -34,7 +34,6 @@ namespace GsbCampagneDAL
         public virtual DbSet<Campagne> Campagnes { get; set; }
         public virtual DbSet<CategorieVIP> CategorieVIPs { get; set; }
         public virtual DbSet<CourantArtistique> CourantArtistiques { get; set; }
-        public virtual DbSet<Evenement> Evenements { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Salarie> Salaries { get; set; }
         public virtual DbSet<Theme> Themes { get; set; }
@@ -42,6 +41,9 @@ namespace GsbCampagneDAL
         public virtual DbSet<Ville> Villes { get; set; }
         public virtual DbSet<VIP> VIPs { get; set; }
         public virtual DbSet<JournalIntervention> JournalInterventions { get; set; }
+        public virtual DbSet<Convier> Conviers { get; set; }
+        public virtual DbSet<Participer> Participers { get; set; }
+        public virtual DbSet<Evenement> Evenements { get; set; }
     
         public virtual int sp_agence_add(string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, Nullable<int> idVille)
         {

@@ -18,8 +18,8 @@ namespace GsbCampagneDAL
         public Ville()
         {
             this.Agences = new HashSet<Agence>();
-            this.Evenements = new HashSet<Evenement>();
             this.VIPs = new HashSet<VIP>();
+            this.Evenements = new HashSet<Evenement>();
         }
     
         public int CodeInsee { get; set; }
@@ -30,8 +30,8 @@ namespace GsbCampagneDAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Agence> Agences { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Evenement> Evenements { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VIP> VIPs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Evenement> Evenements { get; set; }
     }
 }

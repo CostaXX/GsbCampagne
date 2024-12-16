@@ -12,22 +12,13 @@ namespace GsbCampagneDAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Evenement
+    public partial class Participer
     {
-        public int Id { get; set; }
-        public Nullable<System.DateTime> DateDebut { get; set; }
-        public Nullable<System.DateTime> DateFin { get; set; }
-        public string Intitule { get; set; }
-        public Nullable<int> IdTheme { get; set; }
+        public int IdEvenement { get; set; }
         public Nullable<int> IdArtiste { get; set; }
-        public Nullable<int> IdVille { get; set; }
-        public Nullable<int> IdCategorieVIP { get; set; }
+        public string Cachet { get; set; }
     
         public virtual Artiste Artiste { get; set; }
-        public virtual CategorieVIP CategorieVIP { get; set; }
-        public virtual Convier Convier { get; set; }
-        public virtual Theme Theme { get; set; }
-        public virtual Ville Ville { get; set; }
-        public virtual Participer Participer { get; set; }
+        public virtual Evenement Evenement { get; set; }
     }
 }

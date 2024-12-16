@@ -89,6 +89,7 @@
             this.btnConnecter.TabIndex = 4;
             this.btnConnecter.Text = "Connexion";
             this.btnConnecter.UseVisualStyleBackColor = true;
+            this.btnConnecter.Click += new System.EventHandler(this.btnConnecter_Click);
             // 
             // FrmAuthentification
             // 

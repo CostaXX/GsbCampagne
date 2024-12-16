@@ -12,7 +12,6 @@
         <EntityTypeShape EntityType="GsbCampagnesModel.Campagne" Width="1.5" PointX="7.5" PointY="13.875" />
         <EntityTypeShape EntityType="GsbCampagnesModel.CategorieVIP" Width="1.5" PointX="0.75" PointY="14" />
         <EntityTypeShape EntityType="GsbCampagnesModel.CourantArtistique" Width="1.5" PointX="1.5" PointY="18.375" />
-        <EntityTypeShape EntityType="GsbCampagnesModel.Evenement" Width="1.5" PointX="3" PointY="6.5" />
         <EntityTypeShape EntityType="GsbCampagnesModel.Role" Width="1.5" PointX="3" PointY="22" />
         <EntityTypeShape EntityType="GsbCampagnesModel.Salarie" Width="1.5" PointX="5.25" PointY="21.625" />
         <EntityTypeShape EntityType="GsbCampagnesModel.Theme" Width="1.5" PointX="0.75" PointY="4.75" />
@@ -25,18 +24,25 @@
         <AssociationConnector Association="GsbCampagnesModel.FK__Campagne__IdAgen__17036CC0" />
         <AssociationConnector Association="GsbCampagnesModel.FK__Campagne__IdAgen__160F4887" />
         <AssociationConnector Association="GsbCampagnesModel.FK__Artiste__IdCoura__693CA210" />
-        <AssociationConnector Association="GsbCampagnesModel.FK__Evenement__IdArt__6D0D32F4" />
         <AssociationConnector Association="GsbCampagnesModel.FK__Campagne__IdSala__18EBB532" />
         <AssociationConnector Association="GsbCampagnesModel.FK__Campagne__IdType__17F790F9" />
-        <AssociationConnector Association="GsbCampagnesModel.FK__Evenement__IdCat__6EF57B66" />
         <AssociationConnector Association="GsbCampagnesModel.FK__VIP__IdCategorie__72C60C4A" />
-        <AssociationConnector Association="GsbCampagnesModel.FK__Evenement__IdThe__6C190EBB" />
-        <AssociationConnector Association="GsbCampagnesModel.FK__Evenement__IdVil__6E01572D" />
         <AssociationConnector Association="GsbCampagnesModel.FK__Salarie__IdRole__0E6E26BF" />
         <AssociationConnector Association="GsbCampagnesModel.FK__VIP__IdVille__71D1E811" />
         <EntityTypeShape EntityType="GsbCampagnesModel.JournalIntervention" Width="1.5" PointX="7.5" PointY="21.875" />
         <AssociationConnector Association="GsbCampagnesModel.FK__JournalIn__IdSal__2739D489" />
-      </Diagram>
+        <EntityTypeShape EntityType="GsbCampagnesModel.Convier" Width="1.5" PointX="8.25" PointY="10.25" />
+        <EntityTypeShape EntityType="GsbCampagnesModel.Participer" Width="1.5" PointX="8.25" PointY="7" />
+        <AssociationConnector Association="GsbCampagnesModel.FK__Participe__IdArt__7A3223E8" />
+        <AssociationConnector Association="GsbCampagnesModel.FK__Convier__IdCateg__76619304" />
+        <EntityTypeShape EntityType="GsbCampagnesModel.Evenement" Width="1.5" PointX="3" PointY="8.5" />
+        <AssociationConnector Association="GsbCampagnesModel.FK__Evenement__IdArt__3F115E1A" />
+        <AssociationConnector Association="GsbCampagnesModel.FK__Evenement__IdCat__40F9A68C" />
+        <AssociationConnector Association="GsbCampagnesModel.FK__Convier__IdEvene__756D6ECB" />
+        <AssociationConnector Association="GsbCampagnesModel.FK__Evenement__IdThe__3E1D39E1" />
+        <AssociationConnector Association="GsbCampagnesModel.FK__Evenement__IdVil__40058253" />
+        <AssociationConnector Association="GsbCampagnesModel.FK__Participe__IdEve__793DFFAF" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
