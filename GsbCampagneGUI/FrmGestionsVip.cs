@@ -33,5 +33,11 @@ namespace GsbCampagneGUI
         {
             this.Close();
         }
+
+        private void btnGererVip_Click(object sender, EventArgs e)
+        {
+            FrmModifSuppVIP form = new FrmModifSuppVIP();
+            form.ShowDialog();
+        }
     }
 }

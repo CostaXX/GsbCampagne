@@ -35,16 +35,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cboVip = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel = new System.Windows.Forms.Panel();
             this.cboVille = new System.Windows.Forms.ComboBox();
             this.cboCategVip = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtAdresse = new System.Windows.Forms.TextBox();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.btnSuppr = new System.Windows.Forms.Button();
+            this.btnModif = new System.Windows.Forms.Button();
             this.btnFermer = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -114,26 +114,28 @@
             this.cboVip.Name = "cboVip";
             this.cboVip.Size = new System.Drawing.Size(224, 21);
             this.cboVip.TabIndex = 10;
+            this.cboVip.SelectionChangeCommitted += new System.EventHandler(this.cboVip_SelectedIndexChanged);
             // 
-            // panel1
+            // panel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.cboVille);
-            this.panel1.Controls.Add(this.cboCategVip);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(134, 112);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(489, 296);
-            this.panel1.TabIndex = 11;
+            this.panel.BackColor = System.Drawing.SystemColors.Control;
+            this.panel.Controls.Add(this.cboVille);
+            this.panel.Controls.Add(this.cboCategVip);
+            this.panel.Controls.Add(this.txtEmail);
+            this.panel.Controls.Add(this.txtAdresse);
+            this.panel.Controls.Add(this.txtNom);
+            this.panel.Controls.Add(this.btnSuppr);
+            this.panel.Controls.Add(this.btnModif);
+            this.panel.Controls.Add(this.label6);
+            this.panel.Controls.Add(this.label2);
+            this.panel.Controls.Add(this.label5);
+            this.panel.Controls.Add(this.label3);
+            this.panel.Controls.Add(this.label4);
+            this.panel.Location = new System.Drawing.Point(134, 112);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(489, 296);
+            this.panel.TabIndex = 11;
+            this.panel.Visible = false;
             // 
             // cboVille
             // 
@@ -151,46 +153,48 @@
             this.cboCategVip.Size = new System.Drawing.Size(224, 21);
             this.cboCategVip.TabIndex = 13;
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(132, 91);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(224, 20);
-            this.textBox3.TabIndex = 14;
+            this.txtEmail.Location = new System.Drawing.Point(132, 91);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(224, 20);
+            this.txtEmail.TabIndex = 14;
             // 
-            // textBox2
+            // txtAdresse
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 53);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(224, 20);
-            this.textBox2.TabIndex = 13;
+            this.txtAdresse.Location = new System.Drawing.Point(132, 53);
+            this.txtAdresse.Name = "txtAdresse";
+            this.txtAdresse.Size = new System.Drawing.Size(224, 20);
+            this.txtAdresse.TabIndex = 13;
             // 
-            // textBox1
+            // txtNom
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 20);
-            this.textBox1.TabIndex = 12;
+            this.txtNom.Location = new System.Drawing.Point(132, 10);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(224, 20);
+            this.txtNom.TabIndex = 12;
             // 
-            // button2
+            // btnSuppr
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(287, 227);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 56);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Supprimer";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSuppr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuppr.Location = new System.Drawing.Point(287, 227);
+            this.btnSuppr.Name = "btnSuppr";
+            this.btnSuppr.Size = new System.Drawing.Size(129, 56);
+            this.btnSuppr.TabIndex = 11;
+            this.btnSuppr.Text = "Supprimer";
+            this.btnSuppr.UseVisualStyleBackColor = true;
+            this.btnSuppr.Click += new System.EventHandler(this.btnSuppr_Click);
             // 
-            // button1
+            // btnModif
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(48, 227);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 56);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Modifier";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnModif.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModif.Location = new System.Drawing.Point(48, 227);
+            this.btnModif.Name = "btnModif";
+            this.btnModif.Size = new System.Drawing.Size(129, 56);
+            this.btnModif.TabIndex = 10;
+            this.btnModif.Text = "Modifier";
+            this.btnModif.UseVisualStyleBackColor = true;
+            this.btnModif.Click += new System.EventHandler(this.btnModif_Click);
             // 
             // btnFermer
             // 
@@ -209,13 +213,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 471);
             this.Controls.Add(this.btnFermer);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel);
             this.Controls.Add(this.cboVip);
             this.Controls.Add(this.label1);
             this.Name = "FrmModifSuppVIP";
             this.Text = "Modifier / supprimer un vip";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,14 +234,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboVip;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.Button btnSuppr;
+        private System.Windows.Forms.Button btnModif;
         private System.Windows.Forms.Button btnFermer;
         private System.Windows.Forms.ComboBox cboVille;
         private System.Windows.Forms.ComboBox cboCategVip;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtAdresse;
+        private System.Windows.Forms.TextBox txtNom;
     }
 }

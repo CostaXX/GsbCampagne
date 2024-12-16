@@ -48,6 +48,37 @@ namespace GsbCampagneDAL
             }
         }
 
+        public int SupprimerUnVip(VIP v)
+        {
+            using (var ctx = new GsbCampagnesEntities())
+            {
+                try
+                {
+                    ctx.sp_vip_delete(v.Id);
+                    return 0;
+                }
+                catch
+                {
+                    return -1;
+                }
+            }
+        }
+        public int ModifierUnVip(VIP v)
+        {
+            using (var ctx = new GsbCampagnesEntities())
+            {
+                try
+                {
+                    ctx.sp_vip_update(v.Id, v.Nom, v.AdressePostal, v.Email, v.IdCategorieVIP, v.IdVille);
+                    return 0;
+                }
+                catch
+                {
+                    return -1;
+                }
+            }
+        }
+
 
     }
 }

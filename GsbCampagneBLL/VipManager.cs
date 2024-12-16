@@ -36,5 +36,13 @@ namespace GsbCampagneBLL
 
             return VipDAO.GetInstance().AjouterUnVip(v);
         }
+        public int SupprimerUnVip(VIP v)
+        {
+            return VipDAO.GetInstance().SupprimerUnVip(v);
+        }
+        public int ModifierUnVip(VIP v)
+        {
+            return VipDAO.GetInstance().ModifierUnVip(v);
+        }
     }
 }

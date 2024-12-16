@@ -65,6 +65,7 @@
             this.btnGererVip.TabIndex = 2;
             this.btnGererVip.Text = "Modifier / Supprimer";
             this.btnGererVip.UseVisualStyleBackColor = true;
+            this.btnGererVip.Click += new System.EventHandler(this.btnGererVip_Click);
             // 
             // btnFermer
             // 
