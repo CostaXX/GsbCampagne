@@ -62,11 +62,23 @@
     <Compile Include="FrmAccueil.Designer.cs">
       <DependentUpon>FrmAccueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAjoutArtiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjoutArtiste.Designer.cs">
+      <DependentUpon>FrmAjoutArtiste.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAjoutVip.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAjoutVip.Designer.cs">
       <DependentUpon>FrmAjoutVip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionsArtiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionsArtiste.Designer.cs">
+      <DependentUpon>FrmGestionsArtiste.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmGestionsVip.cs">
       <SubType>Form</SubType>
@@ -74,11 +86,23 @@
     <Compile Include="FrmGestionsVip.Designer.cs">
       <DependentUpon>FrmGestionsVip.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmListeArtiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListeArtiste.Designer.cs">
+      <DependentUpon>FrmListeArtiste.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmListeVip.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmListeVip.Designer.cs">
       <DependentUpon>FrmListeVip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModifSuppArtiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifSuppArtiste.Designer.cs">
+      <DependentUpon>FrmModifSuppArtiste.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmModifSuppVIP.cs">
       <SubType>Form</SubType>
@@ -91,14 +115,26 @@
     <EmbeddedResource Include="FrmAccueil.resx">
       <DependentUpon>FrmAccueil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjoutArtiste.resx">
+      <DependentUpon>FrmAjoutArtiste.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAjoutVip.resx">
       <DependentUpon>FrmAjoutVip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionsArtiste.resx">
+      <DependentUpon>FrmGestionsArtiste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionsVip.resx">
       <DependentUpon>FrmGestionsVip.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmListeArtiste.resx">
+      <DependentUpon>FrmListeArtiste.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmListeVip.resx">
       <DependentUpon>FrmListeVip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifSuppArtiste.resx">
+      <DependentUpon>FrmModifSuppArtiste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModifSuppVIP.resx">
       <DependentUpon>FrmModifSuppVIP.cs</DependentUpon>

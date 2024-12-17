@@ -17,8 +17,8 @@ namespace GsbCampagneDAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Agence()
         {
-            this.AgenceCommunications = new HashSet<AgenceCommunication>();
-            this.AgenceEvenementiels = new HashSet<AgenceEvenementiel>();
+            this.Campagnes = new HashSet<Campagne>();
+            this.Campagnes1 = new HashSet<Campagne>();
         }
     
         public int Id { get; set; }
@@ -27,12 +27,14 @@ namespace GsbCampagneDAL
         public Nullable<int> Telephone { get; set; }
         public string Email { get; set; }
         public string SiteWeb { get; set; }
+        public string TypeCommunication { get; set; }
+        public string TypeEvenementiel { get; set; }
         public Nullable<int> IdVille { get; set; }
     
         public virtual Ville Ville { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AgenceCommunication> AgenceCommunications { get; set; }
+        public virtual ICollection<Campagne> Campagnes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AgenceEvenementiel> AgenceEvenementiels { get; set; }
+        public virtual ICollection<Campagne> Campagnes1 { get; set; }
     }
 }

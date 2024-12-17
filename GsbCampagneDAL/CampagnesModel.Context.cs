@@ -28,8 +28,6 @@ namespace GsbCampagneDAL
         }
     
         public virtual DbSet<Agence> Agences { get; set; }
-        public virtual DbSet<AgenceCommunication> AgenceCommunications { get; set; }
-        public virtual DbSet<AgenceEvenementiel> AgenceEvenementiels { get; set; }
         public virtual DbSet<Artiste> Artistes { get; set; }
         public virtual DbSet<Campagne> Campagnes { get; set; }
         public virtual DbSet<CategorieVIP> CategorieVIPs { get; set; }
@@ -348,6 +346,53 @@ namespace GsbCampagneDAL
                 new ObjectParameter("idVille", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_vip_update", idParameter, nomParameter, adressePostalParameter, emailParameter, idCategorieVIPParameter, idVilleParameter);
+        }
+    
+        public virtual int sp_artiste_add(string nom, string siteWeb, Nullable<int> idCourantArtistique)
+        {
+            var nomParameter = nom != null ?
+                new ObjectParameter("Nom", nom) :
+                new ObjectParameter("Nom", typeof(string));
+    
+            var siteWebParameter = siteWeb != null ?
+                new ObjectParameter("SiteWeb", siteWeb) :
+                new ObjectParameter("SiteWeb", typeof(string));
+    
+            var idCourantArtistiqueParameter = idCourantArtistique.HasValue ?
+                new ObjectParameter("idCourantArtistique", idCourantArtistique) :
+                new ObjectParameter("idCourantArtistique", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_artiste_add", nomParameter, siteWebParameter, idCourantArtistiqueParameter);
+        }
+    
+        public virtual int sp_artiste_delete(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_artiste_delete", idParameter);
+        }
+    
+        public virtual int sp_artiste_update(Nullable<int> id, string nom, string siteWeb, Nullable<int> idCourantArtistique)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            var nomParameter = nom != null ?
+                new ObjectParameter("Nom", nom) :
+                new ObjectParameter("Nom", typeof(string));
+    
+            var siteWebParameter = siteWeb != null ?
+                new ObjectParameter("SiteWeb", siteWeb) :
+                new ObjectParameter("SiteWeb", typeof(string));
+    
+            var idCourantArtistiqueParameter = idCourantArtistique.HasValue ?
+                new ObjectParameter("idCourantArtistique", idCourantArtistique) :
+                new ObjectParameter("idCourantArtistique", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_artiste_update", idParameter, nomParameter, siteWebParameter, idCourantArtistiqueParameter);
         }
     }
 }

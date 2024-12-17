@@ -22,5 +22,11 @@ namespace GsbCampagneGUI
             FrmGestionsVip form = new FrmGestionsVip();
             form.ShowDialog();
         }
+
+        private void btnArtiste_Click(object sender, EventArgs e)
+        {
+            FrmGestionsArtiste form = new FrmGestionsArtiste();
+            form.ShowDialog();
+        }
     }
 }

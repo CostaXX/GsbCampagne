@@ -51,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(189, 63);
+            this.label1.Location = new System.Drawing.Point(193, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 16);
             this.label1.TabIndex = 0;
@@ -110,7 +110,7 @@
             // cboVip
             // 
             this.cboVip.FormattingEnabled = true;
-            this.cboVip.Location = new System.Drawing.Point(263, 63);
+            this.cboVip.Location = new System.Drawing.Point(267, 44);
             this.cboVip.Name = "cboVip";
             this.cboVip.Size = new System.Drawing.Size(224, 21);
             this.cboVip.TabIndex = 10;
@@ -131,7 +131,7 @@
             this.panel.Controls.Add(this.label5);
             this.panel.Controls.Add(this.label3);
             this.panel.Controls.Add(this.label4);
-            this.panel.Location = new System.Drawing.Point(134, 112);
+            this.panel.Location = new System.Drawing.Point(138, 93);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(489, 296);
             this.panel.TabIndex = 11;
@@ -199,7 +199,7 @@
             // btnFermer
             // 
             this.btnFermer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFermer.Location = new System.Drawing.Point(668, 352);
+            this.btnFermer.Location = new System.Drawing.Point(301, 395);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(129, 56);
             this.btnFermer.TabIndex = 12;

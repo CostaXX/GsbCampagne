@@ -56,15 +56,11 @@
     <Compile Include="Agence.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AgenceCommunication.cs">
-      <DependentUpon>CampagnesModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AgenceEvenementiel.cs">
-      <DependentUpon>CampagnesModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Artiste.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ArtisteDAO.cs" />
+    <Compile Include="ArtisteExt.cs" />
     <Compile Include="Campagne.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
@@ -93,6 +89,7 @@
     <Compile Include="CourantArtistique.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CourantArtistiqueDAO.cs" />
     <Compile Include="Evenement.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>

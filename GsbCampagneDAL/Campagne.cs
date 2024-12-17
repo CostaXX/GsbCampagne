@@ -14,6 +14,12 @@ namespace GsbCampagneDAL
     
     public partial class Campagne
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Campagne()
+        {
+            this.Evenements = new HashSet<Evenement>();
+        }
+    
         public int Id { get; set; }
         public string Intitule { get; set; }
         public string Objectif { get; set; }
@@ -24,9 +30,11 @@ namespace GsbCampagneDAL
         public Nullable<int> IdAgenceEvenementiel { get; set; }
         public Nullable<int> IdSalarie { get; set; }
     
-        public virtual AgenceCommunication AgenceCommunication { get; set; }
-        public virtual AgenceEvenementiel AgenceEvenementiel { get; set; }
+        public virtual Agence Agence { get; set; }
+        public virtual Agence Agence1 { get; set; }
         public virtual Salarie Salarie { get; set; }
         public virtual TypePublic TypePublic { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Evenement> Evenements { get; set; }
     }
 }
