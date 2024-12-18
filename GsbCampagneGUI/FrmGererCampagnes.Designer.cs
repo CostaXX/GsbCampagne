@@ -49,6 +49,7 @@
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnFermer = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +61,7 @@
             this.cboCampagne.Name = "cboCampagne";
             this.cboCampagne.Size = new System.Drawing.Size(296, 24);
             this.cboCampagne.TabIndex = 0;
+            this.cboCampagne.SelectedIndexChanged += new System.EventHandler(this.cboCampagne_SelectionChangeCommitted);
             // 
             // panel1
             // 
@@ -244,6 +246,7 @@
             this.btnSupprimer.TabIndex = 1;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // btnModifier
             // 
@@ -267,19 +270,32 @@
             this.btnFermer.UseVisualStyleBackColor = true;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(164, 61);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 16);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Campagne";
+            // 
             // FrmGererCampagnes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 605);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cboCampagne);
             this.Name = "FrmGererCampagnes";
-            this.Text = "FrmGererCampagnes";
+            this.Text = "Gerer les Campagnes";
+            this.Load += new System.EventHandler(this.cboCampagne_SelectionChangeCommitted);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -306,5 +322,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnFermer;
+        private System.Windows.Forms.Label label9;
     }
 }

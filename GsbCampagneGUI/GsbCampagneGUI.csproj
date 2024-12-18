@@ -68,11 +68,23 @@
     <Compile Include="FrmAfficherCampagnes.Designer.cs">
       <DependentUpon>FrmAfficherCampagnes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAfficherCategorieVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAfficherCategorieVIP.Designer.cs">
+      <DependentUpon>FrmAfficherCategorieVIP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAjouterCampagnes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAjouterCampagnes.Designer.cs">
       <DependentUpon>FrmAjouterCampagnes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAjouterCategorieVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjouterCategorieVIP.Designer.cs">
+      <DependentUpon>FrmAjouterCategorieVIP.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmGererCampagnes.cs">
       <SubType>Form</SubType>
@@ -80,11 +92,23 @@
     <Compile Include="FrmGererCampagnes.Designer.cs">
       <DependentUpon>FrmGererCampagnes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGererCategorieVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGererCategorieVIP.Designer.cs">
+      <DependentUpon>FrmGererCategorieVIP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionCampagnes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmGestionCampagnes.Designer.cs">
       <DependentUpon>FrmGestionCampagnes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionCategorieVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionCategorieVIP.Designer.cs">
+      <DependentUpon>FrmGestionCategorieVIP.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,14 +118,26 @@
     <EmbeddedResource Include="FrmAfficherCampagnes.resx">
       <DependentUpon>FrmAfficherCampagnes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAfficherCategorieVIP.resx">
+      <DependentUpon>FrmAfficherCategorieVIP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAjouterCampagnes.resx">
       <DependentUpon>FrmAjouterCampagnes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjouterCategorieVIP.resx">
+      <DependentUpon>FrmAjouterCategorieVIP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGererCampagnes.resx">
       <DependentUpon>FrmGererCampagnes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmGererCategorieVIP.resx">
+      <DependentUpon>FrmGererCategorieVIP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionCampagnes.resx">
       <DependentUpon>FrmGestionCampagnes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionCategorieVIP.resx">
+      <DependentUpon>FrmGestionCategorieVIP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

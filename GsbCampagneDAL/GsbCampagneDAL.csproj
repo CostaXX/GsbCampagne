@@ -56,6 +56,7 @@
     <Compile Include="Agence.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AgenceDAO.cs" />
     <Compile Include="Artiste.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
@@ -82,6 +83,7 @@
     <Compile Include="CategorieVIP.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CategorieVIPDAO.cs" />
     <Compile Include="Convier.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
@@ -104,12 +106,14 @@
     <Compile Include="Salarie.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SalarieDAO.cs" />
     <Compile Include="Theme.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TypePublic.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="TypePublicDAO.cs" />
     <Compile Include="Ville.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>

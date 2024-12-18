@@ -23,7 +23,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nom" Type="varchar" MaxLength="150" />
           <Property Name="SiteWeb" Type="varchar" MaxLength="150" />
           <Property Name="IdCourantArtistique" Type="int" />
@@ -46,21 +46,22 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Libelle" Type="varchar" MaxLength="150" />
         </EntityType>
-        <!--Erreurs détectées durant la génération :
-avertissement 6013: Aucune clé primaire n'est définie pour la table/vue 'GsbCampagnes.dbo.Convier' ; en outre, aucune clé primaire valide n'a pu être déduite. Cette table/vue a été exclue. Pour utiliser l'entité, vous devez passer en revue votre schéma, ajouter les clés appropriées et supprimer le commentaire associé.
         <EntityType Name="Convier">
-          <Property Name="IdEvenement" Type="int" />
+          <Key>
+            <PropertyRef Name="IdEvenement" />
+          </Key>
+          <Property Name="IdEvenement" Type="int" Nullable="false" />
           <Property Name="IdCategorieVIP" Type="int" />
           <Property Name="Message" Type="varchar" MaxLength="150" />
-        </EntityType>-->
+        </EntityType>
         <EntityType Name="CourantArtistique">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Libelle" Type="varchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="Evenement">
@@ -88,13 +89,14 @@ avertissement 6013: Aucune clé primaire n'est définie pour la table/vue 'GsbCa
           <Property Name="ReferenceEnregistrement" Type="varchar" MaxLength="150" />
           <Property Name="IdSalarie" Type="int" />
         </EntityType>
-        <!--Erreurs détectées durant la génération :
-avertissement 6013: Aucune clé primaire n'est définie pour la table/vue 'GsbCampagnes.dbo.Participer' ; en outre, aucune clé primaire valide n'a pu être déduite. Cette table/vue a été exclue. Pour utiliser l'entité, vous devez passer en revue votre schéma, ajouter les clés appropriées et supprimer le commentaire associé.
         <EntityType Name="Participer">
-          <Property Name="IdEvenement" Type="int" />
+          <Key>
+            <PropertyRef Name="IdEvenement" />
+          </Key>
+          <Property Name="IdEvenement" Type="int" Nullable="false" />
           <Property Name="IdArtiste" Type="int" />
           <Property Name="Cachet" Type="decimal" Precision="10" Scale="2" />
-        </EntityType>-->
+        </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="Id" />
@@ -159,7 +161,7 @@ avertissement 6013: Aucune clé primaire n'est définie pour la table/vue 'GsbCa
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Artiste__IdCoura__693CA210">
+        <Association Name="FK__Artiste__IdCoura__73501C2F">
           <End Role="CourantArtistique" Type="Self.CourantArtistique" Multiplicity="0..1" />
           <End Role="Artiste" Type="Self.Artiste" Multiplicity="*" />
           <ReferentialConstraint>
@@ -219,13 +221,31 @@ avertissement 6013: Aucune clé primaire n'est définie pour la table/vue 'GsbCa
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Erreurs détectées durant la génération :
-erreur 6004: La table 'GsbCampagnes.dbo.Convier' est référencée par une relation, mais elle est introuvable.
-        <Association Name="FK__Convier__IdCateg__22401542" />-->
-        <!--Erreurs détectées durant la génération :
-erreur 6004: La table 'GsbCampagnes.dbo.Convier' est référencée par une relation, mais elle est introuvable.
-        <Association Name="FK__Convier__IdEvene__214BF109" />-->
-        <Association Name="FK__Evenement__IdArt__1C873BEC">
+        <Association Name="FK__Convier__IdCateg__11D4A34F">
+          <End Role="CategorieVIP" Type="Self.CategorieVIP" Multiplicity="0..1" />
+          <End Role="Convier" Type="Self.Convier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategorieVIP">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Convier">
+              <PropertyRef Name="IdCategorieVIP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Convier__IdEvene__10E07F16">
+          <End Role="Evenement" Type="Self.Evenement" Multiplicity="1" />
+          <End Role="Convier" Type="Self.Convier" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Evenement">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Convier">
+              <PropertyRef Name="IdEvenement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Evenement__IdArt__0B27A5C0">
           <End Role="Artiste" Type="Self.Artiste" Multiplicity="0..1" />
           <End Role="Evenement" Type="Self.Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -237,7 +257,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Convier' est référencée par une relat
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdCam__1F63A897">
+        <Association Name="FK__Evenement__IdCam__0E04126B">
           <End Role="Campagne" Type="Self.Campagne" Multiplicity="0..1" />
           <End Role="Evenement" Type="Self.Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -249,7 +269,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Convier' est référencée par une relat
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdCat__1E6F845E">
+        <Association Name="FK__Evenement__IdCat__0D0FEE32">
           <End Role="CategorieVIP" Type="Self.CategorieVIP" Multiplicity="0..1" />
           <End Role="Evenement" Type="Self.Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -261,7 +281,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Convier' est référencée par une relat
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdThe__1B9317B3">
+        <Association Name="FK__Evenement__IdThe__0A338187">
           <End Role="Theme" Type="Self.Theme" Multiplicity="0..1" />
           <End Role="Evenement" Type="Self.Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -273,7 +293,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Convier' est référencée par une relat
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdVil__1D7B6025">
+        <Association Name="FK__Evenement__IdVil__0C1BC9F9">
           <End Role="Ville" Type="Self.Ville" Multiplicity="0..1" />
           <End Role="Evenement" Type="Self.Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -297,12 +317,30 @@ erreur 6004: La table 'GsbCampagnes.dbo.Convier' est référencée par une relat
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Erreurs détectées durant la génération :
-erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une relation, mais elle est introuvable.
-        <Association Name="FK__Participe__IdArt__251C81ED" />-->
-        <!--Erreurs détectées durant la génération :
-erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une relation, mais elle est introuvable.
-        <Association Name="FK__Participe__IdEve__24285DB4" />-->
+        <Association Name="FK__Participe__IdArt__15A53433">
+          <End Role="Artiste" Type="Self.Artiste" Multiplicity="0..1" />
+          <End Role="Participer" Type="Self.Participer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artiste">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Participer">
+              <PropertyRef Name="IdArtiste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Participe__IdEve__14B10FFA">
+          <End Role="Evenement" Type="Self.Evenement" Multiplicity="1" />
+          <End Role="Participer" Type="Self.Participer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Evenement">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Participer">
+              <PropertyRef Name="IdEvenement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Salarie__IdRole__1EA48E88">
           <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
           <End Role="Salarie" Type="Self.Salarie" Multiplicity="*" />
@@ -315,7 +353,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VIP__IdCategorie__3A4CA8FD">
+        <Association Name="FK__VIP__IdCategorie__0662F0A3">
           <End Role="CategorieVIP" Type="Self.CategorieVIP" Multiplicity="0..1" />
           <End Role="VIP" Type="Self.VIP" Multiplicity="*" />
           <ReferentialConstraint>
@@ -327,7 +365,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VIP__IdVille__3B40CD36">
+        <Association Name="FK__VIP__IdVille__075714DC">
           <End Role="Ville" Type="Self.Ville" Multiplicity="0..1" />
           <End Role="VIP" Type="Self.VIP" Multiplicity="*" />
           <ReferentialConstraint>
@@ -339,14 +377,50 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="sp_campagne_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Intitule" Type="varchar" Mode="In" />
+          <Parameter Name="Objectif" Type="varchar" Mode="In" />
+          <Parameter Name="dateDebut" Type="date" Mode="In" />
+          <Parameter Name="dateFin" Type="date" Mode="In" />
+          <Parameter Name="IdSalarie" Type="int" Mode="In" />
+          <Parameter Name="IdTypePublic" Type="int" Mode="In" />
+          <Parameter Name="IdAgenceCommunication" Type="int" Mode="In" />
+          <Parameter Name="IdAgenceEvenementiel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_campagne_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_campagne_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="Intitule" Type="varchar" Mode="In" />
+          <Parameter Name="Objectif" Type="varchar" Mode="In" />
+          <Parameter Name="dateDebut" Type="date" Mode="In" />
+          <Parameter Name="dateFin" Type="date" Mode="In" />
+          <Parameter Name="IdSalarie" Type="int" Mode="In" />
+          <Parameter Name="IdTypePublic" Type="int" Mode="In" />
+          <Parameter Name="IdAgenceCommunication" Type="int" Mode="In" />
+          <Parameter Name="IdAgenceEvenementiel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_categorieVIP_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Libelle" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_categorieVIP_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_categorieVIP_edit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="Libelle" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="GsbCampagnesModelStoreContainer">
           <EntitySet Name="Agence" EntityType="Self.Agence" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Artiste" EntityType="Self.Artiste" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Campagne" EntityType="Self.Campagne" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CategorieVIP" EntityType="Self.CategorieVIP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Convier" EntityType="Self.Convier" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CourantArtistique" EntityType="Self.CourantArtistique" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Evenement" EntityType="Self.Evenement" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="JournalIntervention" EntityType="Self.JournalIntervention" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Participer" EntityType="Self.Participer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Salarie" EntityType="Self.Salarie" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Theme" EntityType="Self.Theme" Schema="dbo" store:Type="Tables" />
@@ -357,7 +431,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             <End Role="Ville" EntitySet="Ville" />
             <End Role="Agence" EntitySet="Agence" />
           </AssociationSet>
-          <AssociationSet Name="FK__Artiste__IdCoura__693CA210" Association="Self.FK__Artiste__IdCoura__693CA210">
+          <AssociationSet Name="FK__Artiste__IdCoura__73501C2F" Association="Self.FK__Artiste__IdCoura__73501C2F">
             <End Role="CourantArtistique" EntitySet="CourantArtistique" />
             <End Role="Artiste" EntitySet="Artiste" />
           </AssociationSet>
@@ -377,23 +451,31 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             <End Role="TypePublic" EntitySet="TypePublic" />
             <End Role="Campagne" EntitySet="Campagne" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdArt__1C873BEC" Association="Self.FK__Evenement__IdArt__1C873BEC">
+          <AssociationSet Name="FK__Convier__IdCateg__11D4A34F" Association="Self.FK__Convier__IdCateg__11D4A34F">
+            <End Role="CategorieVIP" EntitySet="CategorieVIP" />
+            <End Role="Convier" EntitySet="Convier" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Convier__IdEvene__10E07F16" Association="Self.FK__Convier__IdEvene__10E07F16">
+            <End Role="Evenement" EntitySet="Evenement" />
+            <End Role="Convier" EntitySet="Convier" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Evenement__IdArt__0B27A5C0" Association="Self.FK__Evenement__IdArt__0B27A5C0">
             <End Role="Artiste" EntitySet="Artiste" />
             <End Role="Evenement" EntitySet="Evenement" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdCam__1F63A897" Association="Self.FK__Evenement__IdCam__1F63A897">
+          <AssociationSet Name="FK__Evenement__IdCam__0E04126B" Association="Self.FK__Evenement__IdCam__0E04126B">
             <End Role="Campagne" EntitySet="Campagne" />
             <End Role="Evenement" EntitySet="Evenement" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdCat__1E6F845E" Association="Self.FK__Evenement__IdCat__1E6F845E">
+          <AssociationSet Name="FK__Evenement__IdCat__0D0FEE32" Association="Self.FK__Evenement__IdCat__0D0FEE32">
             <End Role="CategorieVIP" EntitySet="CategorieVIP" />
             <End Role="Evenement" EntitySet="Evenement" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdThe__1B9317B3" Association="Self.FK__Evenement__IdThe__1B9317B3">
+          <AssociationSet Name="FK__Evenement__IdThe__0A338187" Association="Self.FK__Evenement__IdThe__0A338187">
             <End Role="Theme" EntitySet="Theme" />
             <End Role="Evenement" EntitySet="Evenement" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdVil__1D7B6025" Association="Self.FK__Evenement__IdVil__1D7B6025">
+          <AssociationSet Name="FK__Evenement__IdVil__0C1BC9F9" Association="Self.FK__Evenement__IdVil__0C1BC9F9">
             <End Role="Ville" EntitySet="Ville" />
             <End Role="Evenement" EntitySet="Evenement" />
           </AssociationSet>
@@ -401,15 +483,23 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             <End Role="Salarie" EntitySet="Salarie" />
             <End Role="JournalIntervention" EntitySet="JournalIntervention" />
           </AssociationSet>
+          <AssociationSet Name="FK__Participe__IdArt__15A53433" Association="Self.FK__Participe__IdArt__15A53433">
+            <End Role="Artiste" EntitySet="Artiste" />
+            <End Role="Participer" EntitySet="Participer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Participe__IdEve__14B10FFA" Association="Self.FK__Participe__IdEve__14B10FFA">
+            <End Role="Evenement" EntitySet="Evenement" />
+            <End Role="Participer" EntitySet="Participer" />
+          </AssociationSet>
           <AssociationSet Name="FK__Salarie__IdRole__1EA48E88" Association="Self.FK__Salarie__IdRole__1EA48E88">
             <End Role="Role" EntitySet="Role" />
             <End Role="Salarie" EntitySet="Salarie" />
           </AssociationSet>
-          <AssociationSet Name="FK__VIP__IdCategorie__3A4CA8FD" Association="Self.FK__VIP__IdCategorie__3A4CA8FD">
+          <AssociationSet Name="FK__VIP__IdCategorie__0662F0A3" Association="Self.FK__VIP__IdCategorie__0662F0A3">
             <End Role="CategorieVIP" EntitySet="CategorieVIP" />
             <End Role="VIP" EntitySet="VIP" />
           </AssociationSet>
-          <AssociationSet Name="FK__VIP__IdVille__3B40CD36" Association="Self.FK__VIP__IdVille__3B40CD36">
+          <AssociationSet Name="FK__VIP__IdVille__075714DC" Association="Self.FK__VIP__IdVille__075714DC">
             <End Role="Ville" EntitySet="Ville" />
             <End Role="VIP" EntitySet="VIP" />
           </AssociationSet>
@@ -419,6 +509,30 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
     <edmx:ConceptualModels>
       <Schema Namespace="GsbCampagnesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="GsbCampagnesEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="sp_campagne_add">
+            <Parameter Name="Intitule" Mode="In" Type="String" />
+            <Parameter Name="Objectif" Mode="In" Type="String" />
+            <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
+            <Parameter Name="dateFin" Mode="In" Type="DateTime" />
+            <Parameter Name="IdSalarie" Mode="In" Type="Int32" />
+            <Parameter Name="IdTypePublic" Mode="In" Type="Int32" />
+            <Parameter Name="IdAgenceCommunication" Mode="In" Type="Int32" />
+            <Parameter Name="IdAgenceEvenementiel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_campagne_delete">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_campagne_update">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="Intitule" Mode="In" Type="String" />
+            <Parameter Name="Objectif" Mode="In" Type="String" />
+            <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
+            <Parameter Name="dateFin" Mode="In" Type="DateTime" />
+            <Parameter Name="IdSalarie" Mode="In" Type="Int32" />
+            <Parameter Name="IdTypePublic" Mode="In" Type="Int32" />
+            <Parameter Name="IdAgenceCommunication" Mode="In" Type="Int32" />
+            <Parameter Name="IdAgenceEvenementiel" Mode="In" Type="Int32" />
+          </FunctionImport>
           <EntitySet Name="Agences" EntityType="GsbCampagnesModel.Agence" />
           <EntitySet Name="Artistes" EntityType="GsbCampagnesModel.Artiste" />
           <EntitySet Name="Campagnes" EntityType="GsbCampagnesModel.Campagne" />
@@ -432,27 +546,39 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
           <EntitySet Name="TypePublics" EntityType="GsbCampagnesModel.TypePublic" />
           <EntitySet Name="Villes" EntityType="GsbCampagnesModel.Ville" />
           <EntitySet Name="VIPs" EntityType="GsbCampagnesModel.VIP" />
-          <AssociationSet Name="FK__Agence__IdVille__5224328E" Association="GsbCampagnesModel.FK__Agence__IdVille__5224328E">
+          <AssociationSet Name="FK__Agence__IdVille__0A688BB1" Association="GsbCampagnesModel.FK__Agence__IdVille__0A688BB1">
             <End Role="Ville" EntitySet="Villes" />
             <End Role="Agence" EntitySet="Agences" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Campagne__IdAgen__1209AD79" Association="GsbCampagnesModel.FK__Campagne__IdAgen__1209AD79">
+            <End Role="Agence" EntitySet="Agences" />
+            <End Role="Campagne" EntitySet="Campagnes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Campagne__IdAgen__12FDD1B2" Association="GsbCampagnesModel.FK__Campagne__IdAgen__12FDD1B2">
+            <End Role="Agence" EntitySet="Agences" />
+            <End Role="Campagne" EntitySet="Campagnes" />
           </AssociationSet>
           <AssociationSet Name="FK__Artiste__IdCoura__693CA210" Association="GsbCampagnesModel.FK__Artiste__IdCoura__693CA210">
             <End Role="CourantArtistique" EntitySet="CourantArtistiques" />
             <End Role="Artiste" EntitySet="Artistes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdArt__3F115E1A" Association="GsbCampagnesModel.FK__Evenement__IdArt__3F115E1A">
+          <AssociationSet Name="FK__Evenement__IdArt__1C873BEC" Association="GsbCampagnesModel.FK__Evenement__IdArt__1C873BEC">
             <End Role="Artiste" EntitySet="Artistes" />
             <End Role="Evenement" EntitySet="Evenements" />
           </AssociationSet>
-          <AssociationSet Name="FK__Campagne__IdSala__5F7E2DAC" Association="GsbCampagnesModel.FK__Campagne__IdSala__5F7E2DAC">
+          <AssociationSet Name="FK__Campagne__IdSala__14E61A24" Association="GsbCampagnesModel.FK__Campagne__IdSala__14E61A24">
             <End Role="Salarie" EntitySet="Salaries" />
             <End Role="Campagne" EntitySet="Campagnes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Campagne__IdType__5E8A0973" Association="GsbCampagnesModel.FK__Campagne__IdType__5E8A0973">
+          <AssociationSet Name="FK__Campagne__IdType__13F1F5EB" Association="GsbCampagnesModel.FK__Campagne__IdType__13F1F5EB">
             <End Role="TypePublic" EntitySet="TypePublics" />
             <End Role="Campagne" EntitySet="Campagnes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdCat__40F9A68C" Association="GsbCampagnesModel.FK__Evenement__IdCat__40F9A68C">
+          <AssociationSet Name="FK__Evenement__IdCam__1F63A897" Association="GsbCampagnesModel.FK__Evenement__IdCam__1F63A897">
+            <End Role="Campagne" EntitySet="Campagnes" />
+            <End Role="Evenement" EntitySet="Evenements" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Evenement__IdCat__1E6F845E" Association="GsbCampagnesModel.FK__Evenement__IdCat__1E6F845E">
             <End Role="CategorieVIP" EntitySet="CategorieVIPs" />
             <End Role="Evenement" EntitySet="Evenements" />
           </AssociationSet>
@@ -460,11 +586,11 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             <End Role="CategorieVIP" EntitySet="CategorieVIPs" />
             <End Role="VIP" EntitySet="VIPs" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdThe__3E1D39E1" Association="GsbCampagnesModel.FK__Evenement__IdThe__3E1D39E1">
+          <AssociationSet Name="FK__Evenement__IdThe__1B9317B3" Association="GsbCampagnesModel.FK__Evenement__IdThe__1B9317B3">
             <End Role="Theme" EntitySet="Themes" />
             <End Role="Evenement" EntitySet="Evenements" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdVil__40058253" Association="GsbCampagnesModel.FK__Evenement__IdVil__40058253">
+          <AssociationSet Name="FK__Evenement__IdVil__1D7B6025" Association="GsbCampagnesModel.FK__Evenement__IdVil__1D7B6025">
             <End Role="Ville" EntitySet="Villes" />
             <End Role="Evenement" EntitySet="Evenements" />
           </AssociationSet>
@@ -482,34 +608,32 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
           </AssociationSet>
           <EntitySet Name="Conviers" EntityType="GsbCampagnesModel.Convier" />
           <EntitySet Name="Participers" EntityType="GsbCampagnesModel.Participer" />
-          <AssociationSet Name="FK__Participe__IdArt__7A3223E8" Association="GsbCampagnesModel.FK__Participe__IdArt__7A3223E8">
+          <AssociationSet Name="FK__Participe__IdArt__44952D46" Association="GsbCampagnesModel.FK__Participe__IdArt__44952D46">
             <End Role="Artiste" EntitySet="Artistes" />
             <End Role="Participer" EntitySet="Participers" />
           </AssociationSet>
-          <AssociationSet Name="FK__Convier__IdCateg__76619304" Association="GsbCampagnesModel.FK__Convier__IdCateg__76619304">
+          <AssociationSet Name="FK__Convier__IdCateg__4865BE2A" Association="GsbCampagnesModel.FK__Convier__IdCateg__4865BE2A">
             <End Role="CategorieVIP" EntitySet="CategorieVIPs" />
             <End Role="Convier" EntitySet="Conviers" />
           </AssociationSet>
-          <AssociationSet Name="FK__Convier__IdEvene__756D6ECB" Association="GsbCampagnesModel.FK__Convier__IdEvene__756D6ECB">
+          <AssociationSet Name="FK__Convier__IdEvene__477199F1" Association="GsbCampagnesModel.FK__Convier__IdEvene__477199F1">
             <End Role="Evenement" EntitySet="Evenements" />
             <End Role="Convier" EntitySet="Conviers" />
           </AssociationSet>
-          <AssociationSet Name="FK__Participe__IdEve__793DFFAF" Association="GsbCampagnesModel.FK__Participe__IdEve__793DFFAF">
+          <AssociationSet Name="FK__Participe__IdEve__43A1090D" Association="GsbCampagnesModel.FK__Participe__IdEve__43A1090D">
             <End Role="Evenement" EntitySet="Evenements" />
             <End Role="Participer" EntitySet="Participers" />
           </AssociationSet>
-          <AssociationSet Name="FK__Campagne__IdAgen__1209AD79" Association="GsbCampagnesModel.FK__Campagne__IdAgen__1209AD79">
-            <End Role="Agence" EntitySet="Agences" />
-            <End Role="Campagne" EntitySet="Campagnes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Campagne__IdAgen__12FDD1B2" Association="GsbCampagnesModel.FK__Campagne__IdAgen__12FDD1B2">
-            <End Role="Agence" EntitySet="Agences" />
-            <End Role="Campagne" EntitySet="Campagnes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdCam__1F63A897" Association="GsbCampagnesModel.FK__Evenement__IdCam__1F63A897">
-            <End Role="Campagne" EntitySet="Campagnes" />
-            <End Role="Evenement" EntitySet="Evenements" />
-          </AssociationSet>
+          <FunctionImport Name="sp_categorieVIP_add">
+          <Parameter Name="Libelle" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_categorieVIP_delete">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_categorieVIP_edit">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="Libelle" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Agence">
           <Key>
@@ -521,10 +645,10 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
           <Property Name="Telephone" Type="Int32" />
           <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="SiteWeb" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="IdVille" Type="Int32" />
-          <NavigationProperty Name="Ville" Relationship="GsbCampagnesModel.FK__Agence__IdVille__5224328E" FromRole="Agence" ToRole="Ville" />
           <Property Name="TypeCommunication" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="TypeEvenementiel" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IdVille" Type="Int32" />
+          <NavigationProperty Name="Ville" Relationship="GsbCampagnesModel.FK__Agence__IdVille__0A688BB1" FromRole="Agence" ToRole="Ville" />
           <NavigationProperty Name="Campagnes" Relationship="GsbCampagnesModel.FK__Campagne__IdAgen__1209AD79" FromRole="Agence" ToRole="Campagne" />
           <NavigationProperty Name="Campagnes1" Relationship="GsbCampagnesModel.FK__Campagne__IdAgen__12FDD1B2" FromRole="Agence" ToRole="Campagne" />
         </EntityType>
@@ -537,8 +661,8 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
           <Property Name="SiteWeb" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="IdCourantArtistique" Type="Int32" />
           <NavigationProperty Name="CourantArtistique" Relationship="GsbCampagnesModel.FK__Artiste__IdCoura__693CA210" FromRole="Artiste" ToRole="CourantArtistique" />
-          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdArt__3F115E1A" FromRole="Artiste" ToRole="Evenement" />
-          <NavigationProperty Name="Participers" Relationship="GsbCampagnesModel.FK__Participe__IdArt__7A3223E8" FromRole="Artiste" ToRole="Participer" />
+          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdArt__1C873BEC" FromRole="Artiste" ToRole="Evenement" />
+          <NavigationProperty Name="Participers" Relationship="GsbCampagnesModel.FK__Participe__IdArt__44952D46" FromRole="Artiste" ToRole="Participer" />
         </EntityType>
         <EntityType Name="Campagne">
           <Key>
@@ -553,11 +677,10 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
           <Property Name="IdAgenceCommunication" Type="Int32" />
           <Property Name="IdAgenceEvenementiel" Type="Int32" />
           <Property Name="IdSalarie" Type="Int32" />
-          <NavigationProperty Name="Salarie" Relationship="GsbCampagnesModel.FK__Campagne__IdSala__5F7E2DAC" FromRole="Campagne" ToRole="Salarie" />
-          <NavigationProperty Name="TypePublic" Relationship="GsbCampagnesModel.FK__Campagne__IdType__5E8A0973" FromRole="Campagne" ToRole="TypePublic" />
           <NavigationProperty Name="Agence" Relationship="GsbCampagnesModel.FK__Campagne__IdAgen__1209AD79" FromRole="Campagne" ToRole="Agence" />
           <NavigationProperty Name="Agence1" Relationship="GsbCampagnesModel.FK__Campagne__IdAgen__12FDD1B2" FromRole="Campagne" ToRole="Agence" />
-          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdCam__1F63A897" FromRole="Campagne" ToRole="Evenement" />
+          <NavigationProperty Name="Salarie" Relationship="GsbCampagnesModel.FK__Campagne__IdSala__14E61A24" FromRole="Campagne" ToRole="Salarie" />
+          <NavigationProperty Name="TypePublic" Relationship="GsbCampagnesModel.FK__Campagne__IdType__13F1F5EB" FromRole="Campagne" ToRole="TypePublic" />
         </EntityType>
         <EntityType Name="CategorieVIP">
           <Key>
@@ -565,9 +688,6 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Libelle" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdCat__40F9A68C" FromRole="CategorieVIP" ToRole="Evenement" />
-          <NavigationProperty Name="VIPs" Relationship="GsbCampagnesModel.FK__VIP__IdCategorie__3A4CA8FD" FromRole="CategorieVIP" ToRole="VIP" />
-          <NavigationProperty Name="Conviers" Relationship="GsbCampagnesModel.FK__Convier__IdCateg__76619304" FromRole="CategorieVIP" ToRole="Convier" />
         </EntityType>
         <EntityType Name="CourantArtistique">
           <Key>
@@ -589,14 +709,14 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
           <Property Name="IdArtiste" Type="Int32" />
           <Property Name="IdVille" Type="Int32" />
           <Property Name="IdCategorieVIP" Type="Int32" />
-          <NavigationProperty Name="Artiste" Relationship="GsbCampagnesModel.FK__Evenement__IdArt__3F115E1A" FromRole="Evenement" ToRole="Artiste" />
-          <NavigationProperty Name="CategorieVIP" Relationship="GsbCampagnesModel.FK__Evenement__IdCat__40F9A68C" FromRole="Evenement" ToRole="CategorieVIP" />
-          <NavigationProperty Name="Theme" Relationship="GsbCampagnesModel.FK__Evenement__IdThe__3E1D39E1" FromRole="Evenement" ToRole="Theme" />
-          <NavigationProperty Name="Ville" Relationship="GsbCampagnesModel.FK__Evenement__IdVil__40058253" FromRole="Evenement" ToRole="Ville" />
-          <NavigationProperty Name="Convier" Relationship="GsbCampagnesModel.FK__Convier__IdEvene__756D6ECB" FromRole="Evenement" ToRole="Convier" />
-          <NavigationProperty Name="Participer" Relationship="GsbCampagnesModel.FK__Participe__IdEve__793DFFAF" FromRole="Evenement" ToRole="Participer" />
           <Property Name="IdCampagne" Type="Int32" />
+          <NavigationProperty Name="Artiste" Relationship="GsbCampagnesModel.FK__Evenement__IdArt__1C873BEC" FromRole="Evenement" ToRole="Artiste" />
           <NavigationProperty Name="Campagne" Relationship="GsbCampagnesModel.FK__Evenement__IdCam__1F63A897" FromRole="Evenement" ToRole="Campagne" />
+          <NavigationProperty Name="CategorieVIP" Relationship="GsbCampagnesModel.FK__Evenement__IdCat__1E6F845E" FromRole="Evenement" ToRole="CategorieVIP" />
+          <NavigationProperty Name="Theme" Relationship="GsbCampagnesModel.FK__Evenement__IdThe__1B9317B3" FromRole="Evenement" ToRole="Theme" />
+          <NavigationProperty Name="Ville" Relationship="GsbCampagnesModel.FK__Evenement__IdVil__1D7B6025" FromRole="Evenement" ToRole="Ville" />
+          <NavigationProperty Name="Convier" Relationship="GsbCampagnesModel.FK__Convier__IdEvene__477199F1" FromRole="Evenement" ToRole="Convier" />
+          <NavigationProperty Name="Participer" Relationship="GsbCampagnesModel.FK__Participe__IdEve__43A1090D" FromRole="Evenement" ToRole="Participer" />
         </EntityType>
         <EntityType Name="JournalIntervention">
           <Key>
@@ -628,7 +748,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
           <Property Name="Login" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="Mdp" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="IdRole" Type="Int32" />
-          <NavigationProperty Name="Campagnes" Relationship="GsbCampagnesModel.FK__Campagne__IdSala__5F7E2DAC" FromRole="Salarie" ToRole="Campagne" />
+          <NavigationProperty Name="Campagnes" Relationship="GsbCampagnesModel.FK__Campagne__IdSala__14E61A24" FromRole="Salarie" ToRole="Campagne" />
           <NavigationProperty Name="JournalInterventions" Relationship="GsbCampagnesModel.FK__JournalIn__IdSal__2739D489" FromRole="Salarie" ToRole="JournalIntervention" />
           <NavigationProperty Name="Role" Relationship="GsbCampagnesModel.FK__Salarie__IdRole__1EA48E88" FromRole="Salarie" ToRole="Role" />
         </EntityType>
@@ -638,7 +758,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Libelle" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdThe__3E1D39E1" FromRole="Theme" ToRole="Evenement" />
+          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdThe__1B9317B3" FromRole="Theme" ToRole="Evenement" />
         </EntityType>
         <EntityType Name="TypePublic">
           <Key>
@@ -646,7 +766,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Libelle" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Campagnes" Relationship="GsbCampagnesModel.FK__Campagne__IdType__5E8A0973" FromRole="TypePublic" ToRole="Campagne" />
+          <NavigationProperty Name="Campagnes" Relationship="GsbCampagnesModel.FK__Campagne__IdType__13F1F5EB" FromRole="TypePublic" ToRole="Campagne" />
         </EntityType>
         <EntityType Name="Ville">
           <Key>
@@ -656,8 +776,8 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
           <Property Name="Nom" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="Arrondissement" Type="Int32" />
           <Property Name="CodePostal" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Agences" Relationship="GsbCampagnesModel.FK__Agence__IdVille__5224328E" FromRole="Ville" ToRole="Agence" />
-          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdVil__40058253" FromRole="Ville" ToRole="Evenement" />
+          <NavigationProperty Name="Agences" Relationship="GsbCampagnesModel.FK__Agence__IdVille__0A688BB1" FromRole="Ville" ToRole="Agence" />
+          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdVil__1D7B6025" FromRole="Ville" ToRole="Evenement" />
           <NavigationProperty Name="VIPs" Relationship="GsbCampagnesModel.FK__VIP__IdVille__3B40CD36" FromRole="Ville" ToRole="VIP" />
         </EntityType>
         <EntityType Name="VIP">
@@ -673,7 +793,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
           <NavigationProperty Name="CategorieVIP" Relationship="GsbCampagnesModel.FK__VIP__IdCategorie__3A4CA8FD" FromRole="VIP" ToRole="CategorieVIP" />
           <NavigationProperty Name="Ville" Relationship="GsbCampagnesModel.FK__VIP__IdVille__3B40CD36" FromRole="VIP" ToRole="Ville" />
         </EntityType>
-        <Association Name="FK__Agence__IdVille__5224328E">
+        <Association Name="FK__Agence__IdVille__0A688BB1">
           <End Type="GsbCampagnesModel.Ville" Role="Ville" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Agence" Role="Agence" Multiplicity="*" />
           <ReferentialConstraint>
@@ -682,6 +802,30 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             </Principal>
             <Dependent Role="Agence">
               <PropertyRef Name="IdVille" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Campagne__IdAgen__1209AD79">
+          <End Type="GsbCampagnesModel.Agence" Role="Agence" Multiplicity="0..1" />
+          <End Type="GsbCampagnesModel.Campagne" Role="Campagne" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agence">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Campagne">
+              <PropertyRef Name="IdAgenceCommunication" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Campagne__IdAgen__12FDD1B2">
+          <End Type="GsbCampagnesModel.Agence" Role="Agence" Multiplicity="0..1" />
+          <End Type="GsbCampagnesModel.Campagne" Role="Campagne" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agence">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Campagne">
+              <PropertyRef Name="IdAgenceEvenementiel" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -697,7 +841,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdArt__3F115E1A">
+        <Association Name="FK__Evenement__IdArt__1C873BEC">
           <End Type="GsbCampagnesModel.Artiste" Role="Artiste" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -709,7 +853,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Campagne__IdSala__5F7E2DAC">
+        <Association Name="FK__Campagne__IdSala__14E61A24">
           <End Type="GsbCampagnesModel.Salarie" Role="Salarie" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Campagne" Role="Campagne" Multiplicity="*" />
           <ReferentialConstraint>
@@ -721,7 +865,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Campagne__IdType__5E8A0973">
+        <Association Name="FK__Campagne__IdType__13F1F5EB">
           <End Type="GsbCampagnesModel.TypePublic" Role="TypePublic" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Campagne" Role="Campagne" Multiplicity="*" />
           <ReferentialConstraint>
@@ -733,7 +877,19 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdCat__40F9A68C">
+        <Association Name="FK__Evenement__IdCam__1F63A897">
+          <End Type="GsbCampagnesModel.Campagne" Role="Campagne" Multiplicity="0..1" />
+          <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campagne">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Evenement">
+              <PropertyRef Name="IdCampagne" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Evenement__IdCat__1E6F845E">
           <End Type="GsbCampagnesModel.CategorieVIP" Role="CategorieVIP" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -757,7 +913,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdThe__3E1D39E1">
+        <Association Name="FK__Evenement__IdThe__1B9317B3">
           <End Type="GsbCampagnesModel.Theme" Role="Theme" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -769,7 +925,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdVil__40058253">
+        <Association Name="FK__Evenement__IdVil__1D7B6025">
           <End Type="GsbCampagnesModel.Ville" Role="Ville" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -822,10 +978,10 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             <PropertyRef Name="IdEvenement" />
           </Key>
           <Property Name="IdEvenement" Type="Int32" Nullable="false" />
-          <Property Name="IdCategorie" Type="Int32" />
+          <Property Name="IdCategorieVIP" Type="Int32" />
           <Property Name="Message" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="CategorieVIP" Relationship="GsbCampagnesModel.FK__Convier__IdCateg__76619304" FromRole="Convier" ToRole="CategorieVIP" />
-          <NavigationProperty Name="Evenement" Relationship="GsbCampagnesModel.FK__Convier__IdEvene__756D6ECB" FromRole="Convier" ToRole="Evenement" />
+          <NavigationProperty Name="CategorieVIP" Relationship="GsbCampagnesModel.FK__Convier__IdCateg__4865BE2A" FromRole="Convier" ToRole="CategorieVIP" />
+          <NavigationProperty Name="Evenement" Relationship="GsbCampagnesModel.FK__Convier__IdEvene__477199F1" FromRole="Convier" ToRole="Evenement" />
         </EntityType>
         <EntityType Name="Participer">
           <Key>
@@ -833,11 +989,11 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
           </Key>
           <Property Name="IdEvenement" Type="Int32" Nullable="false" />
           <Property Name="IdArtiste" Type="Int32" />
-          <Property Name="Cachet" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Artiste" Relationship="GsbCampagnesModel.FK__Participe__IdArt__7A3223E8" FromRole="Participer" ToRole="Artiste" />
-          <NavigationProperty Name="Evenement" Relationship="GsbCampagnesModel.FK__Participe__IdEve__793DFFAF" FromRole="Participer" ToRole="Evenement" />
+          <Property Name="Cachet" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Artiste" Relationship="GsbCampagnesModel.FK__Participe__IdArt__44952D46" FromRole="Participer" ToRole="Artiste" />
+          <NavigationProperty Name="Evenement" Relationship="GsbCampagnesModel.FK__Participe__IdEve__43A1090D" FromRole="Participer" ToRole="Evenement" />
         </EntityType>
-        <Association Name="FK__Participe__IdArt__7A3223E8">
+        <Association Name="FK__Participe__IdArt__44952D46">
           <End Type="GsbCampagnesModel.Artiste" Role="Artiste" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Participer" Role="Participer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -849,7 +1005,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Convier__IdCateg__76619304">
+        <Association Name="FK__Convier__IdCateg__4865BE2A">
           <End Type="GsbCampagnesModel.CategorieVIP" Role="CategorieVIP" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Convier" Role="Convier" Multiplicity="*" />
           <ReferentialConstraint>
@@ -857,11 +1013,11 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Convier">
-              <PropertyRef Name="IdCategorie" />
+              <PropertyRef Name="IdCategorieVIP" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Convier__IdEvene__756D6ECB">
+        <Association Name="FK__Convier__IdEvene__477199F1">
           <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="1" />
           <End Type="GsbCampagnesModel.Convier" Role="Convier" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -873,7 +1029,7 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Participe__IdEve__793DFFAF">
+        <Association Name="FK__Participe__IdEve__43A1090D">
           <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="1" />
           <End Type="GsbCampagnesModel.Participer" Role="Participer" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -885,54 +1041,21 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Campagne__IdAgen__1209AD79">
-          <End Type="GsbCampagnesModel.Agence" Role="Agence" Multiplicity="0..1" />
-          <End Type="GsbCampagnesModel.Campagne" Role="Campagne" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Agence">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Campagne">
-              <PropertyRef Name="IdAgenceCommunication" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Campagne__IdAgen__12FDD1B2">
-          <End Type="GsbCampagnesModel.Agence" Role="Agence" Multiplicity="0..1" />
-          <End Type="GsbCampagnesModel.Campagne" Role="Campagne" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Agence">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Campagne">
-              <PropertyRef Name="IdAgenceEvenementiel" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Evenement__IdCam__1F63A897">
-          <End Type="GsbCampagnesModel.Campagne" Role="Campagne" Multiplicity="0..1" />
-          <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Campagne">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Evenement">
-              <PropertyRef Name="IdCampagne" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="GsbCampagnesModelStoreContainer" CdmEntityContainer="GsbCampagnesEntities" >
+          <FunctionImportMapping FunctionImportName="sp_campagne_add" FunctionName="GsbCampagnesModel.Store.sp_campagne_add" />
+          <FunctionImportMapping FunctionImportName="sp_campagne_delete" FunctionName="GsbCampagnesModel.Store.sp_campagne_delete" />
+          <FunctionImportMapping FunctionImportName="sp_campagne_update" FunctionName="GsbCampagnesModel.Store.sp_campagne_update" />
           <EntitySetMapping Name="Agences">
             <EntityTypeMapping TypeName="GsbCampagnesModel.Agence">
               <MappingFragment StoreEntitySet="Agence">
+                <ScalarProperty Name="IdVille" ColumnName="IdVille" />
                 <ScalarProperty Name="TypeEvenementiel" ColumnName="TypeEvenementiel" />
                 <ScalarProperty Name="TypeCommunication" ColumnName="TypeCommunication" />
-                <ScalarProperty Name="IdVille" ColumnName="IdVille" />
                 <ScalarProperty Name="SiteWeb" ColumnName="SiteWeb" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Telephone" ColumnName="Telephone" />
@@ -1068,6 +1191,27 @@ erreur 6004: La table 'GsbCampagnes.dbo.Participer' est référencée par une re
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Conviers">
+            <EntityTypeMapping TypeName="GsbCampagnesModel.Convier">
+              <MappingFragment StoreEntitySet="Convier">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="IdCategorieVIP" ColumnName="IdCategorieVIP" />
+                <ScalarProperty Name="IdEvenement" ColumnName="IdEvenement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Participers">
+            <EntityTypeMapping TypeName="GsbCampagnesModel.Participer">
+              <MappingFragment StoreEntitySet="Participer">
+                <ScalarProperty Name="Cachet" ColumnName="Cachet" />
+                <ScalarProperty Name="IdArtiste" ColumnName="IdArtiste" />
+                <ScalarProperty Name="IdEvenement" ColumnName="IdEvenement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_categorieVIP_add" FunctionName="GsbCampagnesModel.Store.sp_categorieVIP_add" />
+          <FunctionImportMapping FunctionImportName="sp_categorieVIP_delete" FunctionName="GsbCampagnesModel.Store.sp_categorieVIP_delete" />
+          <FunctionImportMapping FunctionImportName="sp_categorieVIP_edit" FunctionName="GsbCampagnesModel.Store.sp_categorieVIP_edit" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

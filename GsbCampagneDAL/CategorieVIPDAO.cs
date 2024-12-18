@@ -3,45 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GsbCampagneDAL;
 
 namespace GsbCampagneDAL
 {
-    public class CampagneDAO
+    public class CategorieVIPDAO
     {
         #region Singleton
-        private static CampagneDAO instance;
-        public static CampagneDAO GetInstance()
+        private static CategorieVIPDAO instance;
+        public static CategorieVIPDAO GetInstance()
         {
             if (instance == null)
             {
-                instance = new CampagneDAO();
+                instance = new CategorieVIPDAO();
             }
             return instance;
         }
         #endregion Singleton
 
-        public List<Campagne> GetLesCampagnes()
+        public List<CategorieVIP> GetLesCategoriesVIP()
         {
             using (var ctx = new GsbCampagnesEntities())
             {
-                var liste = ctx.Campagnes
-                .Include("TypePublic")
-                .Include("Agence")
-                .Include("Agence1")
-                .Include("Salarie")
+                var liste = ctx.CategorieVIPs
                 .ToList();
                 return liste;
             }
         }
 
-        public int AjouterCampagne(Campagne c)
+        public int AjouterCategorieVIP(CategorieVIP c)
         {
             using (var ctx = new GsbCampagnesEntities())
             {
                 try
                 {
-                    ctx.sp_campagne_add(c.Intitule, c.Objectif, c.DateDebut, c.DateFin, c.IdSalarie, c.IdTypePublic, c.IdAgenceCommunication, c.IdAgenceEvenementiel);
+                    ctx.sp_categorieVIP_add(c.Libelle);
                     return 0;
                 }
                 catch
@@ -51,13 +46,13 @@ namespace GsbCampagneDAL
             }
         }
 
-        public int ModifierCampagne(Campagne c)
+        public int ModifierCategorieVIP(CategorieVIP c)
         {
             using (var ctx = new GsbCampagnesEntities())
             {
                 try
                 {
-                    ctx.sp_campagne_update(c.Id, c.Intitule, c.Objectif , c.DateDebut, c.DateFin, c.IdSalarie, c.IdTypePublic, c.IdAgenceCommunication, c.IdAgenceEvenementiel);
+                    ctx.sp_categorieVIP_edit(c.Id, c.Libelle);
                     return 0;
                 }
                 catch
@@ -67,13 +62,13 @@ namespace GsbCampagneDAL
             }
         }
 
-        public int SupprimerCampagne(Campagne c)
+        public int SupprimerCategorieVIP(CategorieVIP c)
         {
             using (var ctx = new GsbCampagnesEntities())
             {
                 try
                 {
-                    ctx.sp_campagne_delete(c.Id);
+                    ctx.sp_categorieVIP_delete(c.Id);
                     return 0;
                 }
                 catch
@@ -82,6 +77,5 @@ namespace GsbCampagneDAL
                 }
             }
         }
-
     }
 }

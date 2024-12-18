@@ -22,5 +22,11 @@ namespace GsbCampagneGUI
             FrmGestionCampagnes frmGestionCampagnes = new FrmGestionCampagnes();
             frmGestionCampagnes.Show();
         }
+
+        private void btnGestionCategorieVIP_Click(object sender, EventArgs e)
+        {
+            FrmGestionCategorieVIP frmGestionCategorieVIP = new FrmGestionCategorieVIP();
+            frmGestionCategorieVIP.Show();
+        }
     }
 }
