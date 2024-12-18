@@ -28,5 +28,11 @@ namespace GsbCampagneGUI
             FrmGestionsArtiste form = new FrmGestionsArtiste();
             form.ShowDialog();
         }
+
+        private void btnCategArtiste_Click(object sender, EventArgs e)
+        {
+            FrmGestionsCourantArtistes form = new FrmGestionsCourantArtistes();
+            form.ShowDialog();
+        }
     }
 }

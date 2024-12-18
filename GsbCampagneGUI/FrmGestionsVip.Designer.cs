@@ -88,7 +88,7 @@
             this.Controls.Add(this.btnAjouterVip);
             this.Controls.Add(this.btnConsulterVip);
             this.Name = "FrmGestionsVip";
-            this.Text = "GestionsVip";
+            this.Text = "Gestion VIP";
             this.ResumeLayout(false);
 
         }

@@ -80,6 +80,12 @@
     <Compile Include="FrmGestionsArtiste.Designer.cs">
       <DependentUpon>FrmGestionsArtiste.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGestionsCourantArtistes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionsCourantArtistes.Designer.cs">
+      <DependentUpon>FrmGestionsCourantArtistes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionsVip.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,12 @@
     </Compile>
     <Compile Include="FrmListeArtiste.Designer.cs">
       <DependentUpon>FrmListeArtiste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListeCourantArtistes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListeCourantArtistes.Designer.cs">
+      <DependentUpon>FrmListeCourantArtistes.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmListeVip.cs">
       <SubType>Form</SubType>
@@ -124,11 +136,17 @@
     <EmbeddedResource Include="FrmGestionsArtiste.resx">
       <DependentUpon>FrmGestionsArtiste.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionsCourantArtistes.resx">
+      <DependentUpon>FrmGestionsCourantArtistes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionsVip.resx">
       <DependentUpon>FrmGestionsVip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListeArtiste.resx">
       <DependentUpon>FrmListeArtiste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListeCourantArtistes.resx">
+      <DependentUpon>FrmListeCourantArtistes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListeVip.resx">
       <DependentUpon>FrmListeVip.cs</DependentUpon>

@@ -33,6 +33,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnVip = new System.Windows.Forms.Button();
             this.btnArtiste = new System.Windows.Forms.Button();
+            this.btnCourantArtiste = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEvenements
@@ -87,11 +88,23 @@
             this.btnArtiste.UseVisualStyleBackColor = true;
             this.btnArtiste.Click += new System.EventHandler(this.btnArtiste_Click);
             // 
+            // btnCourantArtiste
+            // 
+            this.btnCourantArtiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCourantArtiste.Location = new System.Drawing.Point(251, 343);
+            this.btnCourantArtiste.Name = "btnCourantArtiste";
+            this.btnCourantArtiste.Size = new System.Drawing.Size(137, 76);
+            this.btnCourantArtiste.TabIndex = 2;
+            this.btnCourantArtiste.Text = "Gestion des Courant d\'artistes";
+            this.btnCourantArtiste.UseVisualStyleBackColor = true;
+            this.btnCourantArtiste.Click += new System.EventHandler(this.btnCategArtiste_Click);
+            // 
             // FrmAccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 450);
+            this.Controls.Add(this.btnCourantArtiste);
             this.Controls.Add(this.btnArtiste);
             this.Controls.Add(this.btnVip);
             this.Controls.Add(this.button2);
@@ -110,5 +123,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnVip;
         private System.Windows.Forms.Button btnArtiste;
+        private System.Windows.Forms.Button btnCourantArtiste;
     }
 }

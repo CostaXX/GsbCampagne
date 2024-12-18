@@ -179,7 +179,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmAjoutVip";
-            this.Text = "FrmAjoutVip";
+            this.Text = "Ajout d\'un vip";
             this.ResumeLayout(false);
             this.PerformLayout();
 

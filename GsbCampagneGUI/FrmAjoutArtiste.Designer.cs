@@ -127,7 +127,7 @@
             this.Controls.Add(this.cboCourantArtiste);
             this.Controls.Add(this.label1);
             this.Name = "FrmAjoutArtiste";
-            this.Text = "FrmAjoutArtiste";
+            this.Text = "Ajout d\'un Artiste";
             this.ResumeLayout(false);
             this.PerformLayout();
 

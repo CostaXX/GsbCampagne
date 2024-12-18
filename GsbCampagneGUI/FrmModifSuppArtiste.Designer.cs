@@ -173,7 +173,7 @@
             this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.panel);
             this.Name = "FrmModifSuppArtiste";
-            this.Text = "FrmModifSuppArtiste";
+            this.Text = "Modification et suppression d\'un Artistes";
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             this.ResumeLayout(false);

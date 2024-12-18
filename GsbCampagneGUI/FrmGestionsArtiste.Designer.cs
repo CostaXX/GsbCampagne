@@ -88,7 +88,7 @@
             this.Controls.Add(this.btnAjouterArtiste);
             this.Controls.Add(this.btnConsulterArtiste);
             this.Name = "FrmGestionsArtiste";
-            this.Text = "FrmGestionsArtiste";
+            this.Text = "Gestion des Artistes";
             this.ResumeLayout(false);
 
         }
