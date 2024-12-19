@@ -53,6 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agence.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Artiste.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Campagne.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CampagneDAO.cs" />
     <Compile Include="CampagnesModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -68,7 +78,51 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CampagnesModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="CategorieDAO.cs" />
+    <Compile Include="CategorieVIP.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Convier.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourantArtistique.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Evenement.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvenementDAO.cs" />
+    <Compile Include="EvenementExt.cs" />
+    <Compile Include="JournalIntervention.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Participer.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Salarie.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_agence_getAll_Result.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Theme.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThemeDAO.cs" />
+    <Compile Include="TypePublic.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ville.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VilleDAO.cs" />
+    <Compile Include="VIP.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -82,19 +136,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="CampagnesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CampagnesModel.Context.cs</LastGenOutput>
       <DependentUpon>CampagnesModel.edmx</DependentUpon>
+      <LastGenOutput>CampagnesModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="CampagnesModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CampagnesModel.edmx</DependentUpon>
       <LastGenOutput>CampagnesModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

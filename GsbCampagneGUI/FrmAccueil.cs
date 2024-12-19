@@ -16,5 +16,16 @@ namespace GsbCampagneGUI
         {
             InitializeComponent();
         }
+
+        private void btnEvenements_Click(object sender, EventArgs e)
+        {
+            FrmGestionEvenements form = new FrmGestionEvenements();
+            form.Show();
+        }
+
+        private void btnQuitter_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
