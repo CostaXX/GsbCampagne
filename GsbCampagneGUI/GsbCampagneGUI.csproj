@@ -68,6 +68,12 @@
     <Compile Include="FrmAjoutArtiste.Designer.cs">
       <DependentUpon>FrmAjoutArtiste.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAjouterCourantArtiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjouterCourantArtiste.Designer.cs">
+      <DependentUpon>FrmAjouterCourantArtiste.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAjoutVip.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,12 @@
     <Compile Include="FrmModifSuppVIP.Designer.cs">
       <DependentUpon>FrmModifSuppVIP.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSupprimerCourantArtistique.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSupprimerCourantArtistique.Designer.cs">
+      <DependentUpon>FrmSupprimerCourantArtistique.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAccueil.resx">
@@ -129,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAjoutArtiste.resx">
       <DependentUpon>FrmAjoutArtiste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjouterCourantArtiste.resx">
+      <DependentUpon>FrmAjouterCourantArtiste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAjoutVip.resx">
       <DependentUpon>FrmAjoutVip.cs</DependentUpon>
@@ -156,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModifSuppVIP.resx">
       <DependentUpon>FrmModifSuppVIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSupprimerCourantArtistique.resx">
+      <DependentUpon>FrmSupprimerCourantArtistique.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

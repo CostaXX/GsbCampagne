@@ -22,5 +22,22 @@ namespace GsbCampagneGUI
             FrmListeCourantArtistes form = new FrmListeCourantArtistes();
             form.ShowDialog();
         }
+
+        private void btnAjouterCourantArtistes_Click(object sender, EventArgs e)
+        {
+            FrmAjouterCourantArtiste form = new FrmAjouterCourantArtiste();
+            form.ShowDialog();
+        }
+
+        private void btnFermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnGererCategArtistes_Click(object sender, EventArgs e)
+        {
+            FrmSupprimerCourantArtistique form = new FrmSupprimerCourantArtistique();
+            form.ShowDialog();
+        }
     }
 }

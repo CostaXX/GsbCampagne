@@ -43,6 +43,7 @@
             this.btnFermer.TabIndex = 11;
             this.btnFermer.Text = "Femer";
             this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
             // btnGererCategArtistes
             // 
@@ -53,6 +54,7 @@
             this.btnGererCategArtistes.TabIndex = 10;
             this.btnGererCategArtistes.Text = "Supprimer";
             this.btnGererCategArtistes.UseVisualStyleBackColor = true;
+            this.btnGererCategArtistes.Click += new System.EventHandler(this.btnGererCategArtistes_Click);
             // 
             // btnAjouterCourantArtistes
             // 
@@ -63,6 +65,7 @@
             this.btnAjouterCourantArtistes.TabIndex = 9;
             this.btnAjouterCourantArtistes.Text = "Ajouter";
             this.btnAjouterCourantArtistes.UseVisualStyleBackColor = true;
+            this.btnAjouterCourantArtistes.Click += new System.EventHandler(this.btnAjouterCourantArtistes_Click);
             // 
             // btnConsuterCourantArtistes
             // 
@@ -75,7 +78,7 @@
             this.btnConsuterCourantArtistes.UseVisualStyleBackColor = true;
             this.btnConsuterCourantArtistes.Click += new System.EventHandler(this.btnConsuterCategArtistes_Click);
             // 
-            // FrmGestionsCategArtistes
+            // FrmGestionsCourantArtistes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,7 +87,7 @@
             this.Controls.Add(this.btnGererCategArtistes);
             this.Controls.Add(this.btnAjouterCourantArtistes);
             this.Controls.Add(this.btnConsuterCourantArtistes);
-            this.Name = "FrmGestionsCategArtistes";
+            this.Name = "FrmGestionsCourantArtistes";
             this.Text = "Gestions des Categories Artistes";
             this.ResumeLayout(false);
 

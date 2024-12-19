@@ -25,6 +25,18 @@ namespace GsbCampagneBLL
         {
             return CourantArtistiqueDAO.GetInstance().GetLesCourantArtistiques();
         }
+        public int AjouterUneCategArtiste(string libelle)
+        {
+            CourantArtistique a = new CourantArtistique();
+            a.Libelle = libelle;
+
+
+            return CourantArtistiqueDAO.GetInstance().AjouterUneCategArtiste(a);
+        }
+        public int SupprimerUneCategArtiste(CourantArtistique a)
+        {
+            return CourantArtistiqueDAO.GetInstance().SupprimerUneCategArtiste(a);
+        }
 
     }
 }

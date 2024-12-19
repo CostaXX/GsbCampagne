@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace GsbCampagneDAL
 {
     public class CourantArtistiqueDAO
@@ -27,6 +28,38 @@ namespace GsbCampagneDAL
                 var liste = ctx.CourantArtistiques
                 .ToList();
                 return liste;
+            }
+        }
+
+        public int AjouterUneCategArtiste(CourantArtistique a)
+        {
+            using (var ctx = new GsbCampagnesEntities())
+            {
+                try
+                {
+                    ctx.sp_CourantArtistique_add(a.Libelle);
+                    return 0;
+                }
+                catch
+                {
+                    return -1;
+                }
+            }
+        }
+
+        public int SupprimerUneCategArtiste(CourantArtistique a)
+        {
+            using (var ctx = new GsbCampagnesEntities())
+            {
+                try
+                {
+                    ctx.sp_CourantArtistique_delete(a.Id);
+                    return 0;
+                }
+                catch
+                {
+                    return -1;
+                }
             }
         }
     }

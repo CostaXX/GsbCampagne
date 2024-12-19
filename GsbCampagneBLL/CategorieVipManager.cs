@@ -26,7 +26,8 @@ namespace GsbCampagneBLL
         {
             return CategorieVipDAO.GetInstance().GetLesCategoriesVip();
         }
-      
-      
+        
+
+
     }
 }

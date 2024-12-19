@@ -46,7 +46,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Libelle" Type="varchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="Convier">
@@ -61,7 +61,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Libelle" Type="varchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="Evenement">
@@ -161,7 +161,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Artiste__IdCoura__318258D2">
+        <Association Name="FK__Artiste__IdCoura__73501C2F">
           <End Role="CourantArtistique" Type="Self.CourantArtistique" Multiplicity="0..1" />
           <End Role="Artiste" Type="Self.Artiste" Multiplicity="*" />
           <ReferentialConstraint>
@@ -221,7 +221,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Convier__IdCateg__4865BE2A">
+        <Association Name="FK__Convier__IdCateg__7DCDAAA2">
           <End Role="CategorieVIP" Type="Self.CategorieVIP" Multiplicity="0..1" />
           <End Role="Convier" Type="Self.Convier" Multiplicity="*" />
           <ReferentialConstraint>
@@ -233,7 +233,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Convier__IdEvene__477199F1">
+        <Association Name="FK__Convier__IdEvene__7CD98669">
           <End Role="Evenement" Type="Self.Evenement" Multiplicity="1" />
           <End Role="Convier" Type="Self.Convier" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -245,7 +245,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdArt__3552E9B6">
+        <Association Name="FK__Evenement__IdArt__7720AD13">
           <End Role="Artiste" Type="Self.Artiste" Multiplicity="0..1" />
           <End Role="Evenement" Type="Self.Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -257,7 +257,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdCam__382F5661">
+        <Association Name="FK__Evenement__IdCam__79FD19BE">
           <End Role="Campagne" Type="Self.Campagne" Multiplicity="0..1" />
           <End Role="Evenement" Type="Self.Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -269,7 +269,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdCat__373B3228">
+        <Association Name="FK__Evenement__IdCat__7908F585">
           <End Role="CategorieVIP" Type="Self.CategorieVIP" Multiplicity="0..1" />
           <End Role="Evenement" Type="Self.Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -281,7 +281,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdThe__345EC57D">
+        <Association Name="FK__Evenement__IdThe__762C88DA">
           <End Role="Theme" Type="Self.Theme" Multiplicity="0..1" />
           <End Role="Evenement" Type="Self.Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -293,7 +293,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdVil__36470DEF">
+        <Association Name="FK__Evenement__IdVil__7814D14C">
           <End Role="Ville" Type="Self.Ville" Multiplicity="0..1" />
           <End Role="Evenement" Type="Self.Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -317,7 +317,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Participe__IdArt__44952D46">
+        <Association Name="FK__Participe__IdArt__019E3B86">
           <End Role="Artiste" Type="Self.Artiste" Multiplicity="0..1" />
           <End Role="Participer" Type="Self.Participer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -329,7 +329,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Participe__IdEve__43A1090D">
+        <Association Name="FK__Participe__IdEve__00AA174D">
           <End Role="Evenement" Type="Self.Evenement" Multiplicity="1" />
           <End Role="Participer" Type="Self.Participer" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -353,7 +353,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VIP__IdCategorie__3A4CA8FD">
+        <Association Name="FK__VIP__IdCategorie__67DE6983">
           <End Role="CategorieVIP" Type="Self.CategorieVIP" Multiplicity="0..1" />
           <End Role="VIP" Type="Self.VIP" Multiplicity="*" />
           <ReferentialConstraint>
@@ -365,7 +365,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VIP__IdVille__3B40CD36">
+        <Association Name="FK__VIP__IdVille__68D28DBC">
           <End Role="Ville" Type="Self.Ville" Multiplicity="0..1" />
           <End Role="VIP" Type="Self.VIP" Multiplicity="*" />
           <ReferentialConstraint>
@@ -383,6 +383,8 @@
           <Parameter Name="Telephone" Type="int" Mode="In" />
           <Parameter Name="Email" Type="varchar" Mode="In" />
           <Parameter Name="SiteWeb" Type="varchar" Mode="In" />
+          <Parameter Name="TypeCommunication" Type="varchar" Mode="In" />
+          <Parameter Name="TypeEvenementiel" Type="varchar" Mode="In" />
           <Parameter Name="idVille" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_agence_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -445,6 +447,22 @@
           <Parameter Name="IdAgenceCommunication" Type="int" Mode="In" />
           <Parameter Name="IdAgenceEvenementiel" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_categorieVIP_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Libelle" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_categorieVIP_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_categorieVIP_edit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="Libelle" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_CourantArtistique_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Libelle" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_CourantArtistique_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_modifierEvenement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Id" Type="int" Mode="In" />
           <Parameter Name="DateDebut" Type="date" Mode="In" />
@@ -496,7 +514,7 @@
             <End Role="Ville" EntitySet="Ville" />
             <End Role="Agence" EntitySet="Agence" />
           </AssociationSet>
-          <AssociationSet Name="FK__Artiste__IdCoura__318258D2" Association="Self.FK__Artiste__IdCoura__318258D2">
+          <AssociationSet Name="FK__Artiste__IdCoura__73501C2F" Association="Self.FK__Artiste__IdCoura__73501C2F">
             <End Role="CourantArtistique" EntitySet="CourantArtistique" />
             <End Role="Artiste" EntitySet="Artiste" />
           </AssociationSet>
@@ -516,31 +534,31 @@
             <End Role="TypePublic" EntitySet="TypePublic" />
             <End Role="Campagne" EntitySet="Campagne" />
           </AssociationSet>
-          <AssociationSet Name="FK__Convier__IdCateg__4865BE2A" Association="Self.FK__Convier__IdCateg__4865BE2A">
+          <AssociationSet Name="FK__Convier__IdCateg__7DCDAAA2" Association="Self.FK__Convier__IdCateg__7DCDAAA2">
             <End Role="CategorieVIP" EntitySet="CategorieVIP" />
             <End Role="Convier" EntitySet="Convier" />
           </AssociationSet>
-          <AssociationSet Name="FK__Convier__IdEvene__477199F1" Association="Self.FK__Convier__IdEvene__477199F1">
+          <AssociationSet Name="FK__Convier__IdEvene__7CD98669" Association="Self.FK__Convier__IdEvene__7CD98669">
             <End Role="Evenement" EntitySet="Evenement" />
             <End Role="Convier" EntitySet="Convier" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdArt__3552E9B6" Association="Self.FK__Evenement__IdArt__3552E9B6">
+          <AssociationSet Name="FK__Evenement__IdArt__7720AD13" Association="Self.FK__Evenement__IdArt__7720AD13">
             <End Role="Artiste" EntitySet="Artiste" />
             <End Role="Evenement" EntitySet="Evenement" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdCam__382F5661" Association="Self.FK__Evenement__IdCam__382F5661">
+          <AssociationSet Name="FK__Evenement__IdCam__79FD19BE" Association="Self.FK__Evenement__IdCam__79FD19BE">
             <End Role="Campagne" EntitySet="Campagne" />
             <End Role="Evenement" EntitySet="Evenement" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdCat__373B3228" Association="Self.FK__Evenement__IdCat__373B3228">
+          <AssociationSet Name="FK__Evenement__IdCat__7908F585" Association="Self.FK__Evenement__IdCat__7908F585">
             <End Role="CategorieVIP" EntitySet="CategorieVIP" />
             <End Role="Evenement" EntitySet="Evenement" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdThe__345EC57D" Association="Self.FK__Evenement__IdThe__345EC57D">
+          <AssociationSet Name="FK__Evenement__IdThe__762C88DA" Association="Self.FK__Evenement__IdThe__762C88DA">
             <End Role="Theme" EntitySet="Theme" />
             <End Role="Evenement" EntitySet="Evenement" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdVil__36470DEF" Association="Self.FK__Evenement__IdVil__36470DEF">
+          <AssociationSet Name="FK__Evenement__IdVil__7814D14C" Association="Self.FK__Evenement__IdVil__7814D14C">
             <End Role="Ville" EntitySet="Ville" />
             <End Role="Evenement" EntitySet="Evenement" />
           </AssociationSet>
@@ -548,11 +566,11 @@
             <End Role="Salarie" EntitySet="Salarie" />
             <End Role="JournalIntervention" EntitySet="JournalIntervention" />
           </AssociationSet>
-          <AssociationSet Name="FK__Participe__IdArt__44952D46" Association="Self.FK__Participe__IdArt__44952D46">
+          <AssociationSet Name="FK__Participe__IdArt__019E3B86" Association="Self.FK__Participe__IdArt__019E3B86">
             <End Role="Artiste" EntitySet="Artiste" />
             <End Role="Participer" EntitySet="Participer" />
           </AssociationSet>
-          <AssociationSet Name="FK__Participe__IdEve__43A1090D" Association="Self.FK__Participe__IdEve__43A1090D">
+          <AssociationSet Name="FK__Participe__IdEve__00AA174D" Association="Self.FK__Participe__IdEve__00AA174D">
             <End Role="Evenement" EntitySet="Evenement" />
             <End Role="Participer" EntitySet="Participer" />
           </AssociationSet>
@@ -560,11 +578,11 @@
             <End Role="Role" EntitySet="Role" />
             <End Role="Salarie" EntitySet="Salarie" />
           </AssociationSet>
-          <AssociationSet Name="FK__VIP__IdCategorie__3A4CA8FD" Association="Self.FK__VIP__IdCategorie__3A4CA8FD">
+          <AssociationSet Name="FK__VIP__IdCategorie__67DE6983" Association="Self.FK__VIP__IdCategorie__67DE6983">
             <End Role="CategorieVIP" EntitySet="CategorieVIP" />
             <End Role="VIP" EntitySet="VIP" />
           </AssociationSet>
-          <AssociationSet Name="FK__VIP__IdVille__3B40CD36" Association="Self.FK__VIP__IdVille__3B40CD36">
+          <AssociationSet Name="FK__VIP__IdVille__68D28DBC" Association="Self.FK__VIP__IdVille__68D28DBC">
             <End Role="Ville" EntitySet="Ville" />
             <End Role="VIP" EntitySet="VIP" />
           </AssociationSet>
@@ -580,6 +598,8 @@
             <Parameter Name="Telephone" Mode="In" Type="Int32" />
             <Parameter Name="Email" Mode="In" Type="String" />
             <Parameter Name="SiteWeb" Mode="In" Type="String" />
+            <Parameter Name="TypeCommunication" Mode="In" Type="String" />
+            <Parameter Name="TypeEvenementiel" Mode="In" Type="String" />
             <Parameter Name="idVille" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_agence_delete">
@@ -677,9 +697,11 @@
           <EntitySet Name="Artistes" EntityType="GsbCampagnesModel.Artiste" />
           <EntitySet Name="Campagnes" EntityType="GsbCampagnesModel.Campagne" />
           <EntitySet Name="CategorieVIPs" EntityType="GsbCampagnesModel.CategorieVIP" />
+          <EntitySet Name="Conviers" EntityType="GsbCampagnesModel.Convier" />
           <EntitySet Name="CourantArtistiques" EntityType="GsbCampagnesModel.CourantArtistique" />
           <EntitySet Name="Evenements" EntityType="GsbCampagnesModel.Evenement" />
           <EntitySet Name="JournalInterventions" EntityType="GsbCampagnesModel.JournalIntervention" />
+          <EntitySet Name="Participers" EntityType="GsbCampagnesModel.Participer" />
           <EntitySet Name="Roles" EntityType="GsbCampagnesModel.Role" />
           <EntitySet Name="Salaries" EntityType="GsbCampagnesModel.Salarie" />
           <EntitySet Name="Themes" EntityType="GsbCampagnesModel.Theme" />
@@ -698,13 +720,17 @@
             <End Role="Agence" EntitySet="Agences" />
             <End Role="Campagne" EntitySet="Campagnes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Artiste__IdCoura__318258D2" Association="GsbCampagnesModel.FK__Artiste__IdCoura__318258D2">
+          <AssociationSet Name="FK__Artiste__IdCoura__73501C2F" Association="GsbCampagnesModel.FK__Artiste__IdCoura__73501C2F">
             <End Role="CourantArtistique" EntitySet="CourantArtistiques" />
             <End Role="Artiste" EntitySet="Artistes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdArt__3552E9B6" Association="GsbCampagnesModel.FK__Evenement__IdArt__3552E9B6">
+          <AssociationSet Name="FK__Evenement__IdArt__7720AD13" Association="GsbCampagnesModel.FK__Evenement__IdArt__7720AD13">
             <End Role="Artiste" EntitySet="Artistes" />
             <End Role="Evenement" EntitySet="Evenements" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Participe__IdArt__019E3B86" Association="GsbCampagnesModel.FK__Participe__IdArt__019E3B86">
+            <End Role="Artiste" EntitySet="Artistes" />
+            <End Role="Participer" EntitySet="Participers" />
           </AssociationSet>
           <AssociationSet Name="FK__Campagne__IdSala__14E61A24" Association="GsbCampagnesModel.FK__Campagne__IdSala__14E61A24">
             <End Role="Salarie" EntitySet="Salaries" />
@@ -714,25 +740,37 @@
             <End Role="TypePublic" EntitySet="TypePublics" />
             <End Role="Campagne" EntitySet="Campagnes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdCam__382F5661" Association="GsbCampagnesModel.FK__Evenement__IdCam__382F5661">
+          <AssociationSet Name="FK__Evenement__IdCam__79FD19BE" Association="GsbCampagnesModel.FK__Evenement__IdCam__79FD19BE">
             <End Role="Campagne" EntitySet="Campagnes" />
             <End Role="Evenement" EntitySet="Evenements" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdCat__373B3228" Association="GsbCampagnesModel.FK__Evenement__IdCat__373B3228">
+          <AssociationSet Name="FK__Convier__IdCateg__7DCDAAA2" Association="GsbCampagnesModel.FK__Convier__IdCateg__7DCDAAA2">
+            <End Role="CategorieVIP" EntitySet="CategorieVIPs" />
+            <End Role="Convier" EntitySet="Conviers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Evenement__IdCat__7908F585" Association="GsbCampagnesModel.FK__Evenement__IdCat__7908F585">
             <End Role="CategorieVIP" EntitySet="CategorieVIPs" />
             <End Role="Evenement" EntitySet="Evenements" />
           </AssociationSet>
-          <AssociationSet Name="FK__VIP__IdCategorie__3A4CA8FD" Association="GsbCampagnesModel.FK__VIP__IdCategorie__3A4CA8FD">
+          <AssociationSet Name="FK__VIP__IdCategorie__67DE6983" Association="GsbCampagnesModel.FK__VIP__IdCategorie__67DE6983">
             <End Role="CategorieVIP" EntitySet="CategorieVIPs" />
             <End Role="VIP" EntitySet="VIPs" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdThe__345EC57D" Association="GsbCampagnesModel.FK__Evenement__IdThe__345EC57D">
+          <AssociationSet Name="FK__Convier__IdEvene__7CD98669" Association="GsbCampagnesModel.FK__Convier__IdEvene__7CD98669">
+            <End Role="Evenement" EntitySet="Evenements" />
+            <End Role="Convier" EntitySet="Conviers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Evenement__IdThe__762C88DA" Association="GsbCampagnesModel.FK__Evenement__IdThe__762C88DA">
             <End Role="Theme" EntitySet="Themes" />
             <End Role="Evenement" EntitySet="Evenements" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdVil__36470DEF" Association="GsbCampagnesModel.FK__Evenement__IdVil__36470DEF">
+          <AssociationSet Name="FK__Evenement__IdVil__7814D14C" Association="GsbCampagnesModel.FK__Evenement__IdVil__7814D14C">
             <End Role="Ville" EntitySet="Villes" />
             <End Role="Evenement" EntitySet="Evenements" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Participe__IdEve__00AA174D" Association="GsbCampagnesModel.FK__Participe__IdEve__00AA174D">
+            <End Role="Evenement" EntitySet="Evenements" />
+            <End Role="Participer" EntitySet="Participers" />
           </AssociationSet>
           <AssociationSet Name="FK__JournalIn__IdSal__2739D489" Association="GsbCampagnesModel.FK__JournalIn__IdSal__2739D489">
             <End Role="Salarie" EntitySet="Salaries" />
@@ -742,29 +780,27 @@
             <End Role="Role" EntitySet="Roles" />
             <End Role="Salarie" EntitySet="Salaries" />
           </AssociationSet>
-          <AssociationSet Name="FK__VIP__IdVille__3B40CD36" Association="GsbCampagnesModel.FK__VIP__IdVille__3B40CD36">
+          <AssociationSet Name="FK__VIP__IdVille__68D28DBC" Association="GsbCampagnesModel.FK__VIP__IdVille__68D28DBC">
             <End Role="Ville" EntitySet="Villes" />
             <End Role="VIP" EntitySet="VIPs" />
           </AssociationSet>
-          <EntitySet Name="Conviers" EntityType="GsbCampagnesModel.Convier" />
-          <EntitySet Name="Participers" EntityType="GsbCampagnesModel.Participer" />
-          <AssociationSet Name="FK__Participe__IdArt__44952D46" Association="GsbCampagnesModel.FK__Participe__IdArt__44952D46">
-            <End Role="Artiste" EntitySet="Artistes" />
-            <End Role="Participer" EntitySet="Participers" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Convier__IdCateg__4865BE2A" Association="GsbCampagnesModel.FK__Convier__IdCateg__4865BE2A">
-            <End Role="CategorieVIP" EntitySet="CategorieVIPs" />
-            <End Role="Convier" EntitySet="Conviers" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Convier__IdEvene__477199F1" Association="GsbCampagnesModel.FK__Convier__IdEvene__477199F1">
-            <End Role="Evenement" EntitySet="Evenements" />
-            <End Role="Convier" EntitySet="Conviers" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Participe__IdEve__43A1090D" Association="GsbCampagnesModel.FK__Participe__IdEve__43A1090D">
-            <End Role="Evenement" EntitySet="Evenements" />
-            <End Role="Participer" EntitySet="Participers" />
-          </AssociationSet>
-        </EntityContainer>
+          <FunctionImport Name="sp_categorieVIP_add">
+            <Parameter Name="Libelle" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_categorieVIP_delete">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_categorieVIP_edit">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="Libelle" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_CourantArtistique_add">
+            <Parameter Name="Libelle" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_CourantArtistique_delete">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          </EntityContainer>
         <ComplexType Name="sp_agence_getAll_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
           <Property Type="String" Name="Libelle" Nullable="true" MaxLength="150" />
@@ -799,9 +835,9 @@
           <Property Name="Nom" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="SiteWeb" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="IdCourantArtistique" Type="Int32" />
-          <NavigationProperty Name="CourantArtistique" Relationship="GsbCampagnesModel.FK__Artiste__IdCoura__318258D2" FromRole="Artiste" ToRole="CourantArtistique" />
-          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdArt__3552E9B6" FromRole="Artiste" ToRole="Evenement" />
-          <NavigationProperty Name="Participers" Relationship="GsbCampagnesModel.FK__Participe__IdArt__44952D46" FromRole="Artiste" ToRole="Participer" />
+          <NavigationProperty Name="CourantArtistique" Relationship="GsbCampagnesModel.FK__Artiste__IdCoura__73501C2F" FromRole="Artiste" ToRole="CourantArtistique" />
+          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdArt__7720AD13" FromRole="Artiste" ToRole="Evenement" />
+          <NavigationProperty Name="Participers" Relationship="GsbCampagnesModel.FK__Participe__IdArt__019E3B86" FromRole="Artiste" ToRole="Participer" />
         </EntityType>
         <EntityType Name="Campagne">
           <Key>
@@ -820,25 +856,35 @@
           <NavigationProperty Name="Agence1" Relationship="GsbCampagnesModel.FK__Campagne__IdAgen__12FDD1B2" FromRole="Campagne" ToRole="Agence" />
           <NavigationProperty Name="Salarie" Relationship="GsbCampagnesModel.FK__Campagne__IdSala__14E61A24" FromRole="Campagne" ToRole="Salarie" />
           <NavigationProperty Name="TypePublic" Relationship="GsbCampagnesModel.FK__Campagne__IdType__13F1F5EB" FromRole="Campagne" ToRole="TypePublic" />
-          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdCam__382F5661" FromRole="Campagne" ToRole="Evenement" />
+          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdCam__79FD19BE" FromRole="Campagne" ToRole="Evenement" />
         </EntityType>
         <EntityType Name="CategorieVIP">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Libelle" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdCat__373B3228" FromRole="CategorieVIP" ToRole="Evenement" />
-          <NavigationProperty Name="VIPs" Relationship="GsbCampagnesModel.FK__VIP__IdCategorie__3A4CA8FD" FromRole="CategorieVIP" ToRole="VIP" />
-          <NavigationProperty Name="Conviers" Relationship="GsbCampagnesModel.FK__Convier__IdCateg__4865BE2A" FromRole="CategorieVIP" ToRole="Convier" />
+          <NavigationProperty Name="Conviers" Relationship="GsbCampagnesModel.FK__Convier__IdCateg__7DCDAAA2" FromRole="CategorieVIP" ToRole="Convier" />
+          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdCat__7908F585" FromRole="CategorieVIP" ToRole="Evenement" />
+          <NavigationProperty Name="VIPs" Relationship="GsbCampagnesModel.FK__VIP__IdCategorie__67DE6983" FromRole="CategorieVIP" ToRole="VIP" />
+        </EntityType>
+        <EntityType Name="Convier">
+          <Key>
+            <PropertyRef Name="IdEvenement" />
+          </Key>
+          <Property Name="IdEvenement" Type="Int32" Nullable="false" />
+          <Property Name="IdCategorieVIP" Type="Int32" />
+          <Property Name="Message" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CategorieVIP" Relationship="GsbCampagnesModel.FK__Convier__IdCateg__7DCDAAA2" FromRole="Convier" ToRole="CategorieVIP" />
+          <NavigationProperty Name="Evenement" Relationship="GsbCampagnesModel.FK__Convier__IdEvene__7CD98669" FromRole="Convier" ToRole="Evenement" />
         </EntityType>
         <EntityType Name="CourantArtistique">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Libelle" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Artistes" Relationship="GsbCampagnesModel.FK__Artiste__IdCoura__318258D2" FromRole="CourantArtistique" ToRole="Artiste" />
+          <NavigationProperty Name="Artistes" Relationship="GsbCampagnesModel.FK__Artiste__IdCoura__73501C2F" FromRole="CourantArtistique" ToRole="Artiste" />
         </EntityType>
         <EntityType Name="Evenement">
           <Key>
@@ -853,13 +899,13 @@
           <Property Name="IdVille" Type="Int32" />
           <Property Name="IdCategorieVIP" Type="Int32" />
           <Property Name="IdCampagne" Type="Int32" />
-          <NavigationProperty Name="Artiste" Relationship="GsbCampagnesModel.FK__Evenement__IdArt__3552E9B6" FromRole="Evenement" ToRole="Artiste" />
-          <NavigationProperty Name="Campagne" Relationship="GsbCampagnesModel.FK__Evenement__IdCam__382F5661" FromRole="Evenement" ToRole="Campagne" />
-          <NavigationProperty Name="CategorieVIP" Relationship="GsbCampagnesModel.FK__Evenement__IdCat__373B3228" FromRole="Evenement" ToRole="CategorieVIP" />
-          <NavigationProperty Name="Theme" Relationship="GsbCampagnesModel.FK__Evenement__IdThe__345EC57D" FromRole="Evenement" ToRole="Theme" />
-          <NavigationProperty Name="Ville" Relationship="GsbCampagnesModel.FK__Evenement__IdVil__36470DEF" FromRole="Evenement" ToRole="Ville" />
-          <NavigationProperty Name="Convier" Relationship="GsbCampagnesModel.FK__Convier__IdEvene__477199F1" FromRole="Evenement" ToRole="Convier" />
-          <NavigationProperty Name="Participer" Relationship="GsbCampagnesModel.FK__Participe__IdEve__43A1090D" FromRole="Evenement" ToRole="Participer" />
+          <NavigationProperty Name="Artiste" Relationship="GsbCampagnesModel.FK__Evenement__IdArt__7720AD13" FromRole="Evenement" ToRole="Artiste" />
+          <NavigationProperty Name="Campagne" Relationship="GsbCampagnesModel.FK__Evenement__IdCam__79FD19BE" FromRole="Evenement" ToRole="Campagne" />
+          <NavigationProperty Name="CategorieVIP" Relationship="GsbCampagnesModel.FK__Evenement__IdCat__7908F585" FromRole="Evenement" ToRole="CategorieVIP" />
+          <NavigationProperty Name="Convier" Relationship="GsbCampagnesModel.FK__Convier__IdEvene__7CD98669" FromRole="Evenement" ToRole="Convier" />
+          <NavigationProperty Name="Theme" Relationship="GsbCampagnesModel.FK__Evenement__IdThe__762C88DA" FromRole="Evenement" ToRole="Theme" />
+          <NavigationProperty Name="Ville" Relationship="GsbCampagnesModel.FK__Evenement__IdVil__7814D14C" FromRole="Evenement" ToRole="Ville" />
+          <NavigationProperty Name="Participer" Relationship="GsbCampagnesModel.FK__Participe__IdEve__00AA174D" FromRole="Evenement" ToRole="Participer" />
         </EntityType>
         <EntityType Name="JournalIntervention">
           <Key>
@@ -872,6 +918,16 @@
           <Property Name="ReferenceEnregistrement" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="IdSalarie" Type="Int32" />
           <NavigationProperty Name="Salarie" Relationship="GsbCampagnesModel.FK__JournalIn__IdSal__2739D489" FromRole="JournalIntervention" ToRole="Salarie" />
+        </EntityType>
+        <EntityType Name="Participer">
+          <Key>
+            <PropertyRef Name="IdEvenement" />
+          </Key>
+          <Property Name="IdEvenement" Type="Int32" Nullable="false" />
+          <Property Name="IdArtiste" Type="Int32" />
+          <Property Name="Cachet" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Artiste" Relationship="GsbCampagnesModel.FK__Participe__IdArt__019E3B86" FromRole="Participer" ToRole="Artiste" />
+          <NavigationProperty Name="Evenement" Relationship="GsbCampagnesModel.FK__Participe__IdEve__00AA174D" FromRole="Participer" ToRole="Evenement" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -901,7 +957,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Libelle" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdThe__345EC57D" FromRole="Theme" ToRole="Evenement" />
+          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdThe__762C88DA" FromRole="Theme" ToRole="Evenement" />
         </EntityType>
         <EntityType Name="TypePublic">
           <Key>
@@ -920,8 +976,8 @@
           <Property Name="Arrondissement" Type="Int32" />
           <Property Name="CodePostal" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Agences" Relationship="GsbCampagnesModel.FK__Agence__IdVille__0A688BB1" FromRole="Ville" ToRole="Agence" />
-          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdVil__36470DEF" FromRole="Ville" ToRole="Evenement" />
-          <NavigationProperty Name="VIPs" Relationship="GsbCampagnesModel.FK__VIP__IdVille__3B40CD36" FromRole="Ville" ToRole="VIP" />
+          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdVil__7814D14C" FromRole="Ville" ToRole="Evenement" />
+          <NavigationProperty Name="VIPs" Relationship="GsbCampagnesModel.FK__VIP__IdVille__68D28DBC" FromRole="Ville" ToRole="VIP" />
         </EntityType>
         <EntityType Name="VIP">
           <Key>
@@ -933,8 +989,8 @@
           <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="IdCategorieVIP" Type="Int32" />
           <Property Name="IdVille" Type="Int32" />
-          <NavigationProperty Name="CategorieVIP" Relationship="GsbCampagnesModel.FK__VIP__IdCategorie__3A4CA8FD" FromRole="VIP" ToRole="CategorieVIP" />
-          <NavigationProperty Name="Ville" Relationship="GsbCampagnesModel.FK__VIP__IdVille__3B40CD36" FromRole="VIP" ToRole="Ville" />
+          <NavigationProperty Name="CategorieVIP" Relationship="GsbCampagnesModel.FK__VIP__IdCategorie__67DE6983" FromRole="VIP" ToRole="CategorieVIP" />
+          <NavigationProperty Name="Ville" Relationship="GsbCampagnesModel.FK__VIP__IdVille__68D28DBC" FromRole="VIP" ToRole="Ville" />
         </EntityType>
         <Association Name="FK__Agence__IdVille__0A688BB1">
           <End Type="GsbCampagnesModel.Ville" Role="Ville" Multiplicity="0..1" />
@@ -972,7 +1028,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Artiste__IdCoura__318258D2">
+        <Association Name="FK__Artiste__IdCoura__73501C2F">
           <End Type="GsbCampagnesModel.CourantArtistique" Role="CourantArtistique" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Artiste" Role="Artiste" Multiplicity="*" />
           <ReferentialConstraint>
@@ -984,7 +1040,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdArt__3552E9B6">
+        <Association Name="FK__Evenement__IdArt__7720AD13">
           <End Type="GsbCampagnesModel.Artiste" Role="Artiste" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -992,6 +1048,18 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Evenement">
+              <PropertyRef Name="IdArtiste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Participe__IdArt__019E3B86">
+          <End Type="GsbCampagnesModel.Artiste" Role="Artiste" Multiplicity="0..1" />
+          <End Type="GsbCampagnesModel.Participer" Role="Participer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artiste">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Participer">
               <PropertyRef Name="IdArtiste" />
             </Dependent>
           </ReferentialConstraint>
@@ -1020,7 +1088,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdCam__382F5661">
+        <Association Name="FK__Evenement__IdCam__79FD19BE">
           <End Type="GsbCampagnesModel.Campagne" Role="Campagne" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1032,7 +1100,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdCat__373B3228">
+        <Association Name="FK__Convier__IdCateg__7DCDAAA2">
+          <End Type="GsbCampagnesModel.CategorieVIP" Role="CategorieVIP" Multiplicity="0..1" />
+          <End Type="GsbCampagnesModel.Convier" Role="Convier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategorieVIP">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Convier">
+              <PropertyRef Name="IdCategorieVIP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Evenement__IdCat__7908F585">
           <End Type="GsbCampagnesModel.CategorieVIP" Role="CategorieVIP" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1044,7 +1124,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VIP__IdCategorie__3A4CA8FD">
+        <Association Name="FK__VIP__IdCategorie__67DE6983">
           <End Type="GsbCampagnesModel.CategorieVIP" Role="CategorieVIP" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.VIP" Role="VIP" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1056,7 +1136,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdThe__345EC57D">
+        <Association Name="FK__Convier__IdEvene__7CD98669">
+          <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="1" />
+          <End Type="GsbCampagnesModel.Convier" Role="Convier" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Evenement">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Convier">
+              <PropertyRef Name="IdEvenement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Evenement__IdThe__762C88DA">
           <End Type="GsbCampagnesModel.Theme" Role="Theme" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1068,7 +1160,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdVil__36470DEF">
+        <Association Name="FK__Evenement__IdVil__7814D14C">
           <End Type="GsbCampagnesModel.Ville" Role="Ville" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1077,6 +1169,18 @@
             </Principal>
             <Dependent Role="Evenement">
               <PropertyRef Name="IdVille" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Participe__IdEve__00AA174D">
+          <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="1" />
+          <End Type="GsbCampagnesModel.Participer" Role="Participer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Evenement">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Participer">
+              <PropertyRef Name="IdEvenement" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1104,7 +1208,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VIP__IdVille__3B40CD36">
+        <Association Name="FK__VIP__IdVille__68D28DBC">
           <End Type="GsbCampagnesModel.Ville" Role="Ville" Multiplicity="0..1" />
           <End Type="GsbCampagnesModel.VIP" Role="VIP" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1113,74 +1217,6 @@
             </Principal>
             <Dependent Role="VIP">
               <PropertyRef Name="IdVille" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Convier">
-          <Key>
-            <PropertyRef Name="IdEvenement" />
-          </Key>
-          <Property Name="IdEvenement" Type="Int32" Nullable="false" />
-          <Property Name="IdCategorieVIP" Type="Int32" />
-          <Property Name="Message" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="CategorieVIP" Relationship="GsbCampagnesModel.FK__Convier__IdCateg__4865BE2A" FromRole="Convier" ToRole="CategorieVIP" />
-          <NavigationProperty Name="Evenement" Relationship="GsbCampagnesModel.FK__Convier__IdEvene__477199F1" FromRole="Convier" ToRole="Evenement" />
-        </EntityType>
-        <EntityType Name="Participer">
-          <Key>
-            <PropertyRef Name="IdEvenement" />
-          </Key>
-          <Property Name="IdEvenement" Type="Int32" Nullable="false" />
-          <Property Name="IdArtiste" Type="Int32" />
-          <Property Name="Cachet" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="Artiste" Relationship="GsbCampagnesModel.FK__Participe__IdArt__44952D46" FromRole="Participer" ToRole="Artiste" />
-          <NavigationProperty Name="Evenement" Relationship="GsbCampagnesModel.FK__Participe__IdEve__43A1090D" FromRole="Participer" ToRole="Evenement" />
-        </EntityType>
-        <Association Name="FK__Participe__IdArt__44952D46">
-          <End Type="GsbCampagnesModel.Artiste" Role="Artiste" Multiplicity="0..1" />
-          <End Type="GsbCampagnesModel.Participer" Role="Participer" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Artiste">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Participer">
-              <PropertyRef Name="IdArtiste" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Convier__IdCateg__4865BE2A">
-          <End Type="GsbCampagnesModel.CategorieVIP" Role="CategorieVIP" Multiplicity="0..1" />
-          <End Type="GsbCampagnesModel.Convier" Role="Convier" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CategorieVIP">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Convier">
-              <PropertyRef Name="IdCategorieVIP" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Convier__IdEvene__477199F1">
-          <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="1" />
-          <End Type="GsbCampagnesModel.Convier" Role="Convier" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Evenement">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Convier">
-              <PropertyRef Name="IdEvenement" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Participe__IdEve__43A1090D">
-          <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="1" />
-          <End Type="GsbCampagnesModel.Participer" Role="Participer" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Evenement">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Participer">
-              <PropertyRef Name="IdEvenement" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1266,6 +1302,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Conviers">
+            <EntityTypeMapping TypeName="GsbCampagnesModel.Convier">
+              <MappingFragment StoreEntitySet="Convier">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="IdCategorieVIP" ColumnName="IdCategorieVIP" />
+                <ScalarProperty Name="IdEvenement" ColumnName="IdEvenement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CourantArtistiques">
             <EntityTypeMapping TypeName="GsbCampagnesModel.CourantArtistique">
               <MappingFragment StoreEntitySet="CourantArtistique">
@@ -1298,6 +1343,15 @@
                 <ScalarProperty Name="OperationEffetctue" ColumnName="OperationEffetctue" />
                 <ScalarProperty Name="NomTable" ColumnName="NomTable" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Participers">
+            <EntityTypeMapping TypeName="GsbCampagnesModel.Participer">
+              <MappingFragment StoreEntitySet="Participer">
+                <ScalarProperty Name="Cachet" ColumnName="Cachet" />
+                <ScalarProperty Name="IdArtiste" ColumnName="IdArtiste" />
+                <ScalarProperty Name="IdEvenement" ColumnName="IdEvenement" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1359,24 +1413,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Conviers">
-            <EntityTypeMapping TypeName="GsbCampagnesModel.Convier">
-              <MappingFragment StoreEntitySet="Convier">
-                <ScalarProperty Name="Message" ColumnName="Message" />
-                <ScalarProperty Name="IdCategorieVIP" ColumnName="IdCategorieVIP" />
-                <ScalarProperty Name="IdEvenement" ColumnName="IdEvenement" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Participers">
-            <EntityTypeMapping TypeName="GsbCampagnesModel.Participer">
-              <MappingFragment StoreEntitySet="Participer">
-                <ScalarProperty Name="Cachet" ColumnName="Cachet" />
-                <ScalarProperty Name="IdArtiste" ColumnName="IdArtiste" />
-                <ScalarProperty Name="IdEvenement" ColumnName="IdEvenement" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_categorieVIP_add" FunctionName="GsbCampagnesModel.Store.sp_categorieVIP_add" />
+          <FunctionImportMapping FunctionImportName="sp_categorieVIP_delete" FunctionName="GsbCampagnesModel.Store.sp_categorieVIP_delete" />
+          <FunctionImportMapping FunctionImportName="sp_categorieVIP_edit" FunctionName="GsbCampagnesModel.Store.sp_categorieVIP_edit" />
+          <FunctionImportMapping FunctionImportName="sp_CourantArtistique_add" FunctionName="GsbCampagnesModel.Store.sp_CourantArtistique_add" />
+          <FunctionImportMapping FunctionImportName="sp_CourantArtistique_delete" FunctionName="GsbCampagnesModel.Store.sp_CourantArtistique_delete" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
