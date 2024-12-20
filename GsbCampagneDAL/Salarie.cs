@@ -24,14 +24,14 @@ namespace GsbCampagneDAL
         public int Id { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
+        public string Login { get; set; }
         public string Mdp { get; set; }
         public Nullable<int> IdRole { get; set; }
-        public string Login { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Campagne> Campagnes { get; set; }
-        public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<JournalIntervention> JournalInterventions { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

@@ -17,9 +17,29 @@ namespace GsbCampagneGUI
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
+        
 
+        private void btnAfficherAgences_Click(object sender, EventArgs e)
+        {
+            Form F = new FrmListeAgences();
+            F.Show();
+        }
+
+        private void btnQuitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAjouterAgence_Click(object sender, EventArgs e)
+        {
+            Form F = new FrmAjouterAgences();
+            F.Show();
+        }
+
+        private void btnModifierSupprimerAgence_Click(object sender, EventArgs e)
+        {
+            Form F = new FrmModifierSupprimer();
+            F.Show();
         }
     }
 }

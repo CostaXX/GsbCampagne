@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GsbCampagneBLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,19 @@ namespace GsbCampagneGUI
         public FrmListeAgences()
         {
             InitializeComponent();
+            dgvAgences.DataSource = AgenceManager.GetInstance().GetLesAgences();
+            dgvAgences.Columns["NomVille"].HeaderText = "Ville";
+            dgvAgences.Columns["Id"].Visible = false;
+            dgvAgences.Columns["IdVille"].Visible = false;
+            dgvAgences.Columns["Campagnes"].Visible = false;
+            dgvAgences.Columns["Campagnes1"].Visible = false;
+            dgvAgences.Columns["Ville"].Visible = false;
+            dgvAgences.RowHeadersVisible = false;
+        }
 
+        private void btnQuitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

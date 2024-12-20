@@ -62,6 +62,12 @@
     <Compile Include="FrmAccueil.Designer.cs">
       <DependentUpon>FrmAccueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAjouterAgences.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjouterAgences.Designer.cs">
+      <DependentUpon>FrmAjouterAgences.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAuthentification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,10 +86,19 @@
     <Compile Include="FrmListeAgences.Designer.cs">
       <DependentUpon>FrmListeAgences.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModifierSupprimer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifierSupprimer.Designer.cs">
+      <DependentUpon>FrmModifierSupprimer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAccueil.resx">
       <DependentUpon>FrmAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjouterAgences.resx">
+      <DependentUpon>FrmAjouterAgences.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAuthentification.resx">
       <DependentUpon>FrmAuthentification.cs</DependentUpon>
@@ -93,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListeAgences.resx">
       <DependentUpon>FrmListeAgences.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifierSupprimer.resx">
+      <DependentUpon>FrmModifierSupprimer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

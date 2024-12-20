@@ -19,6 +19,8 @@ namespace GsbCampagneDAL
         public Nullable<int> Telephone { get; set; }
         public string Email { get; set; }
         public string SiteWeb { get; set; }
+        public string TypeCommunication { get; set; }
+        public string TypeEvenementiel { get; set; }
         public Nullable<int> IdVille { get; set; }
     }
 }

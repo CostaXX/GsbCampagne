@@ -56,13 +56,8 @@
     <Compile Include="Agence.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AgenceCommunication.cs">
-      <DependentUpon>CampagnesModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="AgenceDAO.cs" />
-    <Compile Include="AgenceEvenementiel.cs">
-      <DependentUpon>CampagnesModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="AgenceExt.cs" />
     <Compile Include="Artiste.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
@@ -87,9 +82,6 @@
     <Compile Include="CategorieVIP.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Convier.cs">
-      <DependentUpon>CampagnesModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="CourantArtistique.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
@@ -97,9 +89,6 @@
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="JournalIntervention.cs">
-      <DependentUpon>CampagnesModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Participer.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,6 +111,7 @@
     <Compile Include="Ville.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="VilleDAO.cs" />
     <Compile Include="VIP.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
@@ -138,6 +128,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="CampagnesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CampagnesModel.Context.cs</LastGenOutput>
@@ -148,9 +141,6 @@
       <DependentUpon>CampagnesModel.edmx</DependentUpon>
       <LastGenOutput>CampagnesModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

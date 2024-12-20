@@ -44,7 +44,8 @@ namespace GsbCampagneGUI
         }
         private void btnGestionAgences_Click(object sender, EventArgs e)
         {
-            
+            Form F = new FrmGestionAgences();
+            F.Show();
         }
 
         private void FrmAccueil_Shown(object sender, EventArgs e)

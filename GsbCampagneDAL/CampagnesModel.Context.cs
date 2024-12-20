@@ -28,24 +28,20 @@ namespace GsbCampagneDAL
         }
     
         public virtual DbSet<Agence> Agences { get; set; }
-        public virtual DbSet<AgenceCommunication> AgenceCommunications { get; set; }
-        public virtual DbSet<AgenceEvenementiel> AgenceEvenementiels { get; set; }
         public virtual DbSet<Artiste> Artistes { get; set; }
         public virtual DbSet<Campagne> Campagnes { get; set; }
         public virtual DbSet<CategorieVIP> CategorieVIPs { get; set; }
         public virtual DbSet<CourantArtistique> CourantArtistiques { get; set; }
+        public virtual DbSet<Evenement> Evenements { get; set; }
+        public virtual DbSet<JournalIntervention> JournalInterventions { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Salarie> Salaries { get; set; }
         public virtual DbSet<Theme> Themes { get; set; }
         public virtual DbSet<TypePublic> TypePublics { get; set; }
         public virtual DbSet<Ville> Villes { get; set; }
         public virtual DbSet<VIP> VIPs { get; set; }
-        public virtual DbSet<JournalIntervention> JournalInterventions { get; set; }
-        public virtual DbSet<Convier> Conviers { get; set; }
-        public virtual DbSet<Participer> Participers { get; set; }
-        public virtual DbSet<Evenement> Evenements { get; set; }
     
-        public virtual int sp_agence_add(string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, Nullable<int> idVille)
+        public virtual int sp_agence_add(string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, string typeCommunication, string typeEvenementiel, Nullable<int> idVille)
         {
             var libelleParameter = libelle != null ?
                 new ObjectParameter("Libelle", libelle) :
@@ -67,11 +63,19 @@ namespace GsbCampagneDAL
                 new ObjectParameter("SiteWeb", siteWeb) :
                 new ObjectParameter("SiteWeb", typeof(string));
     
+            var typeCommunicationParameter = typeCommunication != null ?
+                new ObjectParameter("TypeCommunication", typeCommunication) :
+                new ObjectParameter("TypeCommunication", typeof(string));
+    
+            var typeEvenementielParameter = typeEvenementiel != null ?
+                new ObjectParameter("TypeEvenementiel", typeEvenementiel) :
+                new ObjectParameter("TypeEvenementiel", typeof(string));
+    
             var idVilleParameter = idVille.HasValue ?
                 new ObjectParameter("idVille", idVille) :
                 new ObjectParameter("idVille", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_agence_add", libelleParameter, adresseParameter, telephoneParameter, emailParameter, siteWebParameter, idVilleParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_agence_add", libelleParameter, adresseParameter, telephoneParameter, emailParameter, siteWebParameter, typeCommunicationParameter, typeEvenementielParameter, idVilleParameter);
         }
     
         public virtual int sp_agence_delete(Nullable<int> id)
