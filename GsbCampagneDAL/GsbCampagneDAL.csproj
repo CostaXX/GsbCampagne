@@ -107,6 +107,9 @@
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SalarieDAO.cs" />
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Theme.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>

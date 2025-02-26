@@ -17,9 +17,9 @@ namespace GsbCampagneDAL
         public int Id { get; set; }
         public string NomTable { get; set; }
         public string OperationEffetctue { get; set; }
-        public Nullable<System.DateTime> DateHeure { get; set; }
+        public System.DateTime DateHeure { get; set; }
         public string ReferenceEnregistrement { get; set; }
-        public Nullable<int> IdSalarie { get; set; }
+        public int IdSalarie { get; set; }
     
         public virtual Salarie Salarie { get; set; }
     }

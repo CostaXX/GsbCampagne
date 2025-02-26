@@ -37,7 +37,7 @@ namespace GsbCampagneDAL
             {
                 var liste = ctx.Agences
                 .Include("Ville")
-                .Where(a => a.TypeCommunication != null)
+                .Where(a => a.TypeAgence == "C")
                 .ToList();
                 return liste;
             }
@@ -49,7 +49,7 @@ namespace GsbCampagneDAL
             {
                 var liste = ctx.Agences
                 .Include("Ville")
-                .Where(a => a.TypeEvenementiel != null)
+                .Where(a => a.TypeAgence == "E")
                 .ToList();
                 return liste;
             }

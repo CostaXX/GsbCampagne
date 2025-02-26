@@ -17,12 +17,12 @@ namespace GsbCampagneDAL
         public int Id { get; set; }
         public string Intitule { get; set; }
         public string Objectif { get; set; }
-        public Nullable<System.DateTime> DateDebut { get; set; }
-        public Nullable<System.DateTime> DateFin { get; set; }
-        public Nullable<int> IdTypePublic { get; set; }
+        public System.DateTime DateDebut { get; set; }
+        public System.DateTime DateFin { get; set; }
+        public int IdTypePublic { get; set; }
+        public int IdSalarie { get; set; }
         public Nullable<int> IdAgenceCommunication { get; set; }
         public Nullable<int> IdAgenceEvenementiel { get; set; }
-        public Nullable<int> IdSalarie { get; set; }
     
         public virtual Agence Agence { get; set; }
         public virtual Agence Agence1 { get; set; }
