@@ -31,52 +31,18 @@ namespace GsbCampagneDAL
         public virtual DbSet<Artiste> Artistes { get; set; }
         public virtual DbSet<Campagne> Campagnes { get; set; }
         public virtual DbSet<CategorieVIP> CategorieVIPs { get; set; }
+        public virtual DbSet<Convier> Conviers { get; set; }
         public virtual DbSet<CourantArtistique> CourantArtistiques { get; set; }
         public virtual DbSet<Evenement> Evenements { get; set; }
         public virtual DbSet<JournalIntervention> JournalInterventions { get; set; }
+        public virtual DbSet<Participer> Participers { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Salarie> Salaries { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Theme> Themes { get; set; }
         public virtual DbSet<TypePublic> TypePublics { get; set; }
         public virtual DbSet<Ville> Villes { get; set; }
         public virtual DbSet<VIP> VIPs { get; set; }
-    
-        public virtual int sp_agence_add(string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, string typeCommunication, string typeEvenementiel, Nullable<int> idVille)
-        {
-            var libelleParameter = libelle != null ?
-                new ObjectParameter("Libelle", libelle) :
-                new ObjectParameter("Libelle", typeof(string));
-    
-            var adresseParameter = adresse != null ?
-                new ObjectParameter("Adresse", adresse) :
-                new ObjectParameter("Adresse", typeof(string));
-    
-            var telephoneParameter = telephone.HasValue ?
-                new ObjectParameter("Telephone", telephone) :
-                new ObjectParameter("Telephone", typeof(int));
-    
-            var emailParameter = email != null ?
-                new ObjectParameter("Email", email) :
-                new ObjectParameter("Email", typeof(string));
-    
-            var siteWebParameter = siteWeb != null ?
-                new ObjectParameter("SiteWeb", siteWeb) :
-                new ObjectParameter("SiteWeb", typeof(string));
-    
-            var typeCommunicationParameter = typeCommunication != null ?
-                new ObjectParameter("TypeCommunication", typeCommunication) :
-                new ObjectParameter("TypeCommunication", typeof(string));
-    
-            var typeEvenementielParameter = typeEvenementiel != null ?
-                new ObjectParameter("TypeEvenementiel", typeEvenementiel) :
-                new ObjectParameter("TypeEvenementiel", typeof(string));
-    
-            var idVilleParameter = idVille.HasValue ?
-                new ObjectParameter("idVille", idVille) :
-                new ObjectParameter("idVille", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_agence_add", libelleParameter, adresseParameter, telephoneParameter, emailParameter, siteWebParameter, typeCommunicationParameter, typeEvenementielParameter, idVilleParameter);
-        }
     
         public virtual int sp_agence_delete(Nullable<int> id)
         {
@@ -85,44 +51,6 @@ namespace GsbCampagneDAL
                 new ObjectParameter("id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_agence_delete", idParameter);
-        }
-    
-        public virtual ObjectResult<sp_agence_getAll_Result> sp_agence_getAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_agence_getAll_Result>("sp_agence_getAll");
-        }
-    
-        public virtual int sp_agence_update(Nullable<int> id, string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, Nullable<int> idVille)
-        {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("Id", id) :
-                new ObjectParameter("Id", typeof(int));
-    
-            var libelleParameter = libelle != null ?
-                new ObjectParameter("Libelle", libelle) :
-                new ObjectParameter("Libelle", typeof(string));
-    
-            var adresseParameter = adresse != null ?
-                new ObjectParameter("Adresse", adresse) :
-                new ObjectParameter("Adresse", typeof(string));
-    
-            var telephoneParameter = telephone.HasValue ?
-                new ObjectParameter("Telephone", telephone) :
-                new ObjectParameter("Telephone", typeof(int));
-    
-            var emailParameter = email != null ?
-                new ObjectParameter("Email", email) :
-                new ObjectParameter("Email", typeof(string));
-    
-            var siteWebParameter = siteWeb != null ?
-                new ObjectParameter("SiteWeb", siteWeb) :
-                new ObjectParameter("SiteWeb", typeof(string));
-    
-            var idVilleParameter = idVille.HasValue ?
-                new ObjectParameter("IdVille", idVille) :
-                new ObjectParameter("IdVille", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_agence_update", idParameter, libelleParameter, adresseParameter, telephoneParameter, emailParameter, siteWebParameter, idVilleParameter);
         }
     
         public virtual int sp_ajoutEvenement(Nullable<System.DateTime> dateDebut, Nullable<System.DateTime> dateFin, string intitule, Nullable<int> idTheme, Nullable<int> idArtiste, Nullable<int> idVille, Nullable<int> idCategorieVIP)
@@ -352,6 +280,76 @@ namespace GsbCampagneDAL
                 new ObjectParameter("idVille", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_vip_update", idParameter, nomParameter, adressePostalParameter, emailParameter, idCategorieVIPParameter, idVilleParameter);
+        }
+    
+        public virtual int sp_agence_add(string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, string typeAgence, string codeInseeVille)
+        {
+            var libelleParameter = libelle != null ?
+                new ObjectParameter("Libelle", libelle) :
+                new ObjectParameter("Libelle", typeof(string));
+    
+            var adresseParameter = adresse != null ?
+                new ObjectParameter("Adresse", adresse) :
+                new ObjectParameter("Adresse", typeof(string));
+    
+            var telephoneParameter = telephone.HasValue ?
+                new ObjectParameter("Telephone", telephone) :
+                new ObjectParameter("Telephone", typeof(int));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var siteWebParameter = siteWeb != null ?
+                new ObjectParameter("SiteWeb", siteWeb) :
+                new ObjectParameter("SiteWeb", typeof(string));
+    
+            var typeAgenceParameter = typeAgence != null ?
+                new ObjectParameter("TypeAgence", typeAgence) :
+                new ObjectParameter("TypeAgence", typeof(string));
+    
+            var codeInseeVilleParameter = codeInseeVille != null ?
+                new ObjectParameter("CodeInseeVille", codeInseeVille) :
+                new ObjectParameter("CodeInseeVille", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_agence_add", libelleParameter, adresseParameter, telephoneParameter, emailParameter, siteWebParameter, typeAgenceParameter, codeInseeVilleParameter);
+        }
+    
+        public virtual int sp_agence_update(Nullable<int> id, string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, string typeAgence, string codeInseeVille)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            var libelleParameter = libelle != null ?
+                new ObjectParameter("Libelle", libelle) :
+                new ObjectParameter("Libelle", typeof(string));
+    
+            var adresseParameter = adresse != null ?
+                new ObjectParameter("Adresse", adresse) :
+                new ObjectParameter("Adresse", typeof(string));
+    
+            var telephoneParameter = telephone.HasValue ?
+                new ObjectParameter("Telephone", telephone) :
+                new ObjectParameter("Telephone", typeof(int));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var siteWebParameter = siteWeb != null ?
+                new ObjectParameter("SiteWeb", siteWeb) :
+                new ObjectParameter("SiteWeb", typeof(string));
+    
+            var typeAgenceParameter = typeAgence != null ?
+                new ObjectParameter("TypeAgence", typeAgence) :
+                new ObjectParameter("TypeAgence", typeof(string));
+    
+            var codeInseeVilleParameter = codeInseeVille != null ?
+                new ObjectParameter("CodeInseeVille", codeInseeVille) :
+                new ObjectParameter("CodeInseeVille", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_agence_update", idParameter, libelleParameter, adresseParameter, telephoneParameter, emailParameter, siteWebParameter, typeAgenceParameter, codeInseeVilleParameter);
         }
     }
 }

@@ -37,7 +37,8 @@ namespace GsbCampagneDAL
             {
                 try
                 {
-                    ctx.sp_agence_add(agence.Libelle, agence.Adresse, agence.Telephone, agence.Email, agence.SiteWeb, agence.TypeCommunication, agence.TypeEvenementiel, agence.IdVille);
+                    ctx.sp_agence_add(agence.Libelle, agence.Adresse, agence.Telephone, agence.Email, agence.SiteWeb,
+                        agence.TypeAgence, agence.CodeInseeVille);
                     return 0;
                 }
                 catch
@@ -46,6 +47,39 @@ namespace GsbCampagneDAL
                 }
             }
             
+        }
+
+        public int ModifierUneAgence(Agence agence)
+        {
+            using (var ctx = new GsbCampagnesEntities())
+            {
+                try
+                {
+                    ctx.sp_agence_update(agence.Id, agence.Libelle, agence.Adresse, agence.Telephone,
+                        agence.Email, agence.SiteWeb, agence.TypeAgence, agence.CodeInseeVille);
+                    return 0;
+                }
+                catch
+                {
+                    return -1;
+                }
+            }
+        }
+
+        public int SupprimerUneAgence(Agence agence)
+        {
+            using (var ctx = new GsbCampagnesEntities())
+            {
+                try
+                {
+                    ctx.sp_agence_delete(agence.Id);
+                    return 0;
+                }
+                catch
+                {
+                    return -1;
+                }
+            }
         }
     }
 }

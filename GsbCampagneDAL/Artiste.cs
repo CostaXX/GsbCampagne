@@ -18,15 +18,18 @@ namespace GsbCampagneDAL
         public Artiste()
         {
             this.Evenements = new HashSet<Evenement>();
+            this.Participers = new HashSet<Participer>();
         }
     
         public int Id { get; set; }
         public string Nom { get; set; }
         public string SiteWeb { get; set; }
-        public Nullable<int> IdCourantArtistique { get; set; }
+        public int IdCourantArtistique { get; set; }
     
         public virtual CourantArtistique CourantArtistique { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Evenement> Evenements { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Participer> Participers { get; set; }
     }
 }

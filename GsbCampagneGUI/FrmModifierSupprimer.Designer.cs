@@ -31,22 +31,22 @@
             this.cboAgence = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlModification = new System.Windows.Forms.Panel();
-            this.lblNom = new System.Windows.Forms.Label();
-            this.lblAdresse = new System.Windows.Forms.Label();
-            this.lblTelephone = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblSiteWeb = new System.Windows.Forms.Label();
-            this.lblType = new System.Windows.Forms.Label();
-            this.lblVille = new System.Windows.Forms.Label();
-            this.cboVille = new System.Windows.Forms.ComboBox();
-            this.txtSiteWeb = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtTelephone = new System.Windows.Forms.TextBox();
-            this.txtAdresse = new System.Windows.Forms.TextBox();
-            this.txtNom = new System.Windows.Forms.TextBox();
-            this.btnModifier = new System.Windows.Forms.Button();
-            this.cboType = new System.Windows.Forms.ComboBox();
             this.btnSupprimer = new System.Windows.Forms.Button();
+            this.cboType = new System.Windows.Forms.ComboBox();
+            this.btnModifier = new System.Windows.Forms.Button();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.txtAdresse = new System.Windows.Forms.TextBox();
+            this.txtTelephone = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSiteWeb = new System.Windows.Forms.TextBox();
+            this.cboVille = new System.Windows.Forms.ComboBox();
+            this.lblVille = new System.Windows.Forms.Label();
+            this.lblType = new System.Windows.Forms.Label();
+            this.lblSiteWeb = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblTelephone = new System.Windows.Forms.Label();
+            this.lblAdresse = new System.Windows.Forms.Label();
+            this.lblNom = new System.Windows.Forms.Label();
             this.pnlModification.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,111 +91,23 @@
             this.pnlModification.Size = new System.Drawing.Size(403, 401);
             this.pnlModification.TabIndex = 2;
             // 
-            // lblNom
+            // btnSupprimer
             // 
-            this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(17, 20);
-            this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(29, 13);
-            this.lblNom.TabIndex = 1;
-            this.lblNom.Text = "Nom";
+            this.btnSupprimer.Location = new System.Drawing.Point(232, 305);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(98, 44);
+            this.btnSupprimer.TabIndex = 3;
+            this.btnSupprimer.Text = "Supprimer";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
-            // lblAdresse
+            // cboType
             // 
-            this.lblAdresse.AutoSize = true;
-            this.lblAdresse.Location = new System.Drawing.Point(17, 55);
-            this.lblAdresse.Name = "lblAdresse";
-            this.lblAdresse.Size = new System.Drawing.Size(45, 13);
-            this.lblAdresse.TabIndex = 2;
-            this.lblAdresse.Text = "Adresse";
-            // 
-            // lblTelephone
-            // 
-            this.lblTelephone.AutoSize = true;
-            this.lblTelephone.Location = new System.Drawing.Point(17, 94);
-            this.lblTelephone.Name = "lblTelephone";
-            this.lblTelephone.Size = new System.Drawing.Size(58, 13);
-            this.lblTelephone.TabIndex = 3;
-            this.lblTelephone.Text = "Telephone";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(17, 132);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
-            this.lblEmail.TabIndex = 4;
-            this.lblEmail.Text = "Email";
-            // 
-            // lblSiteWeb
-            // 
-            this.lblSiteWeb.AutoSize = true;
-            this.lblSiteWeb.Location = new System.Drawing.Point(17, 170);
-            this.lblSiteWeb.Name = "lblSiteWeb";
-            this.lblSiteWeb.Size = new System.Drawing.Size(48, 13);
-            this.lblSiteWeb.TabIndex = 5;
-            this.lblSiteWeb.Text = "Site web";
-            // 
-            // lblType
-            // 
-            this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(17, 211);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(31, 13);
-            this.lblType.TabIndex = 6;
-            this.lblType.Text = "Type";
-            // 
-            // lblVille
-            // 
-            this.lblVille.AutoSize = true;
-            this.lblVille.Location = new System.Drawing.Point(17, 253);
-            this.lblVille.Name = "lblVille";
-            this.lblVille.Size = new System.Drawing.Size(26, 13);
-            this.lblVille.TabIndex = 7;
-            this.lblVille.Text = "Ville";
-            // 
-            // cboVille
-            // 
-            this.cboVille.FormattingEnabled = true;
-            this.cboVille.Location = new System.Drawing.Point(87, 250);
-            this.cboVille.Name = "cboVille";
-            this.cboVille.Size = new System.Drawing.Size(243, 21);
-            this.cboVille.TabIndex = 9;
-            // 
-            // txtSiteWeb
-            // 
-            this.txtSiteWeb.Location = new System.Drawing.Point(87, 167);
-            this.txtSiteWeb.Name = "txtSiteWeb";
-            this.txtSiteWeb.Size = new System.Drawing.Size(243, 20);
-            this.txtSiteWeb.TabIndex = 10;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(87, 129);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(243, 20);
-            this.txtEmail.TabIndex = 10;
-            // 
-            // txtTelephone
-            // 
-            this.txtTelephone.Location = new System.Drawing.Point(87, 91);
-            this.txtTelephone.Name = "txtTelephone";
-            this.txtTelephone.Size = new System.Drawing.Size(243, 20);
-            this.txtTelephone.TabIndex = 10;
-            // 
-            // txtAdresse
-            // 
-            this.txtAdresse.Location = new System.Drawing.Point(87, 52);
-            this.txtAdresse.Name = "txtAdresse";
-            this.txtAdresse.Size = new System.Drawing.Size(243, 20);
-            this.txtAdresse.TabIndex = 10;
-            // 
-            // txtNom
-            // 
-            this.txtNom.Location = new System.Drawing.Point(87, 17);
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(243, 20);
-            this.txtNom.TabIndex = 10;
+            this.cboType.FormattingEnabled = true;
+            this.cboType.Location = new System.Drawing.Point(87, 208);
+            this.cboType.Name = "cboType";
+            this.cboType.Size = new System.Drawing.Size(243, 21);
+            this.cboType.TabIndex = 11;
             // 
             // btnModifier
             // 
@@ -207,22 +119,111 @@
             this.btnModifier.UseVisualStyleBackColor = true;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
-            // cboType
+            // txtNom
             // 
-            this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(87, 208);
-            this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(243, 21);
-            this.cboType.TabIndex = 11;
+            this.txtNom.Location = new System.Drawing.Point(87, 17);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(243, 20);
+            this.txtNom.TabIndex = 10;
             // 
-            // btnSupprimer
+            // txtAdresse
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(232, 305);
-            this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(98, 44);
-            this.btnSupprimer.TabIndex = 3;
-            this.btnSupprimer.Text = "Supprimer";
-            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.txtAdresse.Location = new System.Drawing.Point(87, 52);
+            this.txtAdresse.Name = "txtAdresse";
+            this.txtAdresse.Size = new System.Drawing.Size(243, 20);
+            this.txtAdresse.TabIndex = 10;
+            // 
+            // txtTelephone
+            // 
+            this.txtTelephone.Location = new System.Drawing.Point(87, 91);
+            this.txtTelephone.Name = "txtTelephone";
+            this.txtTelephone.Size = new System.Drawing.Size(243, 20);
+            this.txtTelephone.TabIndex = 10;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(87, 129);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(243, 20);
+            this.txtEmail.TabIndex = 10;
+            // 
+            // txtSiteWeb
+            // 
+            this.txtSiteWeb.Location = new System.Drawing.Point(87, 167);
+            this.txtSiteWeb.Name = "txtSiteWeb";
+            this.txtSiteWeb.Size = new System.Drawing.Size(243, 20);
+            this.txtSiteWeb.TabIndex = 10;
+            // 
+            // cboVille
+            // 
+            this.cboVille.FormattingEnabled = true;
+            this.cboVille.Location = new System.Drawing.Point(87, 250);
+            this.cboVille.Name = "cboVille";
+            this.cboVille.Size = new System.Drawing.Size(243, 21);
+            this.cboVille.TabIndex = 9;
+            // 
+            // lblVille
+            // 
+            this.lblVille.AutoSize = true;
+            this.lblVille.Location = new System.Drawing.Point(17, 253);
+            this.lblVille.Name = "lblVille";
+            this.lblVille.Size = new System.Drawing.Size(26, 13);
+            this.lblVille.TabIndex = 7;
+            this.lblVille.Text = "Ville";
+            // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Location = new System.Drawing.Point(17, 211);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(31, 13);
+            this.lblType.TabIndex = 6;
+            this.lblType.Text = "Type";
+            // 
+            // lblSiteWeb
+            // 
+            this.lblSiteWeb.AutoSize = true;
+            this.lblSiteWeb.Location = new System.Drawing.Point(17, 170);
+            this.lblSiteWeb.Name = "lblSiteWeb";
+            this.lblSiteWeb.Size = new System.Drawing.Size(48, 13);
+            this.lblSiteWeb.TabIndex = 5;
+            this.lblSiteWeb.Text = "Site web";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(17, 132);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.TabIndex = 4;
+            this.lblEmail.Text = "Email";
+            // 
+            // lblTelephone
+            // 
+            this.lblTelephone.AutoSize = true;
+            this.lblTelephone.Location = new System.Drawing.Point(17, 94);
+            this.lblTelephone.Name = "lblTelephone";
+            this.lblTelephone.Size = new System.Drawing.Size(58, 13);
+            this.lblTelephone.TabIndex = 3;
+            this.lblTelephone.Text = "Telephone";
+            // 
+            // lblAdresse
+            // 
+            this.lblAdresse.AutoSize = true;
+            this.lblAdresse.Location = new System.Drawing.Point(17, 55);
+            this.lblAdresse.Name = "lblAdresse";
+            this.lblAdresse.Size = new System.Drawing.Size(45, 13);
+            this.lblAdresse.TabIndex = 2;
+            this.lblAdresse.Text = "Adresse";
+            // 
+            // lblNom
+            // 
+            this.lblNom.AutoSize = true;
+            this.lblNom.Location = new System.Drawing.Point(17, 20);
+            this.lblNom.Name = "lblNom";
+            this.lblNom.Size = new System.Drawing.Size(29, 13);
+            this.lblNom.TabIndex = 1;
+            this.lblNom.Text = "Nom";
             // 
             // FrmModifierSupprimer
             // 

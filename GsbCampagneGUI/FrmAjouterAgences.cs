@@ -29,6 +29,8 @@ namespace GsbCampagneGUI
             cboVille.DisplayMember = "Nom";
             cboVille.ValueMember = "CodeInsee";
             cboVille.SelectedIndex = -1;
+            cboType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboVille.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void btnEnregistrer_Click(object sender, EventArgs e)
@@ -95,25 +97,24 @@ namespace GsbCampagneGUI
             }
             else
             {
-                string leLibelle = txtNom.Text;
+                string libelle = txtNom.Text;
                 string adresse = txtAdresse.Text;
                 int numeroTelephone = Convert.ToInt32(txtTelephone.Text);
-                string leemail = txtEmail.Text;
-                string leSiteWeb = txtSiteWeb.Text;
-                string AgenceCommunication = null;
-                string AgenceEvenementiel = null;
-                int inseeVille = Convert.ToInt32(cboVille.SelectedValue.ToString());
+                string email = txtEmail.Text;
+                string siteWeb = txtSiteWeb.Text;
+                string typeAgence = "";
+                string CodeInseeVille = cboVille.SelectedValue.ToString();
 
                 if (cboType.Text == "agence de communication")
                 {
-                    AgenceCommunication = "agence de communication";
+                    typeAgence = "C";
                 }
-
-                if (cboType.Text == "agence évenementiel artistique")
+                else
                 {
-                    AgenceEvenementiel = "agence évenementiel artistique";
+                    typeAgence = "E";
                 }
-                int valRet = AgenceManager.GetInstance().AjouterUneAgence(leLibelle, adresse, numeroTelephone, leemail, leSiteWeb, AgenceCommunication, AgenceEvenementiel,inseeVille);
+                int valRet = AgenceManager.GetInstance().AjouterUneAgence(libelle, adresse, numeroTelephone, email, 
+                    siteWeb, typeAgence,CodeInseeVille);
                 if (valRet == 0)
                 {
                     MessageBox.Show("Agence ajouté", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);

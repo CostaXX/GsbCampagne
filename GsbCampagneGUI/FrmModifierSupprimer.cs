@@ -22,6 +22,12 @@ namespace GsbCampagneGUI
             pnlModification.Visible = false;
             btnModifier.Enabled = false;
             btnSupprimer.Enabled = false;
+            cboType.SelectedIndex = -1;
+            cboType.Items.Add("agence de communication");
+            cboType.Items.Add("agence évenementiel artistique");
+            cboType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboAgence.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboVille.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public void remplirListeAgences()
@@ -104,25 +110,25 @@ namespace GsbCampagneGUI
             }
             else
             {
-                string leLibelle = txtNom.Text;
+                int id = Convert.ToInt32(cboAgence.SelectedValue.ToString());
+                string libelle = txtNom.Text;
                 string adresse = txtAdresse.Text;
                 int numeroTelephone = Convert.ToInt32(txtTelephone.Text);
-                string leemail = txtEmail.Text;
-                string leSiteWeb = txtSiteWeb.Text;
-                string AgenceCommunication = null;
-                string AgenceEvenementiel = null;
-                int inseeVille = Convert.ToInt32(cboVille.SelectedValue.ToString());
+                string email = txtEmail.Text;
+                string siteWeb = txtSiteWeb.Text;
+                string typeAgence = "";
+                string codeInseeVille = cboVille.SelectedValue.ToString();
 
                 if (cboType.Text == "agence de communication")
                 {
-                    AgenceCommunication = "agence de communication";
+                    typeAgence = "C";
                 }
-
-                if (cboType.Text == "agence évenementiel artistique")
+                else
                 {
-                    AgenceEvenementiel = "agence évenementiel artistique";
+                    typeAgence = "E";
                 }
-                int valRet = AgenceManager.GetInstance().ModifierUneAgence(leLibelle, adresse, numeroTelephone, leemail, leSiteWeb, AgenceCommunication, AgenceEvenementiel, inseeVille);
+                int valRet = AgenceManager.GetInstance().ModifierUneAgence(id,libelle, adresse, numeroTelephone, 
+                    email, siteWeb, typeAgence, codeInseeVille);
                 if (valRet == 0)
                 {
                     MessageBox.Show("Agence ajouté", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -143,6 +149,22 @@ namespace GsbCampagneGUI
                 pnlModification.Visible = true;
                 btnModifier.Enabled = true;
                 btnSupprimer.Enabled = true;
+            }
+        }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(cboAgence.SelectedValue.ToString());
+            int valRet = AgenceManager.GetInstance().SupprimerUneAgence(id);
+            if (valRet == 0)
+            {
+                MessageBox.Show("Agence supprimé", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Probléme durant la mise a jour de la base de données", "Erreurs", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

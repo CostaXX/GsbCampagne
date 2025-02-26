@@ -26,7 +26,8 @@ namespace GsbCampagneBLL
             return AgenceDAO.GetInstance().GetLesAgences();
         }
 
-        public int AjouterUneAgence(string leLibelle, string ladresse, int leTelephone, string lemail, string leSiteWeb, string leTypeCommunication, string leTypeEvenementiel, int leIdVille)
+        public int AjouterUneAgence(string leLibelle, string ladresse, int leTelephone, string lemail, 
+            string leSiteWeb, string leTypeAgence, string leCodeInseeVille)
         {
             Agence a = new Agence();
             a.Libelle = leLibelle;
@@ -34,17 +35,33 @@ namespace GsbCampagneBLL
             a.Telephone = leTelephone;
             a.Email = lemail;
             a.SiteWeb = leSiteWeb;
-            a.TypeCommunication = leTypeCommunication;
-            a.TypeEvenementiel = leTypeEvenementiel;
-            a.IdVille = leIdVille;
+            a.TypeAgence = leTypeAgence;
+            a.CodeInseeVille = leCodeInseeVille;
             return AgenceDAO.GetInstance().AjouterUneAgence(a);
         }
 
-        public int ModifierUneAgence(string leLibelle, string ladresse, int leTelephone, string lemail, string leSiteWeb, string leTypeCommunication, string leTypeEvenementiel, int leIdVille)
+        public int ModifierUneAgence(int id, string leLibelle, string ladresse, int leTelephone, 
+            string lemail, string leSiteWeb, string leTypeAgence, string leCodeInseeVille)
         {
             Agence a = new Agence();
+            
+            a.Id = id;
             a.Libelle = leLibelle;
+            a.Adresse = ladresse;
+            a.Telephone = leTelephone;
+            a.Email = lemail;
+            a.SiteWeb = leSiteWeb;
+            a.TypeAgence = leTypeAgence;
+            a.CodeInseeVille = leCodeInseeVille;
+            return AgenceDAO.GetInstance().ModifierUneAgence(a);
+        }
 
+        public int SupprimerUneAgence(int id)
+        {
+            Agence a = new Agence();
+
+            a.Id = id;
+            return AgenceDAO.GetInstance().SupprimerUneAgence(a);
         }
     }
 }

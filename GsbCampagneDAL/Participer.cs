@@ -12,16 +12,13 @@ namespace GsbCampagneDAL
     using System;
     using System.Collections.Generic;
     
-    public partial class VIP
+    public partial class Participer
     {
-        public int Id { get; set; }
-        public string Nom { get; set; }
-        public string AdressePostal { get; set; }
-        public string Email { get; set; }
-        public int IdCategorieVIP { get; set; }
-        public string CodeInseeVille { get; set; }
+        public int IdEvenement { get; set; }
+        public int IdArtiste { get; set; }
+        public decimal Cachet { get; set; }
     
-        public virtual CategorieVIP CategorieVIP { get; set; }
-        public virtual Ville Ville { get; set; }
+        public virtual Artiste Artiste { get; set; }
+        public virtual Evenement Evenement { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace GsbCampagneGUI
             dgvAgences.DataSource = AgenceManager.GetInstance().GetLesAgences();
             dgvAgences.Columns["NomVille"].HeaderText = "Ville";
             dgvAgences.Columns["Id"].Visible = false;
-            dgvAgences.Columns["IdVille"].Visible = false;
+            dgvAgences.Columns["CodeInseeVille"].Visible = false;
             dgvAgences.Columns["Campagnes"].Visible = false;
             dgvAgences.Columns["Campagnes1"].Visible = false;
             dgvAgences.Columns["Ville"].Visible = false;

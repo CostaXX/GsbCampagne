@@ -24,12 +24,11 @@ namespace GsbCampagneDAL
         public int Id { get; set; }
         public string Libelle { get; set; }
         public string Adresse { get; set; }
-        public Nullable<int> Telephone { get; set; }
+        public int Telephone { get; set; }
         public string Email { get; set; }
         public string SiteWeb { get; set; }
-        public string TypeCommunication { get; set; }
-        public string TypeEvenementiel { get; set; }
-        public Nullable<int> IdVille { get; set; }
+        public string CodeInseeVille { get; set; }
+        public string TypeAgence { get; set; }
     
         public virtual Ville Ville { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
