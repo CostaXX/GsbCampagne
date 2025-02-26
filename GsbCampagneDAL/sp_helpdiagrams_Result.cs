@@ -10,18 +10,13 @@
 namespace GsbCampagneDAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class VIP
+    public partial class sp_helpdiagrams_Result
     {
-        public int Id { get; set; }
-        public string Nom { get; set; }
-        public string AdressePostal { get; set; }
-        public string Email { get; set; }
-        public int IdCategorieVIP { get; set; }
-        public string CodeInseeVille { get; set; }
-    
-        public virtual CategorieVIP CategorieVIP { get; set; }
-        public virtual Ville Ville { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

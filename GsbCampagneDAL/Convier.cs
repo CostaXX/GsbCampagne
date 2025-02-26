@@ -15,7 +15,7 @@ namespace GsbCampagneDAL
     public partial class Convier
     {
         public int IdEvenement { get; set; }
-        public Nullable<int> IdCategorieVIP { get; set; }
+        public int IdCategorieVIP { get; set; }
         public string Message { get; set; }
     
         public virtual CategorieVIP CategorieVIP { get; set; }

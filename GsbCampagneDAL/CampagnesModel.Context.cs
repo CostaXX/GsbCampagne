@@ -38,12 +38,13 @@ namespace GsbCampagneDAL
         public virtual DbSet<Participer> Participers { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Salarie> Salaries { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Theme> Themes { get; set; }
         public virtual DbSet<TypePublic> TypePublics { get; set; }
         public virtual DbSet<Ville> Villes { get; set; }
         public virtual DbSet<VIP> VIPs { get; set; }
     
-        public virtual int sp_agence_add(string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, string typeCommunication, string typeEvenementiel, Nullable<int> idVille)
+        public virtual int sp_agence_add(string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, string typeAgence, string codeInseeVille)
         {
             var libelleParameter = libelle != null ?
                 new ObjectParameter("Libelle", libelle) :
@@ -65,19 +66,15 @@ namespace GsbCampagneDAL
                 new ObjectParameter("SiteWeb", siteWeb) :
                 new ObjectParameter("SiteWeb", typeof(string));
     
-            var typeCommunicationParameter = typeCommunication != null ?
-                new ObjectParameter("TypeCommunication", typeCommunication) :
-                new ObjectParameter("TypeCommunication", typeof(string));
+            var typeAgenceParameter = typeAgence != null ?
+                new ObjectParameter("TypeAgence", typeAgence) :
+                new ObjectParameter("TypeAgence", typeof(string));
     
-            var typeEvenementielParameter = typeEvenementiel != null ?
-                new ObjectParameter("TypeEvenementiel", typeEvenementiel) :
-                new ObjectParameter("TypeEvenementiel", typeof(string));
+            var codeInseeVilleParameter = codeInseeVille != null ?
+                new ObjectParameter("CodeInseeVille", codeInseeVille) :
+                new ObjectParameter("CodeInseeVille", typeof(string));
     
-            var idVilleParameter = idVille.HasValue ?
-                new ObjectParameter("idVille", idVille) :
-                new ObjectParameter("idVille", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_agence_add", libelleParameter, adresseParameter, telephoneParameter, emailParameter, siteWebParameter, typeCommunicationParameter, typeEvenementielParameter, idVilleParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_agence_add", libelleParameter, adresseParameter, telephoneParameter, emailParameter, siteWebParameter, typeAgenceParameter, codeInseeVilleParameter);
         }
     
         public virtual int sp_agence_delete(Nullable<int> id)
@@ -94,7 +91,7 @@ namespace GsbCampagneDAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_agence_getAll_Result>("sp_agence_getAll");
         }
     
-        public virtual int sp_agence_update(Nullable<int> id, string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, Nullable<int> idVille)
+        public virtual int sp_agence_update(Nullable<int> id, string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, string typeAgence, string codeInseeVille)
         {
             var idParameter = id.HasValue ?
                 new ObjectParameter("Id", id) :
@@ -120,11 +117,15 @@ namespace GsbCampagneDAL
                 new ObjectParameter("SiteWeb", siteWeb) :
                 new ObjectParameter("SiteWeb", typeof(string));
     
-            var idVilleParameter = idVille.HasValue ?
-                new ObjectParameter("IdVille", idVille) :
-                new ObjectParameter("IdVille", typeof(int));
+            var typeAgenceParameter = typeAgence != null ?
+                new ObjectParameter("TypeAgence", typeAgence) :
+                new ObjectParameter("TypeAgence", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_agence_update", idParameter, libelleParameter, adresseParameter, telephoneParameter, emailParameter, siteWebParameter, idVilleParameter);
+            var codeInseeVilleParameter = codeInseeVille != null ?
+                new ObjectParameter("CodeInseeVille", codeInseeVille) :
+                new ObjectParameter("CodeInseeVille", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_agence_update", idParameter, libelleParameter, adresseParameter, telephoneParameter, emailParameter, siteWebParameter, typeAgenceParameter, codeInseeVilleParameter);
         }
     
         public virtual int sp_ajoutEvenement(Nullable<System.DateTime> dateDebut, Nullable<System.DateTime> dateFin, string intitule, Nullable<int> idTheme, Nullable<int> idArtiste, Nullable<int> idVille, Nullable<int> idCategorieVIP)
@@ -293,7 +294,7 @@ namespace GsbCampagneDAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_supprimeEvenement", idParameter);
         }
     
-        public virtual int sp_vip_add(string nom, string adressePostal, string email, Nullable<int> idCategorieVIP, Nullable<int> idVille)
+        public virtual int sp_vip_add(string nom, string adressePostal, string email, Nullable<int> idCategorieVIP, string codeInseeVille)
         {
             var nomParameter = nom != null ?
                 new ObjectParameter("Nom", nom) :
@@ -311,11 +312,11 @@ namespace GsbCampagneDAL
                 new ObjectParameter("idCategorieVIP", idCategorieVIP) :
                 new ObjectParameter("idCategorieVIP", typeof(int));
     
-            var idVilleParameter = idVille.HasValue ?
-                new ObjectParameter("idVille", idVille) :
-                new ObjectParameter("idVille", typeof(int));
+            var codeInseeVilleParameter = codeInseeVille != null ?
+                new ObjectParameter("CodeInseeVille", codeInseeVille) :
+                new ObjectParameter("CodeInseeVille", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_vip_add", nomParameter, adressePostalParameter, emailParameter, idCategorieVIPParameter, idVilleParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_vip_add", nomParameter, adressePostalParameter, emailParameter, idCategorieVIPParameter, codeInseeVilleParameter);
         }
     
         public virtual int sp_vip_delete(Nullable<int> id)
@@ -327,7 +328,7 @@ namespace GsbCampagneDAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_vip_delete", idParameter);
         }
     
-        public virtual int sp_vip_update(Nullable<int> id, string nom, string adressePostal, string email, Nullable<int> idCategorieVIP, Nullable<int> idVille)
+        public virtual int sp_vip_update(Nullable<int> id, string nom, string adressePostal, string email, Nullable<int> idCategorieVIP, string codeInseeVille)
         {
             var idParameter = id.HasValue ?
                 new ObjectParameter("Id", id) :
@@ -349,11 +350,11 @@ namespace GsbCampagneDAL
                 new ObjectParameter("idCategorieVIP", idCategorieVIP) :
                 new ObjectParameter("idCategorieVIP", typeof(int));
     
-            var idVilleParameter = idVille.HasValue ?
-                new ObjectParameter("idVille", idVille) :
-                new ObjectParameter("idVille", typeof(int));
+            var codeInseeVilleParameter = codeInseeVille != null ?
+                new ObjectParameter("CodeInseeVille", codeInseeVille) :
+                new ObjectParameter("CodeInseeVille", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_vip_update", idParameter, nomParameter, adressePostalParameter, emailParameter, idCategorieVIPParameter, idVilleParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_vip_update", idParameter, nomParameter, adressePostalParameter, emailParameter, idCategorieVIPParameter, codeInseeVilleParameter);
         }
     
         public virtual int sp_artiste_add(string nom, string siteWeb, Nullable<int> idCourantArtistique)
@@ -450,6 +451,188 @@ namespace GsbCampagneDAL
                 new ObjectParameter("Id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_CourantArtistique_delete", idParameter);
+        }
+    
+        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual int sp_evenement_add(Nullable<System.DateTime> dateDebut, Nullable<System.DateTime> dateFin, string intitule, Nullable<int> idTheme, string codeInseeVille, Nullable<int> idCategorieVIP, Nullable<int> idCampagne)
+        {
+            var dateDebutParameter = dateDebut.HasValue ?
+                new ObjectParameter("DateDebut", dateDebut) :
+                new ObjectParameter("DateDebut", typeof(System.DateTime));
+    
+            var dateFinParameter = dateFin.HasValue ?
+                new ObjectParameter("DateFin", dateFin) :
+                new ObjectParameter("DateFin", typeof(System.DateTime));
+    
+            var intituleParameter = intitule != null ?
+                new ObjectParameter("intitule", intitule) :
+                new ObjectParameter("intitule", typeof(string));
+    
+            var idThemeParameter = idTheme.HasValue ?
+                new ObjectParameter("IdTheme", idTheme) :
+                new ObjectParameter("IdTheme", typeof(int));
+    
+            var codeInseeVilleParameter = codeInseeVille != null ?
+                new ObjectParameter("CodeInseeVille", codeInseeVille) :
+                new ObjectParameter("CodeInseeVille", typeof(string));
+    
+            var idCategorieVIPParameter = idCategorieVIP.HasValue ?
+                new ObjectParameter("IdCategorieVIP", idCategorieVIP) :
+                new ObjectParameter("IdCategorieVIP", typeof(int));
+    
+            var idCampagneParameter = idCampagne.HasValue ?
+                new ObjectParameter("IdCampagne", idCampagne) :
+                new ObjectParameter("IdCampagne", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_evenement_add", dateDebutParameter, dateFinParameter, intituleParameter, idThemeParameter, codeInseeVilleParameter, idCategorieVIPParameter, idCampagneParameter);
+        }
+    
+        public virtual int sp_evenement_delete(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_evenement_delete", idParameter);
+        }
+    
+        public virtual int sp_evenement_update(Nullable<int> id, Nullable<System.DateTime> dateDebut, Nullable<System.DateTime> dateFin, string intitule, Nullable<int> idTheme, string codeInseeVille, Nullable<int> idCategorieVIP, Nullable<int> idCampagne)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            var dateDebutParameter = dateDebut.HasValue ?
+                new ObjectParameter("DateDebut", dateDebut) :
+                new ObjectParameter("DateDebut", typeof(System.DateTime));
+    
+            var dateFinParameter = dateFin.HasValue ?
+                new ObjectParameter("DateFin", dateFin) :
+                new ObjectParameter("DateFin", typeof(System.DateTime));
+    
+            var intituleParameter = intitule != null ?
+                new ObjectParameter("intitule", intitule) :
+                new ObjectParameter("intitule", typeof(string));
+    
+            var idThemeParameter = idTheme.HasValue ?
+                new ObjectParameter("IdTheme", idTheme) :
+                new ObjectParameter("IdTheme", typeof(int));
+    
+            var codeInseeVilleParameter = codeInseeVille != null ?
+                new ObjectParameter("CodeInseeVille", codeInseeVille) :
+                new ObjectParameter("CodeInseeVille", typeof(string));
+    
+            var idCategorieVIPParameter = idCategorieVIP.HasValue ?
+                new ObjectParameter("IdCategorieVIP", idCategorieVIP) :
+                new ObjectParameter("IdCategorieVIP", typeof(int));
+    
+            var idCampagneParameter = idCampagne.HasValue ?
+                new ObjectParameter("IdCampagne", idCampagne) :
+                new ObjectParameter("IdCampagne", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_evenement_update", idParameter, dateDebutParameter, dateFinParameter, intituleParameter, idThemeParameter, codeInseeVilleParameter, idCategorieVIPParameter, idCampagneParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var new_diagramnameParameter = new_diagramname != null ?
+                new ObjectParameter("new_diagramname", new_diagramname) :
+                new ObjectParameter("new_diagramname", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual int sp_upgraddiagrams()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     }
 }

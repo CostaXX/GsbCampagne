@@ -83,8 +83,8 @@ namespace GsbCampagneGUI
                 string adresses = txtAdresse.Text;
                 string email = txtEmail.Text;
                 int idCategorieVip = Convert.ToInt32(cboCategVip.SelectedValue.ToString());
-                int idVille = Convert.ToInt32(cboVille.SelectedValue.ToString());
-                VipManager.GetInstance().AjouterUnVip(nom,adresses,email,idCategorieVip,idVille);
+                string CodeInseeVille = cboVille.SelectedValue.ToString();
+                VipManager.GetInstance().AjouterUnVip(nom,adresses,email,idCategorieVip,CodeInseeVille);
                 MessageBox.Show("Vip ajouté", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

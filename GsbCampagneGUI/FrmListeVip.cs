@@ -24,7 +24,7 @@ namespace GsbCampagneGUI
             // Masquer les éléments non souhaités
             dgvVip.Columns["Id"].Visible = false;
             dgvVip.Columns["IdCategorieVip"].Visible = false;
-            dgvVip.Columns["idVille"].Visible = false;
+            dgvVip.Columns["CodeInseeVille"].Visible = false;
             dgvVip.Columns["Ville"].Visible = false;
             dgvVip.Columns["CategorieVip"].Visible = false;
             // Modifier l’entête de certaines colonnes

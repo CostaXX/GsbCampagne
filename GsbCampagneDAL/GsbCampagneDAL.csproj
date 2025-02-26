@@ -109,6 +109,15 @@
     <Compile Include="sp_agence_getAll_Result.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Theme.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>

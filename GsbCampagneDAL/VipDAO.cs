@@ -38,7 +38,7 @@ namespace GsbCampagneDAL
             {
                 try
                 {
-                    ctx.sp_vip_add(v.Nom,v.AdressePostal,v.Email,v.IdCategorieVIP,v.IdVille);
+                    ctx.sp_vip_add(v.Nom,v.AdressePostal,v.Email,v.IdCategorieVIP,v.CodeInseeVille);
                     return 0;
                 }
                 catch
@@ -69,7 +69,7 @@ namespace GsbCampagneDAL
             {
                 try
                 {
-                    ctx.sp_vip_update(v.Id, v.Nom, v.AdressePostal, v.Email, v.IdCategorieVIP, v.IdVille);
+                    ctx.sp_vip_update(v.Id, v.Nom, v.AdressePostal, v.Email, v.IdCategorieVIP, v.CodeInseeVille);
                     return 0;
                 }
                 catch
@@ -78,7 +78,5 @@ namespace GsbCampagneDAL
                 }
             }
         }
-
-
     }
 }

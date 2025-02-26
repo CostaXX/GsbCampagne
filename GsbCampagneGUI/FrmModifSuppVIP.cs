@@ -57,7 +57,7 @@ namespace GsbCampagneGUI
                 txtAdresse.Text = leVip.AdressePostal;
                 txtEmail.Text = leVip.Email;
                 cboCategVip.SelectedValue = leVip.IdCategorieVIP;
-                cboVille.SelectedValue = leVip.IdVille;
+                cboVille.SelectedValue = leVip.CodeInseeVille;
 
                 panel.Visible = true;
             }
@@ -115,7 +115,7 @@ namespace GsbCampagneGUI
                     v.AdressePostal = txtAdresse.Text;
                     v.Email = txtEmail.Text;
                     v.IdCategorieVIP = Convert.ToInt32(cboCategVip.SelectedValue.ToString());
-                    v.IdVille = Convert.ToInt32(cboVille.SelectedValue.ToString());
+                    v.CodeInseeVille = cboVille.SelectedValue.ToString();
                     VipManager.GetInstance().ModifierUnVip(v);
                     MessageBox.Show("Vip Modifier", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
@@ -182,7 +182,7 @@ namespace GsbCampagneGUI
                     v.AdressePostal = txtAdresse.Text;
                     v.Email = txtEmail.Text;
                     v.IdCategorieVIP = Convert.ToInt32(cboCategVip.SelectedValue.ToString());
-                    v.IdVille = Convert.ToInt32(cboVille.SelectedValue.ToString());
+                    v.CodeInseeVille = cboVille.SelectedValue.ToString();
                     VipManager.GetInstance().SupprimerUnVip(v);
                     MessageBox.Show("Vip Supprimé", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();

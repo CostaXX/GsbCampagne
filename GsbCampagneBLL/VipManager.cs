@@ -25,14 +25,14 @@ namespace GsbCampagneBLL
         {
             return VipDAO.GetInstance().GetLesVips();
         }
-        public int AjouterUnVip(string nom, string adressepostal, string email,int idcategorievip, int idville)
+        public int AjouterUnVip(string nom, string adressepostal, string email,int idcategorievip, string CodeInseeVille)
         {
             VIP v = new VIP();
             v.Nom = nom;
             v.AdressePostal = adressepostal;
             v.Email = email;
             v.IdCategorieVIP = idcategorievip;
-            v.IdVille = idville;
+            v.CodeInseeVille = CodeInseeVille;
 
             return VipDAO.GetInstance().AjouterUnVip(v);
         }

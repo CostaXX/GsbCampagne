@@ -15,8 +15,8 @@ namespace GsbCampagneDAL
     public partial class Participer
     {
         public int IdEvenement { get; set; }
-        public Nullable<int> IdArtiste { get; set; }
-        public Nullable<decimal> Cachet { get; set; }
+        public int IdArtiste { get; set; }
+        public decimal Cachet { get; set; }
     
         public virtual Artiste Artiste { get; set; }
         public virtual Evenement Evenement { get; set; }

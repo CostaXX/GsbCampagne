@@ -3,22 +3,22 @@ CREATE PROCEDURE sp_vip_add
 @AdressePostal varchar(150),
 @Email varchar(150),
 @idCategorieVIP INT,
-@idVille INT
+@CodeInseeVille char(5)
 AS
 BEGIN 
 
-	INSERT INTO VIP(Nom,AdressePostal,Email,IdCategorieVIP,IdVille)
-	VALUES (@Nom, @AdressePostal, @Email, @idCategorieVIP, @idVille);
+	INSERT INTO VIP(Nom,AdressePostal,Email,IdCategorieVIP,CodeInseeVille)
+	VALUES (@Nom, @AdressePostal, @Email, @idCategorieVIP, @CodeInseeVille);
 
 END;
 go
-CREATE PROCEDURE sp_vip_update
+ALTER PROCEDURE sp_vip_update
 @Id INT,
 @Nom varchar(150),
 @AdressePostal varchar(150),
 @Email varchar(150),
 @idCategorieVIP INT,
-@idVille INT
+@CodeInseeVille char(5)
 AS
 BEGIN
 
@@ -28,11 +28,11 @@ BEGIN
 		AdressePostal = @AdressePostal,
 		Email = @Email,
 		idCategorieVIP = @idCategorieVIP,
-		idVille = @idVille
+		CodeInseeVille = @CodeInseeVille
 	WHERE Id = @Id; 
 END
 go
-CREATE PROCEDURE sp_vip_delete
+ALTER PROCEDURE sp_vip_delete
      @Id INT
 AS 
 BEGIN
