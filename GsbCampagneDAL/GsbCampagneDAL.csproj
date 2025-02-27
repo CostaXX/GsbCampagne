@@ -106,7 +106,7 @@
     <Compile Include="Salarie.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sp_agence_getAll_Result.cs">
+    <Compile Include="sysdiagram.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Theme.cs">

@@ -18,8 +18,8 @@ namespace GsbCampagneDAL
         public string Nom { get; set; }
         public string AdressePostal { get; set; }
         public string Email { get; set; }
-        public Nullable<int> IdCategorieVIP { get; set; }
-        public Nullable<int> IdVille { get; set; }
+        public int IdCategorieVIP { get; set; }
+        public string CodeInseeVille { get; set; }
     
         public virtual CategorieVIP CategorieVIP { get; set; }
         public virtual Ville Ville { get; set; }

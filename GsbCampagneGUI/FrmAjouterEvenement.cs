@@ -27,8 +27,8 @@ namespace GsbCampagneGUI
 
             #region Remplir la liste des campagnes
             cboCampagnes.DataSource = CampagneManager.GetInstance().GetLesCampagnes();
-            cboCampagnes.DisplayMember = "Nom";
-            cboCampagnes.ValueMember = "Intitule";
+            cboCampagnes.DisplayMember = "Intitule";
+            cboCampagnes.ValueMember = "Id";
             cboCampagnes.SelectedIndex = -1;
             #endregion
 
@@ -55,23 +55,23 @@ namespace GsbCampagneGUI
                 MessageBox.Show(erreurs, "Erreurs", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; 
             }
-            if (txtIntitule.Text == "" ||cboCampagnes.SelectedIndex == -1 || cboThemes.SelectedIndex == -1 || cboVilles.SelectedIndex == -1 || cboCategories.SelectedIndex == -1)
+            if (String.IsNullOrWhiteSpace(txtIntitule.Text) ||cboCampagnes.SelectedIndex == -1 || cboThemes.SelectedIndex == -1 || cboVilles.SelectedIndex == -1 || cboCategories.SelectedIndex == -1)
             {
                 erreurs += "Toutes les informations sont obligatoires";
                 MessageBox.Show(erreurs, "Erreurs", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
-            {
+            { //dateDebut, dateFin, intitule, Themes, IdCategorieVIP, Campagnes, Villes
                 // Enregistrement du produit dans la BDD
                 string intitule = txtIntitule.Text;
-                int Campagnes = Convert.ToInt32(cboCampagnes.SelectedIndex.ToString());
+                int Campagnes = Convert.ToInt32(cboCampagnes.SelectedValue.ToString());
                 int Themes = Convert.ToInt32(cboThemes.SelectedValue.ToString());
-                int Villes = Convert.ToInt32(cboThemes.SelectedValue.ToString());
+                string Villes = cboVilles.SelectedValue.ToString(); 
                 int IdCategorieVIP = Convert.ToInt32(cboCategories.SelectedValue.ToString());
                 DateTime dateDebut = Convert.ToDateTime(dateTimeDebut.Value);
                 DateTime dateFin = Convert.ToDateTime(dateTimeFin.Value);
-                if (EvenementManager.GetInstance().AjouterEvenements(dateDebut, dateFin, intitule, Campagnes, Themes, Villes, IdCategorieVIP) == 0)
+                if (EvenementManager.GetInstance().AjouterEvenements(dateDebut, dateFin, intitule, Themes, Villes, IdCategorieVIP, Campagnes) == 0)
                 {
                     MessageBox.Show("Evénement ajouté", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -88,5 +88,6 @@ namespace GsbCampagneGUI
         {
             this.Close();
         }
+
     }
 }

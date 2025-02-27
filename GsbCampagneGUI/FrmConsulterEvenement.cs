@@ -21,8 +21,6 @@ namespace GsbCampagneGUI
 
             // Masquer les éléments non souhaités
             dgvEvenement.Columns["Id"].Visible = false;
-            dgvEvenement.Columns["IdArtiste"].Visible = false;
-            dgvEvenement.Columns["Artiste"].Visible = false;
             dgvEvenement.Columns["Campagne"].Visible = false;
             dgvEvenement.Columns["CategorieVIP"].Visible = false;
             dgvEvenement.Columns["Convier"].Visible = false;
@@ -30,7 +28,7 @@ namespace GsbCampagneGUI
             dgvEvenement.Columns["Ville"].Visible = false;
             dgvEvenement.Columns["Participer"].Visible = false;
             dgvEvenement.Columns["IdTheme"].Visible = false;
-            dgvEvenement.Columns["IdVille"].Visible = false;
+            dgvEvenement.Columns["CodeInseeVille"].Visible = false;
             dgvEvenement.Columns["IdCategorieVIP"].Visible = false;
             dgvEvenement.Columns["Idcampagne"].Visible = false;
 

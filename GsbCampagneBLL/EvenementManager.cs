@@ -26,16 +26,21 @@ namespace GsbCampagneBLL
             return EvenementDAO.GetInstance().GetLesEvenements();
         }
 
-        public int AjouterEvenements(DateTime dateDebut, DateTime dateFin, string intitule, int IdTheme, int IdVille, int IdCategorieVIP, int IdCampagne)
+        public int AjouterEvenements(DateTime dateDebut, DateTime dateFin, string intitule, int IdTheme, string CodeInseeVille, int IdCategorieVIP, int IdCampagne)
         {
             Evenement e = new Evenement();
             e.DateDebut = dateDebut;
             e.DateFin = dateFin;
+            e.Intitule = intitule;
             e.IdTheme = IdTheme;
-            e.IdVille = IdVille;
+            e.CodeInseeVille = CodeInseeVille;
             e.IdCategorieVIP = IdCategorieVIP;
             e.IdCampagne = IdCampagne;
             return EvenementDAO.GetInstance().AjouterEvenements(e);
+        }
+        public int ModifierEvenements(Evenement e)
+        {
+            return EvenementDAO.GetInstance().ModifierEvenements(e);
         }
 
         public int SupprimerEvenements(int Id)

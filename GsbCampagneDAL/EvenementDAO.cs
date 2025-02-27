@@ -26,9 +26,9 @@ namespace GsbCampagneDAL
             {
                 var liste = ctx.Evenements
                     .Include("Theme")
-                    .Include("Ville")
                     .Include("CategorieVIP")
                     .Include("Campagne")
+                    .Include("Ville")
                     .ToList();
                 return liste;
             }
@@ -40,7 +40,7 @@ namespace GsbCampagneDAL
             {
                 try
                 {
-                    ctx.sp_ajoutEvenement(e.DateDebut, e.DateFin, e.Intitule, e.IdTheme, e.IdVille, e.IdCategorieVIP, e.IdCampagne);
+                    ctx.sp_evenement_add(e.DateDebut, e.DateFin, e.Intitule, e.IdTheme, e.CodeInseeVille , e.IdCategorieVIP, e.IdCampagne);
                     return 0;
                 }
                 catch
@@ -56,7 +56,7 @@ namespace GsbCampagneDAL
             {
                 try
                 {
-                    ctx.sp_modifierEvenement(e.Id, e.DateDebut, e.DateFin, e.Intitule, e.IdTheme, e.IdVille, e.IdCategorieVIP, e.IdCampagne);
+                    ctx.sp_evenement_update(e.Id, e.DateDebut, e.DateFin, e.Intitule, e.IdTheme, e.CodeInseeVille, e.IdCategorieVIP, e.IdCampagne);
                     return 0;
                 }
                 catch
@@ -72,7 +72,7 @@ namespace GsbCampagneDAL
             {
                 try
                 {
-                    ctx.sp_supprimeEvenement(e.Id);
+                    ctx.sp_evenement_delete(e.Id);
                     return 0;
                 }
                 catch

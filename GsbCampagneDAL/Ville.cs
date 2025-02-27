@@ -22,9 +22,9 @@ namespace GsbCampagneDAL
             this.VIPs = new HashSet<VIP>();
         }
     
-        public int CodeInsee { get; set; }
+        public string CodeInsee { get; set; }
         public string Nom { get; set; }
-        public Nullable<int> Arrondissement { get; set; }
+        public int Arrondissement { get; set; }
         public string CodePostal { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

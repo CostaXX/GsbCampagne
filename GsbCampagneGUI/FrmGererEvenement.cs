@@ -26,8 +26,8 @@ namespace GsbCampagneGUI
 
             #region Remplir la liste des campagnes
             cboCampagnes.DataSource = CampagneManager.GetInstance().GetLesCampagnes();
-            cboCampagnes.DisplayMember = "Nom";
-            cboCampagnes.ValueMember = "Intitule";
+            cboCampagnes.DisplayMember = "Intitule";
+            cboCampagnes.ValueMember = "Id";
             cboCampagnes.SelectedIndex = -1;
             #endregion
 
@@ -78,18 +78,36 @@ namespace GsbCampagneGUI
             {
                 Evenement evenement = (Evenement)cboEvenements.SelectedItem;
                 panel.Visible = true;
-                cboCampagnes.SelectedValue = evenement.Campagne;
-                cboVilles.SelectedValue = evenement.Ville;
-                cboThemes.SelectedValue = evenement.Theme;
-                cboCategories.SelectedValue = evenement.CategorieVIP;
-                dateTimeDebut.Value = evenement.DateDebut.Value; 
-                dateTimeFin.Value = evenement.DateFin.Value;
+                txtIntitule.Text = evenement.Intitule;
+                cboCampagnes.SelectedValue = evenement.IdCampagne;
+                cboVilles.SelectedValue = evenement.CodeInseeVille;
+                cboThemes.SelectedValue = evenement.IdTheme;
+                cboCategories.SelectedValue = evenement.IdCategorieVIP;
+                dateTimeDebut.Value = evenement.DateDebut; 
+                dateTimeFin.Value = evenement.DateFin;
             }
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
+            Evenement evenement = (Evenement)cboEvenements.SelectedItem;
+            panel.Visible = true;
+            if (EvenementManager.GetInstance().SupprimerEvenements(evenement.Id) == 0)
+            {
+                MessageBox.Show("Evénement supprimé", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                panel.Visible = false;
+                cboEvenements.SelectedIndex = -1;
+            }
+            else
+            {
+                MessageBox.Show("Problème lors de la mise à jour", "Erreurs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+
+            #region Contrôle des données saisies
             string erreurs = "";
             if (dateTimeDebut.Value > dateTimeFin.Value)
             {
@@ -97,12 +115,13 @@ namespace GsbCampagneGUI
                 MessageBox.Show(erreurs, "Erreurs", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (cboEvenements.SelectedIndex == -1 || cboCampagnes.SelectedIndex == -1 || cboThemes.SelectedIndex == -1 || cboVilles.SelectedIndex == -1 || cboCategories.SelectedIndex == -1)
+            if (String.IsNullOrWhiteSpace(txtIntitule.Text) || cboCampagnes.SelectedIndex == -1 || cboThemes.SelectedIndex == -1 || cboVilles.SelectedIndex == -1 || cboCategories.SelectedIndex == -1)
             {
                 erreurs += "Toutes les informations sont obligatoires";
                 MessageBox.Show(erreurs, "Erreurs", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            #endregion
 
             if (erreurs != "")
             {
@@ -110,17 +129,24 @@ namespace GsbCampagneGUI
             }
             else
             {
-                Evenement evement = (Evenement)cboEvenements.SelectedItem;
+                Evenement evt = (Evenement)cboEvenements.SelectedItem;
                 panel.Visible = true;
-                if (EvenementManager.GetInstance().SupprimerEvenements(evement.Id) == 0)
+                evt.Intitule = txtIntitule.Text;
+                evt.IdCampagne = Convert.ToInt32(cboCampagnes.SelectedValue.ToString());
+                evt.CodeInseeVille = cboVilles.SelectedValue.ToString();
+                evt.IdTheme = Convert.ToInt32(cboThemes.SelectedValue.ToString());
+                evt.IdCategorieVIP = Convert.ToInt32(cboCategories.SelectedValue.ToString());
+                evt.DateDebut = Convert.ToDateTime(dateTimeDebut.Value);
+                evt.DateFin = Convert.ToDateTime(dateTimeFin.Value);
+                if (EvenementManager.GetInstance().ModifierEvenements(evt) == 0)
                 {
-                    MessageBox.Show("Evenement supprimer", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    panel.Visible = false;
-                    cboCategories.SelectedIndex = -1;
+                    MessageBox.Show("Evénement mis à jour", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    remplirListeEvenements();
                 }
                 else
                 {
                     MessageBox.Show("Problème lors de la mise à jour", "Erreurs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
             }
         }
