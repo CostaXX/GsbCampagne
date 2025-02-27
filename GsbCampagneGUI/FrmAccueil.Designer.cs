@@ -99,6 +99,7 @@
             this.Controls.Add(this.btnEvenements);
             this.Name = "FrmAccueil";
             this.Text = "Accueil";
+            this.Shown += new System.EventHandler(this.FrmAccueil_Shown);
             this.ResumeLayout(false);
 
         }

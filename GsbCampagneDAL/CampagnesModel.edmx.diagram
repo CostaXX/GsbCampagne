@@ -5,6 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="114776f8698f49de94fc2321c67b6499" Name="Diagram1">
+      <Diagram DiagramId="227e05d9e1604a28bd0e7e6602a8dac8" Name="Diagram1">
         <EntityTypeShape EntityType="GsbCampagnesModel.Agence" Width="1.5" PointX="3" PointY="7.625" />
         <EntityTypeShape EntityType="GsbCampagnesModel.Artiste" Width="1.5" PointX="7.5" PointY="0.75" />
         <EntityTypeShape EntityType="GsbCampagnesModel.Campagne" Width="1.5" PointX="5.25" PointY="7.25" />
@@ -19,6 +20,13 @@
         <EntityTypeShape EntityType="GsbCampagnesModel.sysdiagram" Width="1.5" PointX="9.75" PointY="10.375" />
         <EntityTypeShape EntityType="GsbCampagnesModel.Theme" Width="1.5" PointX="5.25" PointY="4" />
         <EntityTypeShape EntityType="GsbCampagnesModel.TypePublic" Width="1.5" PointX="3" PointY="11.625" />
+        <EntityTypeShape EntityType="GsbCampagnesModel.JournalIntervention" Width="1.5" PointX="5.25" PointY="11.75" />
+        <EntityTypeShape EntityType="GsbCampagnesModel.Participer" Width="1.5" PointX="9.75" PointY="6.875" />
+        <EntityTypeShape EntityType="GsbCampagnesModel.Role" Width="1.5" PointX="0.75" PointY="12.125" />
+        <EntityTypeShape EntityType="GsbCampagnesModel.Salarie" Width="1.5" PointX="3" PointY="11.625" />
+        <EntityTypeShape EntityType="GsbCampagnesModel.sysdiagram" Width="1.5" PointX="9.75" PointY="10.375" />
+        <EntityTypeShape EntityType="GsbCampagnesModel.Theme" Width="1.5" PointX="5.25" PointY="4" />
+        <EntityTypeShape EntityType="GsbCampagnesModel.TypePublic" Width="1.5" PointX="3" PointY="15.125" />
         <EntityTypeShape EntityType="GsbCampagnesModel.Ville" Width="1.5" PointX="0.75" PointY="4.625" />
         <EntityTypeShape EntityType="GsbCampagnesModel.VIP" Width="1.5" PointX="3" PointY="3.625" />
         <AssociationConnector Association="GsbCampagnesModel.FK__Agence__IdVille__46136164" />

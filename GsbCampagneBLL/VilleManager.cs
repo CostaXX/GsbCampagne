@@ -9,7 +9,7 @@ namespace GsbCampagneBLL
 {
     public class VilleManager
     {
-        #region Instance
+        #region Singleton
         private static VilleManager instance;
         public static VilleManager GetInstance()
         {

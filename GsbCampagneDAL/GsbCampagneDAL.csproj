@@ -56,13 +56,21 @@
     <Compile Include="Agence.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="AgenceDAO.cs" />
+    <Compile Include="AgenceExt.cs" />
+>>>>>>> d79df52da9902ed14a28e3e199a74ac852949cef
     <Compile Include="Artiste.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Campagne.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="CampagneDAO.cs" />
+=======
+>>>>>>> d79df52da9902ed14a28e3e199a74ac852949cef
     <Compile Include="CampagnesModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,7 +86,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CampagnesModel.edmx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="CategorieDAO.cs" />
+=======
+>>>>>>> d79df52da9902ed14a28e3e199a74ac852949cef
     <Compile Include="CategorieVIP.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
@@ -91,8 +102,11 @@
     <Compile Include="Evenement.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="EvenementDAO.cs" />
     <Compile Include="EvenementExt.cs" />
+=======
+>>>>>>> d79df52da9902ed14a28e3e199a74ac852949cef
     <Compile Include="JournalIntervention.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
@@ -106,13 +120,23 @@
     <Compile Include="Salarie.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="SalarieDAO.cs" />
+    <Compile Include="sp_agence_getAll_Result.cs">
+      <DependentUpon>CampagnesModel.tt</DependentUpon>
+    </Compile>
+>>>>>>> d79df52da9902ed14a28e3e199a74ac852949cef
     <Compile Include="sysdiagram.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Theme.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="ThemeDAO.cs" />
+=======
+>>>>>>> d79df52da9902ed14a28e3e199a74ac852949cef
     <Compile Include="TypePublic.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
