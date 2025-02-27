@@ -68,13 +68,13 @@
     <Compile Include="VilleManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GsbCampagneDAL\GsbCampagneDAL.csproj">
-      <Project>{d619b918-f82a-4287-8bdd-a4b7fc73e189}</Project>
-      <Name>GsbCampagneDAL</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\GsbCampagneDAL\GsbCampagneDAL.csproj">
+      <Project>{5b4abb3d-0679-4a31-8d2e-eb5fdc8c1ee4}</Project>
+      <Name>GsbCampagneDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

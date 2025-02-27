@@ -256,7 +256,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel);
             this.Name = "FrmGererEvenement";
-            this.Text = "FrmGererEvenement";
+            this.Text = "Modification et suppression des événements";
             this.Load += new System.EventHandler(this.FrmGererEvenement_Load);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();

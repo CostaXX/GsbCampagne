@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace GsbCampagneGUI
 {
-    public partial class FrmGestionEvenements : Form
+    public partial class FrmMenuEvenements : Form
     {
-        public FrmGestionEvenements()
+        public FrmMenuEvenements()
         {
             InitializeComponent();
 

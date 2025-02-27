@@ -35,6 +35,7 @@
             // 
             // dgvAgences
             // 
+            this.dgvAgences.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvAgences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAgences.Location = new System.Drawing.Point(12, 12);
             this.dgvAgences.Name = "dgvAgences";
@@ -59,7 +60,7 @@
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.dgvAgences);
             this.Name = "FrmListeAgences";
-            this.Text = "FrmListeAgences";
+            this.Text = "Liste des agences";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgences)).EndInit();
             this.ResumeLayout(false);
 

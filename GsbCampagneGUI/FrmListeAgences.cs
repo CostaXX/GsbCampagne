@@ -24,6 +24,7 @@ namespace GsbCampagneGUI
             dgvAgences.Columns["Campagnes1"].Visible = false;
             dgvAgences.Columns["Ville"].Visible = false;
             dgvAgences.RowHeadersVisible = false;
+            dgvAgences.BorderStyle = BorderStyle.None;
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)

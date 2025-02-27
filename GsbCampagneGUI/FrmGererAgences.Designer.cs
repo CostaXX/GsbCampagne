@@ -1,6 +1,6 @@
 ﻿namespace GsbCampagneGUI
 {
-    partial class FrmModifierSupprimer
+    partial class FrmGererAgences
     {
         /// <summary>
         /// Required designer variable.
@@ -225,7 +225,7 @@
             this.lblNom.TabIndex = 1;
             this.lblNom.Text = "Nom";
             // 
-            // FrmModifierSupprimer
+            // FrmGererAgences
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -233,8 +233,8 @@
             this.Controls.Add(this.pnlModification);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboAgence);
-            this.Name = "FrmModifierSupprimer";
-            this.Text = "Modifier / supprimer agence";
+            this.Name = "FrmGererAgences";
+            this.Text = "Modification et suppression des agences";
             this.pnlModification.ResumeLayout(false);
             this.pnlModification.PerformLayout();
             this.ResumeLayout(false);

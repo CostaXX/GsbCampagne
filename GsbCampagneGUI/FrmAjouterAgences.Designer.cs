@@ -190,7 +190,7 @@
             this.Controls.Add(this.lblAdresse);
             this.Controls.Add(this.lblNom);
             this.Name = "FrmAjouterAgences";
-            this.Text = "FrmAjouterAgences";
+            this.Text = "Nouvelle agence";
             this.ResumeLayout(false);
             this.PerformLayout();
 

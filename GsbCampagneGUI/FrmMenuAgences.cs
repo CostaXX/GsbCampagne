@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GsbCampagneGUI
 {
-    public partial class FrmGestionAgences : Form
+    public partial class FrmMenuAgences : Form
     {
-        public FrmGestionAgences()
+        public FrmMenuAgences()
         {
             InitializeComponent();
         }
@@ -38,7 +38,7 @@ namespace GsbCampagneGUI
 
         private void btnModifierSupprimerAgence_Click(object sender, EventArgs e)
         {
-            Form F = new FrmModifierSupprimer();
+            Form F = new FrmGererAgences();
             F.Show();
         }
     }

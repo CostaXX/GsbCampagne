@@ -83,6 +83,7 @@
             // 
             // btnConnecter
             // 
+            this.btnConnecter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnecter.Location = new System.Drawing.Point(327, 264);
             this.btnConnecter.Name = "btnConnecter";
             this.btnConnecter.Size = new System.Drawing.Size(121, 30);
@@ -103,7 +104,7 @@
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label1);
             this.Name = "FrmAuthentification";
-            this.Text = "FrmAuthentification";
+            this.Text = "Authentification";
             this.ResumeLayout(false);
             this.PerformLayout();
 

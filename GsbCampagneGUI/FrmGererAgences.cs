@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace GsbCampagneGUI
 {
-    public partial class FrmModifierSupprimer : Form
+    public partial class FrmGererAgences : Form
     {
-        public FrmModifierSupprimer()
+        public FrmGererAgences()
         {
             InitializeComponent();
             remplirListeAgences();

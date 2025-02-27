@@ -28,53 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnVIP = new System.Windows.Forms.Button();
-            this.btnEvenements = new System.Windows.Forms.Button();
-            this.btnCampagne = new System.Windows.Forms.Button();
-            this.btnAgences = new System.Windows.Forms.Button();
+            this.btnGestionVIP = new System.Windows.Forms.Button();
+            this.btnGestionEvenements = new System.Windows.Forms.Button();
+            this.btnGestionCampagnes = new System.Windows.Forms.Button();
+            this.btnGestionAgences = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnVIP
+            // btnGestionVIP
             // 
-            this.btnVIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVIP.Location = new System.Drawing.Point(64, 246);
-            this.btnVIP.Name = "btnVIP";
-            this.btnVIP.Size = new System.Drawing.Size(137, 76);
-            this.btnVIP.TabIndex = 0;
-            this.btnVIP.Text = "Gestion des VIP";
-            this.btnVIP.UseVisualStyleBackColor = true;
+            this.btnGestionVIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionVIP.Location = new System.Drawing.Point(64, 246);
+            this.btnGestionVIP.Name = "btnGestionVIP";
+            this.btnGestionVIP.Size = new System.Drawing.Size(137, 76);
+            this.btnGestionVIP.TabIndex = 0;
+            this.btnGestionVIP.Text = "Gestion des VIP";
+            this.btnGestionVIP.UseVisualStyleBackColor = true;
             // 
-            // btnEvenements
+            // btnGestionEvenements
             // 
-            this.btnEvenements.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEvenements.Location = new System.Drawing.Point(64, 129);
-            this.btnEvenements.Name = "btnEvenements";
-            this.btnEvenements.Size = new System.Drawing.Size(137, 76);
-            this.btnEvenements.TabIndex = 0;
-            this.btnEvenements.Text = "Gestion des évènements";
-            this.btnEvenements.UseVisualStyleBackColor = true;
-            this.btnEvenements.Click += new System.EventHandler(this.btnEvenements_Click);
+            this.btnGestionEvenements.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionEvenements.Location = new System.Drawing.Point(64, 129);
+            this.btnGestionEvenements.Name = "btnGestionEvenements";
+            this.btnGestionEvenements.Size = new System.Drawing.Size(137, 76);
+            this.btnGestionEvenements.TabIndex = 0;
+            this.btnGestionEvenements.Text = "Gestion des évènements";
+            this.btnGestionEvenements.UseVisualStyleBackColor = true;
+            this.btnGestionEvenements.Click += new System.EventHandler(this.btnEvenements_Click);
             // 
-            // btnCampagne
+            // btnGestionCampagnes
             // 
-            this.btnCampagne.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCampagne.Location = new System.Drawing.Point(251, 129);
-            this.btnCampagne.Name = "btnCampagne";
-            this.btnCampagne.Size = new System.Drawing.Size(137, 76);
-            this.btnCampagne.TabIndex = 0;
-            this.btnCampagne.Text = "Gestion des campagnes";
-            this.btnCampagne.UseVisualStyleBackColor = true;
+            this.btnGestionCampagnes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionCampagnes.Location = new System.Drawing.Point(251, 129);
+            this.btnGestionCampagnes.Name = "btnGestionCampagnes";
+            this.btnGestionCampagnes.Size = new System.Drawing.Size(137, 76);
+            this.btnGestionCampagnes.TabIndex = 0;
+            this.btnGestionCampagnes.Text = "Gestion des campagnes";
+            this.btnGestionCampagnes.UseVisualStyleBackColor = true;
+            this.btnGestionCampagnes.Click += new System.EventHandler(this.btnGestionCampagnes_Click);
             // 
-            // btnAgences
+            // btnGestionAgences
             // 
-            this.btnAgences.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgences.Location = new System.Drawing.Point(251, 246);
-            this.btnAgences.Name = "btnAgences";
-            this.btnAgences.Size = new System.Drawing.Size(137, 76);
-            this.btnAgences.TabIndex = 0;
-            this.btnAgences.Text = "Gestion des agences";
-            this.btnAgences.UseVisualStyleBackColor = true;
+            this.btnGestionAgences.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionAgences.Location = new System.Drawing.Point(251, 246);
+            this.btnGestionAgences.Name = "btnGestionAgences";
+            this.btnGestionAgences.Size = new System.Drawing.Size(137, 76);
+            this.btnGestionAgences.TabIndex = 0;
+            this.btnGestionAgences.Text = "Gestion des agences";
+            this.btnGestionAgences.UseVisualStyleBackColor = true;
+            this.btnGestionAgences.Click += new System.EventHandler(this.btnGestionAgences_Click);
             // 
             // btnQuitter
             // 
@@ -93,10 +95,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 460);
             this.Controls.Add(this.btnQuitter);
-            this.Controls.Add(this.btnVIP);
-            this.Controls.Add(this.btnAgences);
-            this.Controls.Add(this.btnCampagne);
-            this.Controls.Add(this.btnEvenements);
+            this.Controls.Add(this.btnGestionVIP);
+            this.Controls.Add(this.btnGestionAgences);
+            this.Controls.Add(this.btnGestionCampagnes);
+            this.Controls.Add(this.btnGestionEvenements);
             this.Name = "FrmAccueil";
             this.Text = "Accueil";
             this.Shown += new System.EventHandler(this.FrmAccueil_Shown);
@@ -105,10 +107,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnVIP;
-        private System.Windows.Forms.Button btnEvenements;
-        private System.Windows.Forms.Button btnCampagne;
-        private System.Windows.Forms.Button btnAgences;
+        private System.Windows.Forms.Button btnGestionVIP;
+        private System.Windows.Forms.Button btnGestionEvenements;
+        private System.Windows.Forms.Button btnGestionCampagnes;
+        private System.Windows.Forms.Button btnGestionAgences;
         private System.Windows.Forms.Button btnQuitter;
     }
 }

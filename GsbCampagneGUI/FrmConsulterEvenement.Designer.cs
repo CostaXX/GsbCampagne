@@ -51,7 +51,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvEvenement);
             this.Name = "FrmConsulterEvenement";
-            this.Text = "FrmConsulterEvenement";
+            this.Text = "Liste des événements";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvenement)).EndInit();
             this.ResumeLayout(false);
 

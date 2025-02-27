@@ -35,6 +35,7 @@ namespace GsbCampagneGUI
                 btnGestionEvenements.Enabled = true;
             }
         }
+    
         public void desactiveMenus()
         {
             btnGestionAgences.Enabled = false;
@@ -42,11 +43,7 @@ namespace GsbCampagneGUI
             btnGestionCampagnes.Enabled = false;
             btnGestionEvenements.Enabled = false;
         }
-        private void btnGestionAgences_Click(object sender, EventArgs e)
-        {
-            Form F = new FrmGestionAgences();
-            F.Show();
-        }
+
 
         private void FrmAccueil_Shown(object sender, EventArgs e)
         {
@@ -67,13 +64,24 @@ namespace GsbCampagneGUI
 
         private void btnEvenements_Click(object sender, EventArgs e)
         {
-            FrmGestionEvenements form = new FrmGestionEvenements();
+            FrmMenuEvenements form = new FrmMenuEvenements();
             form.Show();
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnGestionCampagnes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGestionAgences_Click(object sender, EventArgs e)
+        {
+            FrmMenuAgences form = new FrmMenuAgences();
+            form.Show();
         }
     }
 }

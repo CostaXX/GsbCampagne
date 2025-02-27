@@ -1,6 +1,6 @@
 ﻿namespace GsbCampagneGUI
 {
-    partial class FrmGestionAgences
+    partial class FrmMenuAgences
     {
         /// <summary>
         /// Required designer variable.
@@ -36,17 +36,19 @@
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(342, 366);
+            this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitter.Location = new System.Drawing.Point(242, 211);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitter.Size = new System.Drawing.Size(75, 33);
             this.btnQuitter.TabIndex = 0;
-            this.btnQuitter.Text = "Quitter";
+            this.btnQuitter.Text = "Fermer";
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
             // btnAfficherAgences
             // 
-            this.btnAfficherAgences.Location = new System.Drawing.Point(107, 169);
+            this.btnAfficherAgences.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAfficherAgences.Location = new System.Drawing.Point(60, 108);
             this.btnAfficherAgences.Name = "btnAfficherAgences";
             this.btnAfficherAgences.Size = new System.Drawing.Size(122, 65);
             this.btnAfficherAgences.TabIndex = 1;
@@ -56,7 +58,8 @@
             // 
             // btnAjouterAgence
             // 
-            this.btnAjouterAgence.Location = new System.Drawing.Point(322, 169);
+            this.btnAjouterAgence.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjouterAgence.Location = new System.Drawing.Point(217, 108);
             this.btnAjouterAgence.Name = "btnAjouterAgence";
             this.btnAjouterAgence.Size = new System.Drawing.Size(122, 65);
             this.btnAjouterAgence.TabIndex = 1;
@@ -66,7 +69,8 @@
             // 
             // btnModifierSupprimerAgence
             // 
-            this.btnModifierSupprimerAgence.Location = new System.Drawing.Point(534, 169);
+            this.btnModifierSupprimerAgence.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifierSupprimerAgence.Location = new System.Drawing.Point(374, 108);
             this.btnModifierSupprimerAgence.Name = "btnModifierSupprimerAgence";
             this.btnModifierSupprimerAgence.Size = new System.Drawing.Size(122, 65);
             this.btnModifierSupprimerAgence.TabIndex = 1;
@@ -74,17 +78,17 @@
             this.btnModifierSupprimerAgence.UseVisualStyleBackColor = true;
             this.btnModifierSupprimerAgence.Click += new System.EventHandler(this.btnModifierSupprimerAgence_Click);
             // 
-            // FrmGestionAgences
+            // FrmMenuAgences
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 450);
+            this.ClientSize = new System.Drawing.Size(573, 331);
             this.Controls.Add(this.btnModifierSupprimerAgence);
             this.Controls.Add(this.btnAjouterAgence);
             this.Controls.Add(this.btnAfficherAgences);
             this.Controls.Add(this.btnQuitter);
-            this.Name = "FrmGestionAgences";
-            this.Text = "FrmGestionAgences";
+            this.Name = "FrmMenuAgences";
+            this.Text = "Gestion des agences";
             this.ResumeLayout(false);
 
         }
