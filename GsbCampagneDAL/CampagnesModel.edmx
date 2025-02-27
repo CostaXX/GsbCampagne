@@ -12,11 +12,11 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Libelle" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="Adresse" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="Telephone" Type="int" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="SiteWeb" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="CodeInseeVille" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="TypeAgence" Type="varchar" MaxLength="150" />
+          <Property Name="Telephone" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Artiste">
           <Key>
@@ -75,7 +75,6 @@
           <Property Name="CodeInseeVille" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="IdCategorieVIP" Type="int" Nullable="false" />
           <Property Name="IdCampagne" Type="int" Nullable="false" />
-          <Property Name="IdArtiste" Type="int" />
         </EntityType>
         <EntityType Name="JournalIntervention">
           <Key>
@@ -254,15 +253,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Evenement__IdArt__70FDBF69">
-          <End Role="Artiste" Type="Self.Artiste" Multiplicity="0..1" />
+        <Association Name="FK__Evenement__CodeI__5832119F">
+          <End Role="Ville" Type="Self.Ville" Multiplicity="1" />
           <End Role="Evenement" Type="Self.Evenement" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Artiste">
-              <PropertyRef Name="Id" />
+            <Principal Role="Ville">
+              <PropertyRef Name="CodeInsee" />
             </Principal>
             <Dependent Role="Evenement">
-              <PropertyRef Name="IdArtiste" />
+              <PropertyRef Name="CodeInseeVille" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -299,18 +298,6 @@
             </Principal>
             <Dependent Role="Evenement">
               <PropertyRef Name="IdTheme" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Evenement__IdVil__5832119F">
-          <End Role="Ville" Type="Self.Ville" Multiplicity="1" />
-          <End Role="Evenement" Type="Self.Evenement" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ville">
-              <PropertyRef Name="CodeInsee" />
-            </Principal>
-            <Dependent Role="Evenement">
-              <PropertyRef Name="CodeInseeVille" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -389,7 +376,7 @@
         <Function Name="sp_agence_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Libelle" Type="varchar" Mode="In" />
           <Parameter Name="Adresse" Type="varchar" Mode="In" />
-          <Parameter Name="Telephone" Type="int" Mode="In" />
+          <Parameter Name="Telephone" Type="varchar" Mode="In" />
           <Parameter Name="Email" Type="varchar" Mode="In" />
           <Parameter Name="SiteWeb" Type="varchar" Mode="In" />
           <Parameter Name="TypeAgence" Type="char" Mode="In" />
@@ -402,7 +389,7 @@
           <Parameter Name="Id" Type="int" Mode="In" />
           <Parameter Name="Libelle" Type="varchar" Mode="In" />
           <Parameter Name="Adresse" Type="varchar" Mode="In" />
-          <Parameter Name="Telephone" Type="int" Mode="In" />
+          <Parameter Name="Telephone" Type="varchar" Mode="In" />
           <Parameter Name="Email" Type="varchar" Mode="In" />
           <Parameter Name="SiteWeb" Type="varchar" Mode="In" />
           <Parameter Name="TypeAgence" Type="char" Mode="In" />
@@ -437,7 +424,7 @@
           <Parameter Name="AdressePostal" Type="varchar" Mode="In" />
           <Parameter Name="Email" Type="varchar" Mode="In" />
           <Parameter Name="idCategorieVIP" Type="int" Mode="In" />
-          <Parameter Name="idVille" Type="int" Mode="In" />
+          <Parameter Name="CodeInseeVille" Type="char" Mode="In" />
         </Function>
         <Function Name="sp_vip_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Id" Type="int" Mode="In" />
@@ -448,7 +435,7 @@
           <Parameter Name="AdressePostal" Type="varchar" Mode="In" />
           <Parameter Name="Email" Type="varchar" Mode="In" />
           <Parameter Name="idCategorieVIP" Type="int" Mode="In" />
-          <Parameter Name="idVille" Type="int" Mode="In" />
+          <Parameter Name="CodeInseeVille" Type="char" Mode="In" />
         </Function>
         <EntityContainer Name="GsbCampagnesModelStoreContainer">
           <EntitySet Name="Agence" EntityType="Self.Agence" Schema="dbo" store:Type="Tables" />
@@ -499,8 +486,8 @@
             <End Role="Evenement" EntitySet="Evenement" />
             <End Role="Convier" EntitySet="Convier" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdArt__70FDBF69" Association="Self.FK__Evenement__IdArt__70FDBF69">
-            <End Role="Artiste" EntitySet="Artiste" />
+          <AssociationSet Name="FK__Evenement__CodeI__5832119F" Association="Self.FK__Evenement__CodeI__5832119F">
+            <End Role="Ville" EntitySet="Ville" />
             <End Role="Evenement" EntitySet="Evenement" />
           </AssociationSet>
           <AssociationSet Name="FK__Evenement__IdCam__5A1A5A11" Association="Self.FK__Evenement__IdCam__5A1A5A11">
@@ -513,10 +500,6 @@
           </AssociationSet>
           <AssociationSet Name="FK__Evenement__IdThe__573DED66" Association="Self.FK__Evenement__IdThe__573DED66">
             <End Role="Theme" EntitySet="Theme" />
-            <End Role="Evenement" EntitySet="Evenement" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdVil__5832119F" Association="Self.FK__Evenement__IdVil__5832119F">
-            <End Role="Ville" EntitySet="Ville" />
             <End Role="Evenement" EntitySet="Evenement" />
           </AssociationSet>
           <AssociationSet Name="FK__JournalIn__IdSal__4336F4B9" Association="Self.FK__JournalIn__IdSal__4336F4B9">
@@ -603,7 +586,7 @@
             <Parameter Name="AdressePostal" Mode="In" Type="String" />
             <Parameter Name="Email" Mode="In" Type="String" />
             <Parameter Name="idCategorieVIP" Mode="In" Type="Int32" />
-            <Parameter Name="idVille" Mode="In" Type="Int32" />
+            <Parameter Name="CodeInseeVille" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_vip_delete">
           <Parameter Name="Id" Mode="In" Type="Int32" />
@@ -614,7 +597,7 @@
             <Parameter Name="AdressePostal" Mode="In" Type="String" />
             <Parameter Name="Email" Mode="In" Type="String" />
             <Parameter Name="idCategorieVIP" Mode="In" Type="Int32" />
-            <Parameter Name="idVille" Mode="In" Type="Int32" />
+            <Parameter Name="CodeInseeVille" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="Agences" EntityType="GsbCampagnesModel.Agence" />
           <EntitySet Name="Artistes" EntityType="GsbCampagnesModel.Artiste" />
@@ -648,10 +631,6 @@
             <End Role="CourantArtistique" EntitySet="CourantArtistiques" />
             <End Role="Artiste" EntitySet="Artistes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdArt__70FDBF69" Association="GsbCampagnesModel.FK__Evenement__IdArt__70FDBF69">
-            <End Role="Artiste" EntitySet="Artistes" />
-            <End Role="Evenement" EntitySet="Evenements" />
-          </AssociationSet>
           <AssociationSet Name="FK__Participe__IdArt__61BB7BD9" Association="GsbCampagnesModel.FK__Participe__IdArt__61BB7BD9">
             <End Role="Artiste" EntitySet="Artistes" />
             <End Role="Participer" EntitySet="Participers" />
@@ -684,12 +663,12 @@
             <End Role="Evenement" EntitySet="Evenements" />
             <End Role="Convier" EntitySet="Conviers" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdThe__573DED66" Association="GsbCampagnesModel.FK__Evenement__IdThe__573DED66">
-            <End Role="Theme" EntitySet="Themes" />
+          <AssociationSet Name="FK__Evenement__CodeI__5832119F" Association="GsbCampagnesModel.FK__Evenement__CodeI__5832119F">
+            <End Role="Ville" EntitySet="Villes" />
             <End Role="Evenement" EntitySet="Evenements" />
           </AssociationSet>
-          <AssociationSet Name="FK__Evenement__IdVil__5832119F" Association="GsbCampagnesModel.FK__Evenement__IdVil__5832119F">
-            <End Role="Ville" EntitySet="Villes" />
+          <AssociationSet Name="FK__Evenement__IdThe__573DED66" Association="GsbCampagnesModel.FK__Evenement__IdThe__573DED66">
+            <End Role="Theme" EntitySet="Themes" />
             <End Role="Evenement" EntitySet="Evenements" />
           </AssociationSet>
           <AssociationSet Name="FK__Participe__IdEve__60C757A0" Association="GsbCampagnesModel.FK__Participe__IdEve__60C757A0">
@@ -711,7 +690,7 @@
           <FunctionImport Name="sp_agence_add">
             <Parameter Name="Libelle" Mode="In" Type="String" />
             <Parameter Name="Adresse" Mode="In" Type="String" />
-            <Parameter Name="Telephone" Mode="In" Type="Int32" />
+            <Parameter Name="Telephone" Mode="In" Type="String" />
             <Parameter Name="Email" Mode="In" Type="String" />
             <Parameter Name="SiteWeb" Mode="In" Type="String" />
             <Parameter Name="TypeAgence" Mode="In" Type="String" />
@@ -721,13 +700,13 @@
             <Parameter Name="Id" Mode="In" Type="Int32" />
             <Parameter Name="Libelle" Mode="In" Type="String" />
             <Parameter Name="Adresse" Mode="In" Type="String" />
-            <Parameter Name="Telephone" Mode="In" Type="Int32" />
+            <Parameter Name="Telephone" Mode="In" Type="String" />
             <Parameter Name="Email" Mode="In" Type="String" />
             <Parameter Name="SiteWeb" Mode="In" Type="String" />
             <Parameter Name="TypeAgence" Mode="In" Type="String" />
             <Parameter Name="CodeInseeVille" Mode="In" Type="String" />
           </FunctionImport>
-        </EntityContainer>
+          </EntityContainer>
         <ComplexType Name="sp_agence_getAll_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
           <Property Type="String" Name="Libelle" Nullable="true" MaxLength="150" />
@@ -746,11 +725,11 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Libelle" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="Adresse" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="Telephone" Type="Int32" Nullable="false" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="SiteWeb" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="CodeInseeVille" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
           <Property Name="TypeAgence" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Ville" Relationship="GsbCampagnesModel.FK__Agence__IdVille__46136164" FromRole="Agence" ToRole="Ville" />
           <NavigationProperty Name="Campagnes" Relationship="GsbCampagnesModel.FK__Campagne__TypeAg__52793849" FromRole="Agence" ToRole="Campagne" />
           <NavigationProperty Name="Campagnes1" Relationship="GsbCampagnesModel.FK__Campagne__TypeAg__536D5C82" FromRole="Agence" ToRole="Campagne" />
@@ -764,7 +743,6 @@
           <Property Name="SiteWeb" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="IdCourantArtistique" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CourantArtistique" Relationship="GsbCampagnesModel.FK__Artiste__IdCoura__39E294A9" FromRole="Artiste" ToRole="CourantArtistique" />
-          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdArt__70FDBF69" FromRole="Artiste" ToRole="Evenement" />
           <NavigationProperty Name="Participers" Relationship="GsbCampagnesModel.FK__Participe__IdArt__61BB7BD9" FromRole="Artiste" ToRole="Participer" />
         </EntityType>
         <EntityType Name="Campagne">
@@ -826,13 +804,11 @@
           <Property Name="CodeInseeVille" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
           <Property Name="IdCategorieVIP" Type="Int32" Nullable="false" />
           <Property Name="IdCampagne" Type="Int32" Nullable="false" />
-          <Property Name="IdArtiste" Type="Int32" />
-          <NavigationProperty Name="Artiste" Relationship="GsbCampagnesModel.FK__Evenement__IdArt__70FDBF69" FromRole="Evenement" ToRole="Artiste" />
           <NavigationProperty Name="Campagne" Relationship="GsbCampagnesModel.FK__Evenement__IdCam__5A1A5A11" FromRole="Evenement" ToRole="Campagne" />
           <NavigationProperty Name="CategorieVIP" Relationship="GsbCampagnesModel.FK__Evenement__IdCat__592635D8" FromRole="Evenement" ToRole="CategorieVIP" />
           <NavigationProperty Name="Convier" Relationship="GsbCampagnesModel.FK__Convier__IdEvene__5CF6C6BC" FromRole="Evenement" ToRole="Convier" />
+          <NavigationProperty Name="Ville" Relationship="GsbCampagnesModel.FK__Evenement__CodeI__5832119F" FromRole="Evenement" ToRole="Ville" />
           <NavigationProperty Name="Theme" Relationship="GsbCampagnesModel.FK__Evenement__IdThe__573DED66" FromRole="Evenement" ToRole="Theme" />
-          <NavigationProperty Name="Ville" Relationship="GsbCampagnesModel.FK__Evenement__IdVil__5832119F" FromRole="Evenement" ToRole="Ville" />
           <NavigationProperty Name="Participer" Relationship="GsbCampagnesModel.FK__Participe__IdEve__60C757A0" FromRole="Evenement" ToRole="Participer" />
         </EntityType>
         <EntityType Name="JournalIntervention">
@@ -914,7 +890,7 @@
           <Property Name="Arrondissement" Type="Int32" Nullable="false" />
           <Property Name="CodePostal" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Agences" Relationship="GsbCampagnesModel.FK__Agence__IdVille__46136164" FromRole="Ville" ToRole="Agence" />
-          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdVil__5832119F" FromRole="Ville" ToRole="Evenement" />
+          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__CodeI__5832119F" FromRole="Ville" ToRole="Evenement" />
           <NavigationProperty Name="VIPs" Relationship="GsbCampagnesModel.FK__VIP__IdVille__29AC2CE0" FromRole="Ville" ToRole="VIP" />
         </EntityType>
         <EntityType Name="VIP">
@@ -975,18 +951,6 @@
             </Principal>
             <Dependent Role="Artiste">
               <PropertyRef Name="IdCourantArtistique" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Evenement__IdArt__70FDBF69">
-          <End Type="GsbCampagnesModel.Artiste" Role="Artiste" Multiplicity="0..1" />
-          <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Artiste">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Evenement">
-              <PropertyRef Name="IdArtiste" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1086,6 +1050,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Evenement__CodeI__5832119F">
+          <End Type="GsbCampagnesModel.Ville" Role="Ville" Multiplicity="1" />
+          <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ville">
+              <PropertyRef Name="CodeInsee" />
+            </Principal>
+            <Dependent Role="Evenement">
+              <PropertyRef Name="CodeInseeVille" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Evenement__IdThe__573DED66">
           <End Type="GsbCampagnesModel.Theme" Role="Theme" Multiplicity="1" />
           <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
@@ -1095,18 +1071,6 @@
             </Principal>
             <Dependent Role="Evenement">
               <PropertyRef Name="IdTheme" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Evenement__IdVil__5832119F">
-          <End Type="GsbCampagnesModel.Ville" Role="Ville" Multiplicity="1" />
-          <End Type="GsbCampagnesModel.Evenement" Role="Evenement" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ville">
-              <PropertyRef Name="CodeInsee" />
-            </Principal>
-            <Dependent Role="Evenement">
-              <PropertyRef Name="CodeInseeVille" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1174,11 +1138,11 @@
           <EntitySetMapping Name="Agences">
             <EntityTypeMapping TypeName="GsbCampagnesModel.Agence">
               <MappingFragment StoreEntitySet="Agence">
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
                 <ScalarProperty Name="TypeAgence" ColumnName="TypeAgence" />
                 <ScalarProperty Name="CodeInseeVille" ColumnName="CodeInseeVille" />
                 <ScalarProperty Name="SiteWeb" ColumnName="SiteWeb" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
                 <ScalarProperty Name="Adresse" ColumnName="Adresse" />
                 <ScalarProperty Name="Libelle" ColumnName="Libelle" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -1238,7 +1202,6 @@
           <EntitySetMapping Name="Evenements">
             <EntityTypeMapping TypeName="GsbCampagnesModel.Evenement">
               <MappingFragment StoreEntitySet="Evenement">
-                <ScalarProperty Name="IdArtiste" ColumnName="IdArtiste" />
                 <ScalarProperty Name="IdCampagne" ColumnName="IdCampagne" />
                 <ScalarProperty Name="IdCategorieVIP" ColumnName="IdCategorieVIP" />
                 <ScalarProperty Name="CodeInseeVille" ColumnName="CodeInseeVille" />
@@ -1342,7 +1305,7 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="sp_agence_add" FunctionName="GsbCampagnesModel.Store.sp_agence_add" />
           <FunctionImportMapping FunctionImportName="sp_agence_update" FunctionName="GsbCampagnesModel.Store.sp_agence_update" />
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

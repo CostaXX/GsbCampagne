@@ -219,7 +219,7 @@ namespace GsbCampagneDAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_supprimeEvenement", idParameter);
         }
     
-        public virtual int sp_vip_add(string nom, string adressePostal, string email, Nullable<int> idCategorieVIP, Nullable<int> idVille)
+        public virtual int sp_vip_add(string nom, string adressePostal, string email, Nullable<int> idCategorieVIP, string codeInseeVille)
         {
             var nomParameter = nom != null ?
                 new ObjectParameter("Nom", nom) :
@@ -237,11 +237,11 @@ namespace GsbCampagneDAL
                 new ObjectParameter("idCategorieVIP", idCategorieVIP) :
                 new ObjectParameter("idCategorieVIP", typeof(int));
     
-            var idVilleParameter = idVille.HasValue ?
-                new ObjectParameter("idVille", idVille) :
-                new ObjectParameter("idVille", typeof(int));
+            var codeInseeVilleParameter = codeInseeVille != null ?
+                new ObjectParameter("CodeInseeVille", codeInseeVille) :
+                new ObjectParameter("CodeInseeVille", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_vip_add", nomParameter, adressePostalParameter, emailParameter, idCategorieVIPParameter, idVilleParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_vip_add", nomParameter, adressePostalParameter, emailParameter, idCategorieVIPParameter, codeInseeVilleParameter);
         }
     
         public virtual int sp_vip_delete(Nullable<int> id)
@@ -253,7 +253,7 @@ namespace GsbCampagneDAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_vip_delete", idParameter);
         }
     
-        public virtual int sp_vip_update(Nullable<int> id, string nom, string adressePostal, string email, Nullable<int> idCategorieVIP, Nullable<int> idVille)
+        public virtual int sp_vip_update(Nullable<int> id, string nom, string adressePostal, string email, Nullable<int> idCategorieVIP, string codeInseeVille)
         {
             var idParameter = id.HasValue ?
                 new ObjectParameter("Id", id) :
@@ -275,14 +275,14 @@ namespace GsbCampagneDAL
                 new ObjectParameter("idCategorieVIP", idCategorieVIP) :
                 new ObjectParameter("idCategorieVIP", typeof(int));
     
-            var idVilleParameter = idVille.HasValue ?
-                new ObjectParameter("idVille", idVille) :
-                new ObjectParameter("idVille", typeof(int));
+            var codeInseeVilleParameter = codeInseeVille != null ?
+                new ObjectParameter("CodeInseeVille", codeInseeVille) :
+                new ObjectParameter("CodeInseeVille", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_vip_update", idParameter, nomParameter, adressePostalParameter, emailParameter, idCategorieVIPParameter, idVilleParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_vip_update", idParameter, nomParameter, adressePostalParameter, emailParameter, idCategorieVIPParameter, codeInseeVilleParameter);
         }
     
-        public virtual int sp_agence_add(string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, string typeAgence, string codeInseeVille)
+        public virtual int sp_agence_add(string libelle, string adresse, string telephone, string email, string siteWeb, string typeAgence, string codeInseeVille)
         {
             var libelleParameter = libelle != null ?
                 new ObjectParameter("Libelle", libelle) :
@@ -292,9 +292,9 @@ namespace GsbCampagneDAL
                 new ObjectParameter("Adresse", adresse) :
                 new ObjectParameter("Adresse", typeof(string));
     
-            var telephoneParameter = telephone.HasValue ?
+            var telephoneParameter = telephone != null ?
                 new ObjectParameter("Telephone", telephone) :
-                new ObjectParameter("Telephone", typeof(int));
+                new ObjectParameter("Telephone", typeof(string));
     
             var emailParameter = email != null ?
                 new ObjectParameter("Email", email) :
@@ -315,7 +315,7 @@ namespace GsbCampagneDAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_agence_add", libelleParameter, adresseParameter, telephoneParameter, emailParameter, siteWebParameter, typeAgenceParameter, codeInseeVilleParameter);
         }
     
-        public virtual int sp_agence_update(Nullable<int> id, string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, string typeAgence, string codeInseeVille)
+        public virtual int sp_agence_update(Nullable<int> id, string libelle, string adresse, string telephone, string email, string siteWeb, string typeAgence, string codeInseeVille)
         {
             var idParameter = id.HasValue ?
                 new ObjectParameter("Id", id) :
@@ -329,9 +329,9 @@ namespace GsbCampagneDAL
                 new ObjectParameter("Adresse", adresse) :
                 new ObjectParameter("Adresse", typeof(string));
     
-            var telephoneParameter = telephone.HasValue ?
+            var telephoneParameter = telephone != null ?
                 new ObjectParameter("Telephone", telephone) :
-                new ObjectParameter("Telephone", typeof(int));
+                new ObjectParameter("Telephone", typeof(string));
     
             var emailParameter = email != null ?
                 new ObjectParameter("Email", email) :

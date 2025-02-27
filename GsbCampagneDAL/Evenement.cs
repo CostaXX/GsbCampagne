@@ -22,14 +22,12 @@ namespace GsbCampagneDAL
         public string CodeInseeVille { get; set; }
         public int IdCategorieVIP { get; set; }
         public int IdCampagne { get; set; }
-        public Nullable<int> IdArtiste { get; set; }
     
-        public virtual Artiste Artiste { get; set; }
         public virtual Campagne Campagne { get; set; }
         public virtual CategorieVIP CategorieVIP { get; set; }
         public virtual Convier Convier { get; set; }
-        public virtual Theme Theme { get; set; }
         public virtual Ville Ville { get; set; }
+        public virtual Theme Theme { get; set; }
         public virtual Participer Participer { get; set; }
     }
 }

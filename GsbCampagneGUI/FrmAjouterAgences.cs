@@ -99,7 +99,7 @@ namespace GsbCampagneGUI
             {
                 string libelle = txtNom.Text;
                 string adresse = txtAdresse.Text;
-                int numeroTelephone = Convert.ToInt32(txtTelephone.Text);
+                string numeroTelephone = txtTelephone.Text;
                 string email = txtEmail.Text;
                 string siteWeb = txtSiteWeb.Text;
                 string typeAgence = "";

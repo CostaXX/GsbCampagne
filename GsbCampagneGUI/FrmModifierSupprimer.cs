@@ -113,7 +113,7 @@ namespace GsbCampagneGUI
                 int id = Convert.ToInt32(cboAgence.SelectedValue.ToString());
                 string libelle = txtNom.Text;
                 string adresse = txtAdresse.Text;
-                int numeroTelephone = Convert.ToInt32(txtTelephone.Text);
+                string numeroTelephone = txtTelephone.Text;
                 string email = txtEmail.Text;
                 string siteWeb = txtSiteWeb.Text;
                 string typeAgence = "";
@@ -150,6 +150,22 @@ namespace GsbCampagneGUI
                 btnModifier.Enabled = true;
                 btnSupprimer.Enabled = true;
             }
+            int id = Convert.ToInt32(cboAgence.SelectedValue.ToString());
+            Agence valRet = AgenceManager.GetInstance().GetLesAgencesById(id);
+            txtNom.Text = valRet.Libelle;
+            txtAdresse.Text = valRet.Adresse;
+            txtTelephone.Text = valRet.Telephone;
+            txtEmail.Text = valRet.Email;
+            txtSiteWeb.Text = valRet.SiteWeb;
+            if(valRet.TypeAgence == "C")
+            {
+                cboType.SelectedIndex = 0;
+            }
+            else
+            {
+                cboType.SelectedIndex = 1;
+            }
+            cboVille.SelectedValue = valRet.CodeInseeVille;
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)

@@ -26,7 +26,14 @@ namespace GsbCampagneBLL
             return AgenceDAO.GetInstance().GetLesAgences();
         }
 
-        public int AjouterUneAgence(string leLibelle, string ladresse, int leTelephone, string lemail, 
+        public Agence GetLesAgencesById(int id)
+        {
+            Agence a = new Agence();
+            a.Id = id;
+            return AgenceDAO.GetInstance().GetLesAgencesById(a);
+        }
+
+        public int AjouterUneAgence(string leLibelle, string ladresse, string leTelephone, string lemail, 
             string leSiteWeb, string leTypeAgence, string leCodeInseeVille)
         {
             Agence a = new Agence();
@@ -40,7 +47,7 @@ namespace GsbCampagneBLL
             return AgenceDAO.GetInstance().AjouterUneAgence(a);
         }
 
-        public int ModifierUneAgence(int id, string leLibelle, string ladresse, int leTelephone, 
+        public int ModifierUneAgence(int id, string leLibelle, string ladresse, string leTelephone, 
             string lemail, string leSiteWeb, string leTypeAgence, string leCodeInseeVille)
         {
             Agence a = new Agence();

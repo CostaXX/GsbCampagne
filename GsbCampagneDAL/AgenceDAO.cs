@@ -31,6 +31,18 @@ namespace GsbCampagneDAL
             }
         }
 
+        public Agence GetLesAgencesById(Agence agence)
+        {
+            using (var ctx = new GsbCampagnesEntities())
+            {
+               var a = ctx.Agences
+                    .Include("Ville")
+                    .Where(x => x.Id == agence.Id)
+                    .FirstOrDefault();
+                return a;
+            }
+        }
+
         public int AjouterUneAgence(Agence agence)
         {
             using (var ctx = new GsbCampagnesEntities())
