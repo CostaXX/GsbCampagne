@@ -25,7 +25,7 @@ namespace GsbCampagneGUI
             // Masquer les éléments non souhaités
             dgvArtiste.Columns["Id"].Visible = false;
             dgvArtiste.Columns["IdCourantArtistique"].Visible = false;
-            dgvArtiste.Columns["Evenements"].Visible = false;
+            
             dgvArtiste.Columns["Participers"].Visible = false;
             dgvArtiste.Columns["CourantArtistique"].Visible = false;
             // Modifier l’entête de certaines colonnes

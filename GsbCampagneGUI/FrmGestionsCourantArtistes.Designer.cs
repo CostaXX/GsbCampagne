@@ -88,7 +88,7 @@
             this.Controls.Add(this.btnAjouterCourantArtistes);
             this.Controls.Add(this.btnConsuterCourantArtistes);
             this.Name = "FrmGestionsCourantArtistes";
-            this.Text = "Gestions des Categories Artistes";
+            this.Text = "Gestions des categories artistes";
             this.ResumeLayout(false);
 
         }

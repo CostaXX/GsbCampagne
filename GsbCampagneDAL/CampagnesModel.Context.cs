@@ -44,7 +44,7 @@ namespace GsbCampagneDAL
         public virtual DbSet<Ville> Villes { get; set; }
         public virtual DbSet<VIP> VIPs { get; set; }
     
-        public virtual int sp_agence_add(string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, string typeAgence, string codeInseeVille)
+        public virtual int sp_agence_add(string libelle, string adresse, string telephone, string email, string siteWeb, string typeAgence, string codeInseeVille)
         {
             var libelleParameter = libelle != null ?
                 new ObjectParameter("Libelle", libelle) :
@@ -54,9 +54,9 @@ namespace GsbCampagneDAL
                 new ObjectParameter("Adresse", adresse) :
                 new ObjectParameter("Adresse", typeof(string));
     
-            var telephoneParameter = telephone.HasValue ?
+            var telephoneParameter = telephone != null ?
                 new ObjectParameter("Telephone", telephone) :
-                new ObjectParameter("Telephone", typeof(int));
+                new ObjectParameter("Telephone", typeof(string));
     
             var emailParameter = email != null ?
                 new ObjectParameter("Email", email) :
@@ -91,7 +91,7 @@ namespace GsbCampagneDAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_agence_getAll_Result>("sp_agence_getAll");
         }
     
-        public virtual int sp_agence_update(Nullable<int> id, string libelle, string adresse, Nullable<int> telephone, string email, string siteWeb, string typeAgence, string codeInseeVille)
+        public virtual int sp_agence_update(Nullable<int> id, string libelle, string adresse, string telephone, string email, string siteWeb, string typeAgence, string codeInseeVille)
         {
             var idParameter = id.HasValue ?
                 new ObjectParameter("Id", id) :
@@ -105,9 +105,9 @@ namespace GsbCampagneDAL
                 new ObjectParameter("Adresse", adresse) :
                 new ObjectParameter("Adresse", typeof(string));
     
-            var telephoneParameter = telephone.HasValue ?
+            var telephoneParameter = telephone != null ?
                 new ObjectParameter("Telephone", telephone) :
-                new ObjectParameter("Telephone", typeof(int));
+                new ObjectParameter("Telephone", typeof(string));
     
             var emailParameter = email != null ?
                 new ObjectParameter("Email", email) :

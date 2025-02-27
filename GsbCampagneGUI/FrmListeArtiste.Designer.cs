@@ -34,6 +34,7 @@
             // 
             // dgvArtiste
             // 
+            this.dgvArtiste.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvArtiste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArtiste.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvArtiste.Location = new System.Drawing.Point(0, 0);

@@ -82,7 +82,7 @@
             this.Controls.Add(this.txtCourantArtiste);
             this.Controls.Add(this.label1);
             this.Name = "FrmAjouterCourantArtiste";
-            this.Text = "Ajouter un CourantArtiste";
+            this.Text = "Ajouter un artiste courant";
             this.ResumeLayout(false);
             this.PerformLayout();
 
