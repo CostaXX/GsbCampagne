@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace GsbCampagneDAL
 {
-    public class CategorieVipDAO
+    public class CategorieVIPDAO
     {
         #region Singleton
-        private static CategorieVipDAO instance;
-        public static CategorieVipDAO GetInstance()
+        private static CategorieVIPDAO instance;
+        public static CategorieVIPDAO GetInstance()
         {
             if (instance == null)
             {
-                instance = new CategorieVipDAO();
+                instance = new CategorieVIPDAO();
             }
             return instance;
         }
-        #endregion
+        #endregion Singleton
 
-        public List<CategorieVIP> GetLesCategoriesVip()
+        public List<CategorieVIP> GetLesCategoriesVIP()
         {
             using (var ctx = new GsbCampagnesEntities())
             {
@@ -30,5 +30,52 @@ namespace GsbCampagneDAL
             }
         }
 
+        public int AjouterCategorieVIP(CategorieVIP c)
+        {
+            using (var ctx = new GsbCampagnesEntities())
+            {
+                try
+                {
+                    ctx.sp_categorieVIP_add(c.Libelle);
+                    return 0;
+                }
+                catch
+                {
+                    return -1;
+                }
+            }
+        }
+
+        public int ModifierCategorieVIP(CategorieVIP c)
+        {
+            using (var ctx = new GsbCampagnesEntities())
+            {
+                try
+                {
+                    ctx.sp_categorieVIP_edit(c.Id, c.Libelle);
+                    return 0;
+                }
+                catch
+                {
+                    return -1;
+                }
+            }
+        }
+
+        public int SupprimerCategorieVIP(CategorieVIP c)
+        {
+            using (var ctx = new GsbCampagnesEntities())
+            {
+                try
+                {
+                    ctx.sp_categorieVIP_delete(c.Id);
+                    return 0;
+                }
+                catch
+                {
+                    return -1;
+                }
+            }
+        }
     }
 }

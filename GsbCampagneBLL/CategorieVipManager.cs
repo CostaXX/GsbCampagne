@@ -1,33 +1,53 @@
-﻿using System;
+﻿using GsbCampagneDAL;
+using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GsbCampagneDAL;
 
 namespace GsbCampagneBLL
 {
-    public class CategorieVipManager
+    public class CategorieVIPManager
     {
-
         #region Singleton
-        private static CategorieVipManager instance;
-        public static CategorieVipManager GetInstance()
+        private static CategorieVIPManager instance;
+        public static CategorieVIPManager GetInstance()
         {
             if (instance == null)
             {
-                instance = new CategorieVipManager();
+                instance = new CategorieVIPManager();
             }
             return instance;
         }
         #endregion Singleton
-        public List<CategorieVIP> GetLesCategoriesVip()
+
+        public List<CategorieVIP> GetLesCategoriesVIP()
         {
-            return CategorieVipDAO.GetInstance().GetLesCategoriesVip();
+            return CategorieVIPDAO.GetInstance().GetLesCategoriesVIP();
         }
-        
+        public int AjouterCategorieVIP(CategorieVIP categorieVIP)
+        {
 
+            CategorieVIP c = new CategorieVIP();
+            c.Libelle = categorieVIP.Libelle;
 
+            return CategorieVIPDAO.GetInstance().AjouterCategorieVIP(c);
+        }
+
+        public int ModifierCategorieVIP(CategorieVIP categorieVIP)
+        {
+            CategorieVIP c = new CategorieVIP();
+            c.Id = categorieVIP.Id;
+            c.Libelle = categorieVIP.Libelle;
+
+            return CategorieVIPDAO.GetInstance().ModifierCategorieVIP(c);
+        }
+
+        public int SupprimerCategorieVIP(CategorieVIP categorieVIP)
+        {
+            CategorieVIP c = new CategorieVIP();
+            c.Id = categorieVIP.Id;
+            return CategorieVIPDAO.GetInstance().SupprimerCategorieVIP(c);
+        }
     }
 }
