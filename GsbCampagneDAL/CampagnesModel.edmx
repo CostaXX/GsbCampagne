@@ -373,6 +373,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="sp_agence_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Libelle" Type="varchar" Mode="In" />
+          <Parameter Name="Adresse" Type="varchar" Mode="In" />
+          <Parameter Name="Telephone" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="SiteWeb" Type="varchar" Mode="In" />
+          <Parameter Name="TypeAgence" Type="char" Mode="In" />
+          <Parameter Name="CodeInseeVille" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_agence_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_agence_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="Libelle" Type="varchar" Mode="In" />
+          <Parameter Name="Adresse" Type="varchar" Mode="In" />
+          <Parameter Name="Telephone" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="SiteWeb" Type="varchar" Mode="In" />
+          <Parameter Name="TypeAgence" Type="char" Mode="In" />
+          <Parameter Name="CodeInseeVille" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_artiste_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nom" Type="varchar" Mode="In" />
+          <Parameter Name="SiteWeb" Type="varchar" Mode="In" />
+          <Parameter Name="idCourantArtistique" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_artiste_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_artiste_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="Nom" Type="varchar" Mode="In" />
+          <Parameter Name="SiteWeb" Type="varchar" Mode="In" />
+          <Parameter Name="idCourantArtistique" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_campagne_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Intitule" Type="varchar" Mode="In" />
           <Parameter Name="Objectif" Type="varchar" Mode="In" />
@@ -406,6 +442,52 @@
         <Function Name="sp_categorieVIP_edit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Id" Type="int" Mode="In" />
           <Parameter Name="Libelle" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_CourantArtistique_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Libelle" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_CourantArtistique_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_evenement_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DateDebut" Type="date" Mode="In" />
+          <Parameter Name="DateFin" Type="date" Mode="In" />
+          <Parameter Name="intitule" Type="varchar" Mode="In" />
+          <Parameter Name="IdTheme" Type="int" Mode="In" />
+          <Parameter Name="CodeInseeVille" Type="char" Mode="In" />
+          <Parameter Name="IdCategorieVIP" Type="int" Mode="In" />
+          <Parameter Name="IdCampagne" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_evenement_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_evenement_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="DateDebut" Type="date" Mode="In" />
+          <Parameter Name="DateFin" Type="date" Mode="In" />
+          <Parameter Name="intitule" Type="varchar" Mode="In" />
+          <Parameter Name="IdTheme" Type="int" Mode="In" />
+          <Parameter Name="CodeInseeVille" Type="char" Mode="In" />
+          <Parameter Name="IdCategorieVIP" Type="int" Mode="In" />
+          <Parameter Name="IdCampagne" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_vip_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nom" Type="varchar" Mode="In" />
+          <Parameter Name="AdressePostal" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="idCategorieVIP" Type="int" Mode="In" />
+          <Parameter Name="CodeInseeVille" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_vip_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_vip_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="Nom" Type="varchar" Mode="In" />
+          <Parameter Name="AdressePostal" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="idCategorieVIP" Type="int" Mode="In" />
+          <Parameter Name="CodeInseeVille" Type="char" Mode="In" />
         </Function>
         <EntityContainer Name="GsbCampagnesModelStoreContainer">
           <EntitySet Name="Agence" EntityType="Self.Agence" Schema="dbo" store:Type="Tables" />
@@ -502,40 +584,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="GsbCampagnesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="GsbCampagnesEntities" annotation:LazyLoadingEnabled="true" >
-          <FunctionImport Name="sp_campagne_add">
-            <Parameter Name="Intitule" Mode="In" Type="String" />
-            <Parameter Name="Objectif" Mode="In" Type="String" />
-            <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
-            <Parameter Name="dateFin" Mode="In" Type="DateTime" />
-            <Parameter Name="IdSalarie" Mode="In" Type="Int32" />
-            <Parameter Name="IdTypePublic" Mode="In" Type="Int32" />
-            <Parameter Name="IdAgenceCommunication" Mode="In" Type="Int32" />
-            <Parameter Name="IdAgenceEvenementiel" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_campagne_delete">
-          <Parameter Name="Id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_campagne_update">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
-            <Parameter Name="Intitule" Mode="In" Type="String" />
-            <Parameter Name="Objectif" Mode="In" Type="String" />
-            <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
-            <Parameter Name="dateFin" Mode="In" Type="DateTime" />
-            <Parameter Name="IdSalarie" Mode="In" Type="Int32" />
-            <Parameter Name="IdTypePublic" Mode="In" Type="Int32" />
-            <Parameter Name="IdAgenceCommunication" Mode="In" Type="Int32" />
-            <Parameter Name="IdAgenceEvenementiel" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_categorieVIP_add">
-          <Parameter Name="Libelle" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_categorieVIP_delete">
-          <Parameter Name="Id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_categorieVIP_edit">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
-            <Parameter Name="Libelle" Mode="In" Type="String" />
-          </FunctionImport>
           <EntitySet Name="Agences" EntityType="GsbCampagnesModel.Agence" />
           <EntitySet Name="Artistes" EntityType="GsbCampagnesModel.Artiste" />
           <EntitySet Name="Campagnes" EntityType="GsbCampagnesModel.Campagne" />
@@ -624,7 +672,123 @@
             <End Role="Ville" EntitySet="Villes" />
             <End Role="VIP" EntitySet="VIPs" />
           </AssociationSet>
-          </EntityContainer>
+          <FunctionImport Name="sp_agence_add">
+            <Parameter Name="Libelle" Mode="In" Type="String" />
+            <Parameter Name="Adresse" Mode="In" Type="String" />
+            <Parameter Name="Telephone" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="SiteWeb" Mode="In" Type="String" />
+            <Parameter Name="TypeAgence" Mode="In" Type="String" />
+            <Parameter Name="CodeInseeVille" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_agence_delete">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_agence_update">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="Libelle" Mode="In" Type="String" />
+            <Parameter Name="Adresse" Mode="In" Type="String" />
+            <Parameter Name="Telephone" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="SiteWeb" Mode="In" Type="String" />
+            <Parameter Name="TypeAgence" Mode="In" Type="String" />
+            <Parameter Name="CodeInseeVille" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_artiste_add">
+            <Parameter Name="Nom" Mode="In" Type="String" />
+            <Parameter Name="SiteWeb" Mode="In" Type="String" />
+            <Parameter Name="idCourantArtistique" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_artiste_delete">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_artiste_update">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="Nom" Mode="In" Type="String" />
+            <Parameter Name="SiteWeb" Mode="In" Type="String" />
+            <Parameter Name="idCourantArtistique" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_campagne_add">
+            <Parameter Name="Intitule" Mode="In" Type="String" />
+            <Parameter Name="Objectif" Mode="In" Type="String" />
+            <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
+            <Parameter Name="dateFin" Mode="In" Type="DateTime" />
+            <Parameter Name="IdSalarie" Mode="In" Type="Int32" />
+            <Parameter Name="IdTypePublic" Mode="In" Type="Int32" />
+            <Parameter Name="IdAgenceCommunication" Mode="In" Type="Int32" />
+            <Parameter Name="IdAgenceEvenementiel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_campagne_delete">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_campagne_update">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="Intitule" Mode="In" Type="String" />
+            <Parameter Name="Objectif" Mode="In" Type="String" />
+            <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
+            <Parameter Name="dateFin" Mode="In" Type="DateTime" />
+            <Parameter Name="IdSalarie" Mode="In" Type="Int32" />
+            <Parameter Name="IdTypePublic" Mode="In" Type="Int32" />
+            <Parameter Name="IdAgenceCommunication" Mode="In" Type="Int32" />
+            <Parameter Name="IdAgenceEvenementiel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_categorieVIP_add">
+            <Parameter Name="Libelle" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_categorieVIP_delete">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_categorieVIP_edit">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="Libelle" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_CourantArtistique_add">
+            <Parameter Name="Libelle" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_CourantArtistique_delete">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_evenement_add">
+            <Parameter Name="DateDebut" Mode="In" Type="DateTime" />
+            <Parameter Name="DateFin" Mode="In" Type="DateTime" />
+            <Parameter Name="intitule" Mode="In" Type="String" />
+            <Parameter Name="IdTheme" Mode="In" Type="Int32" />
+            <Parameter Name="CodeInseeVille" Mode="In" Type="String" />
+            <Parameter Name="IdCategorieVIP" Mode="In" Type="Int32" />
+            <Parameter Name="IdCampagne" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_evenement_delete">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_evenement_update">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="DateDebut" Mode="In" Type="DateTime" />
+            <Parameter Name="DateFin" Mode="In" Type="DateTime" />
+            <Parameter Name="intitule" Mode="In" Type="String" />
+            <Parameter Name="IdTheme" Mode="In" Type="Int32" />
+            <Parameter Name="CodeInseeVille" Mode="In" Type="String" />
+            <Parameter Name="IdCategorieVIP" Mode="In" Type="Int32" />
+            <Parameter Name="IdCampagne" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_vip_add">
+            <Parameter Name="Nom" Mode="In" Type="String" />
+            <Parameter Name="AdressePostal" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="idCategorieVIP" Mode="In" Type="Int32" />
+            <Parameter Name="CodeInseeVille" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_vip_delete">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_vip_update">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="Nom" Mode="In" Type="String" />
+            <Parameter Name="AdressePostal" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="idCategorieVIP" Mode="In" Type="Int32" />
+            <Parameter Name="CodeInseeVille" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
         <EntityType Name="Agence">
           <Key>
             <PropertyRef Name="Id" />
@@ -669,6 +833,7 @@
           <NavigationProperty Name="Agence1" Relationship="GsbCampagnesModel.FK__Campagne__TypeAg__536D5C82" FromRole="Campagne" ToRole="Agence" />
           <NavigationProperty Name="Salarie" Relationship="GsbCampagnesModel.FK__Campagne__IdSala__546180BB" FromRole="Campagne" ToRole="Salarie" />
           <NavigationProperty Name="TypePublic" Relationship="GsbCampagnesModel.FK__Campagne__IdType__51851410" FromRole="Campagne" ToRole="TypePublic" />
+          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdCam__5A1A5A11" FromRole="Campagne" ToRole="Evenement" />
         </EntityType>
         <EntityType Name="CategorieVIP">
           <Key>
@@ -676,6 +841,9 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Libelle" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Conviers" Relationship="GsbCampagnesModel.FK__Convier__IdCateg__5DEAEAF5" FromRole="CategorieVIP" ToRole="Convier" />
+          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdCat__592635D8" FromRole="CategorieVIP" ToRole="Evenement" />
+          <NavigationProperty Name="VIPs" Relationship="GsbCampagnesModel.FK__VIP__IdCategorie__28B808A7" FromRole="CategorieVIP" ToRole="VIP" />
         </EntityType>
         <EntityType Name="Convier">
           <Key>
@@ -1031,12 +1199,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="GsbCampagnesModelStoreContainer" CdmEntityContainer="GsbCampagnesEntities" >
-          <FunctionImportMapping FunctionImportName="sp_campagne_add" FunctionName="GsbCampagnesModel.Store.sp_campagne_add" />
-          <FunctionImportMapping FunctionImportName="sp_campagne_delete" FunctionName="GsbCampagnesModel.Store.sp_campagne_delete" />
-          <FunctionImportMapping FunctionImportName="sp_campagne_update" FunctionName="GsbCampagnesModel.Store.sp_campagne_update" />
-          <FunctionImportMapping FunctionImportName="sp_categorieVIP_add" FunctionName="GsbCampagnesModel.Store.sp_categorieVIP_add" />
-          <FunctionImportMapping FunctionImportName="sp_categorieVIP_delete" FunctionName="GsbCampagnesModel.Store.sp_categorieVIP_delete" />
-          <FunctionImportMapping FunctionImportName="sp_categorieVIP_edit" FunctionName="GsbCampagnesModel.Store.sp_categorieVIP_edit" />
           <EntitySetMapping Name="Agences">
             <EntityTypeMapping TypeName="GsbCampagnesModel.Agence">
               <MappingFragment StoreEntitySet="Agence">
@@ -1205,7 +1367,27 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          </EntityContainerMapping>
+          <FunctionImportMapping FunctionImportName="sp_agence_add" FunctionName="GsbCampagnesModel.Store.sp_agence_add" />
+          <FunctionImportMapping FunctionImportName="sp_agence_delete" FunctionName="GsbCampagnesModel.Store.sp_agence_delete" />
+          <FunctionImportMapping FunctionImportName="sp_agence_update" FunctionName="GsbCampagnesModel.Store.sp_agence_update" />
+          <FunctionImportMapping FunctionImportName="sp_artiste_add" FunctionName="GsbCampagnesModel.Store.sp_artiste_add" />
+          <FunctionImportMapping FunctionImportName="sp_artiste_delete" FunctionName="GsbCampagnesModel.Store.sp_artiste_delete" />
+          <FunctionImportMapping FunctionImportName="sp_artiste_update" FunctionName="GsbCampagnesModel.Store.sp_artiste_update" />
+          <FunctionImportMapping FunctionImportName="sp_campagne_add" FunctionName="GsbCampagnesModel.Store.sp_campagne_add" />
+          <FunctionImportMapping FunctionImportName="sp_campagne_delete" FunctionName="GsbCampagnesModel.Store.sp_campagne_delete" />
+          <FunctionImportMapping FunctionImportName="sp_campagne_update" FunctionName="GsbCampagnesModel.Store.sp_campagne_update" />
+          <FunctionImportMapping FunctionImportName="sp_categorieVIP_add" FunctionName="GsbCampagnesModel.Store.sp_categorieVIP_add" />
+          <FunctionImportMapping FunctionImportName="sp_categorieVIP_delete" FunctionName="GsbCampagnesModel.Store.sp_categorieVIP_delete" />
+          <FunctionImportMapping FunctionImportName="sp_categorieVIP_edit" FunctionName="GsbCampagnesModel.Store.sp_categorieVIP_edit" />
+          <FunctionImportMapping FunctionImportName="sp_CourantArtistique_add" FunctionName="GsbCampagnesModel.Store.sp_CourantArtistique_add" />
+          <FunctionImportMapping FunctionImportName="sp_CourantArtistique_delete" FunctionName="GsbCampagnesModel.Store.sp_CourantArtistique_delete" />
+          <FunctionImportMapping FunctionImportName="sp_evenement_add" FunctionName="GsbCampagnesModel.Store.sp_evenement_add" />
+          <FunctionImportMapping FunctionImportName="sp_evenement_delete" FunctionName="GsbCampagnesModel.Store.sp_evenement_delete" />
+          <FunctionImportMapping FunctionImportName="sp_evenement_update" FunctionName="GsbCampagnesModel.Store.sp_evenement_update" />
+          <FunctionImportMapping FunctionImportName="sp_vip_add" FunctionName="GsbCampagnesModel.Store.sp_vip_add" />
+          <FunctionImportMapping FunctionImportName="sp_vip_delete" FunctionName="GsbCampagnesModel.Store.sp_vip_delete" />
+          <FunctionImportMapping FunctionImportName="sp_vip_update" FunctionName="GsbCampagnesModel.Store.sp_vip_update" />
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

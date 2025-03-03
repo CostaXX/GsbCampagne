@@ -36,5 +36,10 @@ namespace GsbCampagneBLL
             }
             return salarie;
         }
+
+        public List<Salarie> GetLesSalaries()
+        {
+            return SalarieDAO.GetInstance().GetLesSalaries();
+        }
     }
 }

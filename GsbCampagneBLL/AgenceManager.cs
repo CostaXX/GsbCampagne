@@ -70,5 +70,15 @@ namespace GsbCampagneBLL
             a.Id = id;
             return AgenceDAO.GetInstance().SupprimerUneAgence(a);
         }
+
+        public List<Agence> GetLesAgencesCommunication()
+        {
+            return AgenceDAO.GetInstance().GetLesAgencesCommunication();
+        }
+
+        public List<Agence> GetLesAgencesEvenementiel()
+        {
+            return AgenceDAO.GetInstance().GetLesAgencesEvenementiel();
+        }
     }
 }

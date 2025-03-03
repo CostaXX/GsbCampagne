@@ -66,8 +66,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThemeManager.cs" />
     <Compile Include="AgenceManager.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalarieManager.cs" />
+    <Compile Include="TypePublicManager.cs" />
     <Compile Include="VilleManager.cs" />
     <Compile Include="VipManager.cs" />
   </ItemGroup>

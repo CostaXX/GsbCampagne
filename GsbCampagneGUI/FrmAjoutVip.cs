@@ -20,7 +20,7 @@ namespace GsbCampagneGUI
            
             InitializeComponent();
             #region Remplir la liste des catégories
-            cboCategVip.DataSource = CategorieVipDAO.GetInstance().GetLesCategoriesVip();
+            cboCategVip.DataSource = CategorieVipDAO.GetInstance().GetLesCategoriesVIP();
             cboCategVip.DisplayMember = "Libelle";
             cboCategVip.ValueMember = "Id";
             cboCategVip.SelectedIndex = -1;

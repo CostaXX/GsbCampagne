@@ -23,7 +23,7 @@ namespace GsbCampagneBLL
 
         public List<CategorieVIP> GetLesCategoriesVIP()
         {
-            return CategorieVIPDAO.GetInstance().GetLesCategoriesVIP();
+            return CategorieVipDAO.GetInstance().GetLesCategoriesVIP();
         }
         public int AjouterCategorieVIP(CategorieVIP categorieVIP)
         {
@@ -31,7 +31,7 @@ namespace GsbCampagneBLL
             CategorieVIP c = new CategorieVIP();
             c.Libelle = categorieVIP.Libelle;
 
-            return CategorieVIPDAO.GetInstance().AjouterCategorieVIP(c);
+            return CategorieVipDAO.GetInstance().AjouterCategorieVIP(c);
         }
 
         public int ModifierCategorieVIP(CategorieVIP categorieVIP)
@@ -40,14 +40,14 @@ namespace GsbCampagneBLL
             c.Id = categorieVIP.Id;
             c.Libelle = categorieVIP.Libelle;
 
-            return CategorieVIPDAO.GetInstance().ModifierCategorieVIP(c);
+            return CategorieVipDAO.GetInstance().ModifierCategorieVIP(c);
         }
 
         public int SupprimerCategorieVIP(CategorieVIP categorieVIP)
         {
             CategorieVIP c = new CategorieVIP();
             c.Id = categorieVIP.Id;
-            return CategorieVIPDAO.GetInstance().SupprimerCategorieVIP(c);
+            return CategorieVipDAO.GetInstance().SupprimerCategorieVIP(c);
         }
     }
 }
