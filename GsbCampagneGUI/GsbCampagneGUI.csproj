@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,6 +14,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -42,7 +45,14 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -188,6 +198,54 @@
     <Compile Include="FrmSupprimerCourantArtistique.Designer.cs">
       <DependentUpon>FrmSupprimerCourantArtistique.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAfficherCampagnes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAfficherCampagnes.Designer.cs">
+      <DependentUpon>FrmAfficherCampagnes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAfficherCategorieVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAfficherCategorieVIP.Designer.cs">
+      <DependentUpon>FrmAfficherCategorieVIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAjouterCampagnes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjouterCampagnes.Designer.cs">
+      <DependentUpon>FrmAjouterCampagnes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAjouterCategorieVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjouterCategorieVIP.Designer.cs">
+      <DependentUpon>FrmAjouterCategorieVIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGererCampagnes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGererCampagnes.Designer.cs">
+      <DependentUpon>FrmGererCampagnes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGererCategorieVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGererCategorieVIP.Designer.cs">
+      <DependentUpon>FrmGererCategorieVIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionCampagnes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionCampagnes.Designer.cs">
+      <DependentUpon>FrmGestionCampagnes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionCategorieVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionCategorieVIP.Designer.cs">
+      <DependentUpon>FrmGestionCategorieVIP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAccueil.resx">
@@ -256,6 +314,30 @@
     <EmbeddedResource Include="FrmSupprimerCourantArtistique.resx">
       <DependentUpon>FrmSupprimerCourantArtistique.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAfficherCampagnes.resx">
+      <DependentUpon>FrmAfficherCampagnes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAfficherCategorieVIP.resx">
+      <DependentUpon>FrmAfficherCategorieVIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjouterCampagnes.resx">
+      <DependentUpon>FrmAjouterCampagnes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjouterCategorieVIP.resx">
+      <DependentUpon>FrmAjouterCategorieVIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGererCampagnes.resx">
+      <DependentUpon>FrmGererCampagnes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGererCategorieVIP.resx">
+      <DependentUpon>FrmGererCategorieVIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionCampagnes.resx">
+      <DependentUpon>FrmGestionCampagnes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionCategorieVIP.resx">
+      <DependentUpon>FrmGestionCategorieVIP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -265,6 +347,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -286,6 +369,16 @@
     </ProjectReference>
     <ProjectReference Include="..\GsbCampagneDAL\GsbCampagneDAL.csproj">
       <Project>{5b4abb3d-0679-4a31-8d2e-eb5fdc8c1ee4}</Project>
+      <Name>GsbCampagneDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GsbCampagneBLL\GsbCampagneBLL.csproj">
+      <Project>{5afd3bbb-0f41-4d33-8a6f-6056754aceed}</Project>
+      <Name>GsbCampagneBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GsbCampagneDAL\GsbCampagneDAL.csproj">
+      <Project>{d619b918-f82a-4287-8bdd-a4b7fc73e189}</Project>
       <Name>GsbCampagneDAL</Name>
     </ProjectReference>
   </ItemGroup>

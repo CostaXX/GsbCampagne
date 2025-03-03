@@ -30,5 +30,16 @@ namespace GsbCampagneDAL
                 .SingleOrDefault();
             }
         }
+
+        public List<Salarie> GetLesSalaries()
+        {
+            using (var ctx = new GsbCampagnesEntities())
+            {
+                var liste = ctx.Salaries
+                .Include("Role")
+                .ToList();
+                return liste;
+            }
+        }
     }
 }

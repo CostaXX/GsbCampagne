@@ -102,5 +102,17 @@ namespace GsbCampagneGUI
             FrmMenuCourantArtistes form = new FrmMenuCourantArtistes();
             form.Show();
         }
+
+        private void btnCampagnes_Click(object sender, EventArgs e)
+        {
+            FrmGestionCampagnes frmGestionCampagnes = new FrmGestionCampagnes();
+            frmGestionCampagnes.Show();
+        }
+
+        private void btnGestionCategorieVIP_Click(object sender, EventArgs e)
+        {
+            FrmGestionCategorieVIP frmGestionCategorieVIP = new FrmGestionCategorieVIP();
+            frmGestionCategorieVIP.Show();
+        }
     }
 }

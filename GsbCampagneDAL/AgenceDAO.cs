@@ -93,5 +93,29 @@ namespace GsbCampagneDAL
                 }
             }
         }
+
+        public List<Agence> GetLesAgencesCommunication()
+        {
+            using (var ctx = new GsbCampagnesEntities())
+            {
+                var liste = ctx.Agences
+                .Include("Ville")
+                .Where(a => a.TypeAgence == "C")
+                .ToList();
+                return liste;
+            }
+        }
+        
+        public List<Agence> GetLesAgencesEvenementiel()
+        {
+            using (var ctx = new GsbCampagnesEntities())
+            {
+                var liste = ctx.Agences
+                .Include("Ville")
+                .Where(a => a.TypeAgence == "E")
+                .ToList();
+                return liste;
+            }
+        }
     }
 }

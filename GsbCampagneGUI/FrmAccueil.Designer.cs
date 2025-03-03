@@ -33,8 +33,8 @@
             this.btnGestionCampagnes = new System.Windows.Forms.Button();
             this.btnGestionAgences = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCampagnes = new System.Windows.Forms.Button();
+            this.btnGestionCategorieVIP = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGestionVIP
@@ -94,6 +94,14 @@
             // 
             // button1
             // 
+            this.btnCampagnes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCampagnes.Location = new System.Drawing.Point(251, 129);
+            this.btnCampagnes.Name = "btnCampagnes";
+            this.btnCampagnes.Size = new System.Drawing.Size(137, 76);
+            this.btnCampagnes.TabIndex = 0;
+            this.btnCampagnes.Text = "Gestion des campagnes";
+            this.btnCampagnes.UseVisualStyleBackColor = true;
+            this.btnCampagnes.Click += new System.EventHandler(this.btnCampagnes_Click);
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(64, 261);
             this.button1.Name = "button1";
@@ -103,8 +111,26 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnGestionCategorieVIP
             // 
+            this.btnGestionCategorieVIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionCategorieVIP.Location = new System.Drawing.Point(251, 246);
+            this.btnGestionCategorieVIP.Name = "btnGestionCategorieVIP";
+            this.btnGestionCategorieVIP.Size = new System.Drawing.Size(137, 76);
+            this.btnGestionCategorieVIP.TabIndex = 0;
+            this.btnGestionCategorieVIP.Text = "Gestion des categories VIP";
+            this.btnGestionCategorieVIP.UseVisualStyleBackColor = true;
+            this.btnGestionCategorieVIP.Click += new System.EventHandler(this.btnGestionCategorieVIP_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(64, 246);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(137, 76);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Gestion des évènements";
+            this.button3.UseVisualStyleBackColor = true;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(261, 261);
             this.button2.Name = "button2";
@@ -118,6 +144,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(470, 450);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnGestionCategorieVIP);
+            this.Controls.Add(this.btnCampagnes);
+            this.Controls.Add(this.btnEvenements);
             this.ClientSize = new System.Drawing.Size(568, 460);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -139,7 +170,7 @@
         private System.Windows.Forms.Button btnGestionCampagnes;
         private System.Windows.Forms.Button btnGestionAgences;
         private System.Windows.Forms.Button btnQuitter;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCampagnes;
+        private System.Windows.Forms.Button btnGestionCategorieVIP;
     }
 }
