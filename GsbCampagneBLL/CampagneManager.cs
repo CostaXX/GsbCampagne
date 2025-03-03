@@ -23,7 +23,7 @@ namespace GsbCampagneBLL
 
         public List<Campagne> GetLesCampagnes()
         {
-            return CampagneDAO.GetInstance().GetLesCampagnes();
+            return CampagneDAO.GetInstance().GetAllCampagnes();
         }
 
         public int AjouterCampagne(Campagne campagne)

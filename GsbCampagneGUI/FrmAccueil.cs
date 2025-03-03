@@ -31,8 +31,10 @@ namespace GsbCampagneGUI
             if(salarieAuthentifie.Role.Libelle == "Employé service de communication")
             {
                 btnGestionAgences.Enabled = true;
-                btnGestionCampagnes.Enabled = true;
+                btnCampagnes.Enabled = true;
                 btnGestionEvenements.Enabled = true;
+                btnGestionArtistes.Enabled = true;
+                btnGestionCourantArtistiques.Enabled = true;
             }
         }
     
@@ -40,8 +42,10 @@ namespace GsbCampagneGUI
         {
             btnGestionAgences.Enabled = false;
             btnGestionVIP.Enabled = false;
-            btnGestionCampagnes.Enabled = false;
+            btnCampagnes.Enabled = false;
             btnGestionEvenements.Enabled = false;
+            btnGestionArtistes.Enabled = false;
+            btnGestionCourantArtistiques.Enabled = false;
         }
 
 
@@ -73,11 +77,6 @@ namespace GsbCampagneGUI
             Application.Exit();
         }
 
-        private void btnGestionCampagnes_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGestionAgences_Click(object sender, EventArgs e)
         {
             FrmMenuAgences form = new FrmMenuAgences();
@@ -90,14 +89,14 @@ namespace GsbCampagneGUI
             form.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnGestionArtistes_Click(object sender, EventArgs e)
         {
             FrmMenuArtiste form = new FrmMenuArtiste();
             form.Show();
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnGestionCourantArtistiques_Click(object sender, EventArgs e)
         {
             FrmMenuCourantArtistes form = new FrmMenuCourantArtistes();
             form.Show();

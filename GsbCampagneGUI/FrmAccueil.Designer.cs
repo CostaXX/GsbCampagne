@@ -30,11 +30,12 @@
         {
             this.btnGestionVIP = new System.Windows.Forms.Button();
             this.btnGestionEvenements = new System.Windows.Forms.Button();
-            this.btnGestionCampagnes = new System.Windows.Forms.Button();
             this.btnGestionAgences = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnCampagnes = new System.Windows.Forms.Button();
             this.btnGestionCategorieVIP = new System.Windows.Forms.Button();
+            this.btnGestionArtistes = new System.Windows.Forms.Button();
+            this.btnGestionCourantArtistiques = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGestionVIP
@@ -59,17 +60,6 @@
             this.btnGestionEvenements.UseVisualStyleBackColor = true;
             this.btnGestionEvenements.Click += new System.EventHandler(this.btnEvenements_Click);
             // 
-            // btnGestionCampagnes
-            // 
-            this.btnGestionCampagnes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionCampagnes.Location = new System.Drawing.Point(261, 51);
-            this.btnGestionCampagnes.Name = "btnGestionCampagnes";
-            this.btnGestionCampagnes.Size = new System.Drawing.Size(137, 76);
-            this.btnGestionCampagnes.TabIndex = 0;
-            this.btnGestionCampagnes.Text = "Gestion des campagnes";
-            this.btnGestionCampagnes.UseVisualStyleBackColor = true;
-            this.btnGestionCampagnes.Click += new System.EventHandler(this.btnGestionCampagnes_Click);
-            // 
             // btnGestionAgences
             // 
             this.btnGestionAgences.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -84,7 +74,7 @@
             // btnQuitter
             // 
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitter.Location = new System.Drawing.Point(179, 359);
+            this.btnQuitter.Location = new System.Drawing.Point(167, 508);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(137, 76);
             this.btnQuitter.TabIndex = 3;
@@ -92,10 +82,10 @@
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
-            // button1
+            // btnCampagnes
             // 
             this.btnCampagnes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCampagnes.Location = new System.Drawing.Point(251, 129);
+            this.btnCampagnes.Location = new System.Drawing.Point(261, 51);
             this.btnCampagnes.Name = "btnCampagnes";
             this.btnCampagnes.Size = new System.Drawing.Size(137, 76);
             this.btnCampagnes.TabIndex = 0;
@@ -106,7 +96,7 @@
             // btnGestionCategorieVIP
             // 
             this.btnGestionCategorieVIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionCategorieVIP.Location = new System.Drawing.Point(251, 246);
+            this.btnGestionCategorieVIP.Location = new System.Drawing.Point(261, 277);
             this.btnGestionCategorieVIP.Name = "btnGestionCategorieVIP";
             this.btnGestionCategorieVIP.Size = new System.Drawing.Size(137, 76);
             this.btnGestionCategorieVIP.TabIndex = 0;
@@ -114,18 +104,40 @@
             this.btnGestionCategorieVIP.UseVisualStyleBackColor = true;
             this.btnGestionCategorieVIP.Click += new System.EventHandler(this.btnGestionCategorieVIP_Click);
             // 
+            // btnGestionArtistes
+            // 
+            this.btnGestionArtistes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionArtistes.Location = new System.Drawing.Point(64, 277);
+            this.btnGestionArtistes.Name = "btnGestionArtistes";
+            this.btnGestionArtistes.Size = new System.Drawing.Size(137, 76);
+            this.btnGestionArtistes.TabIndex = 4;
+            this.btnGestionArtistes.Text = "Gestion des Artistes";
+            this.btnGestionArtistes.UseVisualStyleBackColor = true;
+            this.btnGestionArtistes.Click += new System.EventHandler(this.btnGestionArtistes_Click);
+            // 
+            // btnGestionCourantArtistiques
+            // 
+            this.btnGestionCourantArtistiques.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionCourantArtistiques.Location = new System.Drawing.Point(167, 377);
+            this.btnGestionCourantArtistiques.Name = "btnGestionCourantArtistiques";
+            this.btnGestionCourantArtistiques.Size = new System.Drawing.Size(137, 76);
+            this.btnGestionCourantArtistiques.TabIndex = 5;
+            this.btnGestionCourantArtistiques.Text = "Gestion des Courant Artistiques";
+            this.btnGestionCourantArtistiques.UseVisualStyleBackColor = true;
+            this.btnGestionCourantArtistiques.Click += new System.EventHandler(this.btnGestionCourantArtistiques_Click);
+            // 
             // FrmAccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 450);
+            this.ClientSize = new System.Drawing.Size(568, 632);
+            this.Controls.Add(this.btnGestionCourantArtistiques);
+            this.Controls.Add(this.btnGestionArtistes);
             this.Controls.Add(this.btnGestionCategorieVIP);
             this.Controls.Add(this.btnCampagnes);
-            this.ClientSize = new System.Drawing.Size(568, 460);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnGestionVIP);
             this.Controls.Add(this.btnGestionAgences);
-            this.Controls.Add(this.btnGestionCampagnes);
             this.Controls.Add(this.btnGestionEvenements);
             this.Name = "FrmAccueil";
             this.Text = "Accueil";
@@ -137,10 +149,11 @@
         #endregion
         private System.Windows.Forms.Button btnGestionVIP;
         private System.Windows.Forms.Button btnGestionEvenements;
-        private System.Windows.Forms.Button btnGestionCampagnes;
         private System.Windows.Forms.Button btnGestionAgences;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button btnCampagnes;
         private System.Windows.Forms.Button btnGestionCategorieVIP;
+        private System.Windows.Forms.Button btnGestionArtistes;
+        private System.Windows.Forms.Button btnGestionCourantArtistiques;
     }
 }

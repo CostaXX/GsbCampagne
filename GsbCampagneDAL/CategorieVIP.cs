@@ -14,22 +14,7 @@ namespace GsbCampagneDAL
     
     public partial class CategorieVIP
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CategorieVIP()
-        {
-            this.Conviers = new HashSet<Convier>();
-            this.Evenements = new HashSet<Evenement>();
-            this.VIPs = new HashSet<VIP>();
-        }
-    
         public int Id { get; set; }
         public string Libelle { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Convier> Conviers { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Evenement> Evenements { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VIP> VIPs { get; set; }
     }
 }

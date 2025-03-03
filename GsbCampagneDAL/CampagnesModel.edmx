@@ -833,7 +833,6 @@
           <NavigationProperty Name="Agence1" Relationship="GsbCampagnesModel.FK__Campagne__TypeAg__536D5C82" FromRole="Campagne" ToRole="Agence" />
           <NavigationProperty Name="Salarie" Relationship="GsbCampagnesModel.FK__Campagne__IdSala__546180BB" FromRole="Campagne" ToRole="Salarie" />
           <NavigationProperty Name="TypePublic" Relationship="GsbCampagnesModel.FK__Campagne__IdType__51851410" FromRole="Campagne" ToRole="TypePublic" />
-          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdCam__5A1A5A11" FromRole="Campagne" ToRole="Evenement" />
         </EntityType>
         <EntityType Name="CategorieVIP">
           <Key>
@@ -841,9 +840,6 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Libelle" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Conviers" Relationship="GsbCampagnesModel.FK__Convier__IdCateg__5DEAEAF5" FromRole="CategorieVIP" ToRole="Convier" />
-          <NavigationProperty Name="Evenements" Relationship="GsbCampagnesModel.FK__Evenement__IdCat__592635D8" FromRole="CategorieVIP" ToRole="Evenement" />
-          <NavigationProperty Name="VIPs" Relationship="GsbCampagnesModel.FK__VIP__IdCategorie__28B808A7" FromRole="CategorieVIP" ToRole="VIP" />
         </EntityType>
         <EntityType Name="Convier">
           <Key>

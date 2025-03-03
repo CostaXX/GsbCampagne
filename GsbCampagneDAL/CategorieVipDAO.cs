@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace GsbCampagneDAL
 {
-    public class CategorieVIPDAO
+    public class CategorieVipDAO
     {
         #region Singleton
-        private static CategorieVIPDAO instance;
-        public static CategorieVIPDAO GetInstance()
+        private static CategorieVipDAO instance;
+        public static CategorieVipDAO GetInstance()
         {
             if (instance == null)
             {
-                instance = new CategorieVIPDAO();
+                instance = new CategorieVipDAO();
             }
             return instance;
         }
