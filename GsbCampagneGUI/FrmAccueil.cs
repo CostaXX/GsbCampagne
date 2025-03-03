@@ -25,16 +25,17 @@ namespace GsbCampagneGUI
         {
             if (salarieAuthentifie.Role.Libelle == "Directeur commercial" || salarieAuthentifie.Role.Libelle == "Directeur financier")
             {
-                btnGestionVIP.Enabled = true;
+                btnGestionCategorieVIP.Enabled = true;
             }
-
-            if(salarieAuthentifie.Role.Libelle == "Employé service de communication")
+            btnGestionAgences.Enabled = true;
+            btnCampagnes.Enabled = true;
+            btnGestionEvenements.Enabled = true;
+            btnGestionArtistes.Enabled = true;
+            btnGestionCourantArtistiques.Enabled = true;
+            btnGestionVIP.Enabled = true;
+            if (salarieAuthentifie.Role.Libelle == "Employé service de communication")
             {
-                btnGestionAgences.Enabled = true;
-                btnCampagnes.Enabled = true;
-                btnGestionEvenements.Enabled = true;
-                btnGestionArtistes.Enabled = true;
-                btnGestionCourantArtistiques.Enabled = true;
+                
             }
         }
     
@@ -46,6 +47,7 @@ namespace GsbCampagneGUI
             btnGestionEvenements.Enabled = false;
             btnGestionArtistes.Enabled = false;
             btnGestionCourantArtistiques.Enabled = false;
+            btnGestionCategorieVIP.Enabled = false;
         }
 
 
