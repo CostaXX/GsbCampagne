@@ -58,6 +58,8 @@
     <Compile Include="Artiste.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ArtisteDAO.cs" />
+    <Compile Include="ArtisteExt.cs" />
     <Compile Include="Campagne.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
@@ -81,12 +83,14 @@
     <Compile Include="CategorieVIP.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CategorieVipDAO.cs" />
     <Compile Include="Convier.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CourantArtistique.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CourantArtistiqueDAO.cs" />
     <Compile Include="Evenement.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
@@ -123,6 +127,8 @@
     <Compile Include="VIP.cs">
       <DependentUpon>CampagnesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="VipDAO.cs" />
+    <Compile Include="VipExt.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="CampagnesModel.edmx">

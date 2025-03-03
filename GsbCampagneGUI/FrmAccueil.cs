@@ -83,5 +83,24 @@ namespace GsbCampagneGUI
             FrmMenuAgences form = new FrmMenuAgences();
             form.Show();
         }
+
+        private void btnGestionVIP_Click(object sender, EventArgs e)
+        {
+            FrmMenuVip form = new FrmMenuVip();
+            form.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmMenuArtiste form = new FrmMenuArtiste();
+            form.Show();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmMenuCourantArtistes form = new FrmMenuCourantArtistes();
+            form.Show();
+        }
     }
 }
