@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GsbCampagneBLL;
 using GsbCampagneDAL;
 
 namespace GsbCampagneGUI
@@ -41,12 +42,12 @@ namespace GsbCampagneGUI
     
         public void desactiveMenus()
         {
-            btnGestionAgences.Enabled = false;
-            btnGestionVIP.Enabled = false;
-            btnCampagnes.Enabled = false;
-            btnGestionEvenements.Enabled = false;
-            btnGestionArtistes.Enabled = false;
-            btnGestionCourantArtistiques.Enabled = false;
+            //btnGestionAgences.Enabled = false;
+            //btnGestionVIP.Enabled = false;
+            //btnCampagnes.Enabled = false;
+            //btnGestionEvenements.Enabled = false;
+            //btnGestionArtistes.Enabled = false;
+            //btnGestionCourantArtistiques.Enabled = false;
             btnGestionCategorieVIP.Enabled = false;
         }
 
@@ -59,7 +60,7 @@ namespace GsbCampagneGUI
                 // les informations de l’utilisateur authentifié
                 formLogin.ShowDialog();
 
-                salarieAuthentifie = formLogin.Salarie;
+                SessionUtilisateur.UtilisateurConnecte = formLogin.Salarie;
             }
 
             if(salarieAuthentifie != null)

@@ -61,6 +61,7 @@
     <Compile Include="CampagneManager.cs" />
     <Compile Include="CategorieManager.cs" />
     <Compile Include="CategorieVipManager.cs" />
+    <Compile Include="SessionUtilisateur.cs" />
     <Compile Include="CourantArtistiqueManager.cs" />
     <Compile Include="EvenementManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

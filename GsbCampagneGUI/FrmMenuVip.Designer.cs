@@ -78,7 +78,7 @@
             this.btnFermer.UseVisualStyleBackColor = true;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
-            // FrmGestionsVip
+            // FrmMenuVip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,8 +87,9 @@
             this.Controls.Add(this.btnGererVip);
             this.Controls.Add(this.btnAjouterVip);
             this.Controls.Add(this.btnConsulterVip);
-            this.Name = "FrmGestionsVip";
+            this.Name = "FrmMenuVip";
             this.Text = "Menu VIP";
+            this.Shown += new System.EventHandler(this.FrmMenuVip_Shown);
             this.ResumeLayout(false);
 
         }

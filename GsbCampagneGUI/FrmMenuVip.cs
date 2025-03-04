@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GsbCampagneBLL;
+using GsbCampagneDAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +18,7 @@ namespace GsbCampagneGUI
         {
             InitializeComponent();
         }
+
 
         private void btnConsulterVip_Click(object sender, EventArgs e)
         {
@@ -38,6 +41,20 @@ namespace GsbCampagneGUI
         {
             FrmModifSuppVIP form = new FrmModifSuppVIP();
             form.ShowDialog();
+        }
+
+        private void FrmMenuVip_Shown(object sender, EventArgs e)
+        {
+            if (SessionUtilisateur.UtilisateurConnecte.Role.Libelle == "Directeur commercial" || SessionUtilisateur.UtilisateurConnecte.Role.Libelle == "Directeur financier")
+            {
+                btnGererVip.Enabled = true;
+                btnAjouterVip.Enabled = true;
+            }
+            else
+            {
+                btnGererVip.Enabled = false;
+                btnAjouterVip.Enabled = false;
+            }
         }
     }
 }
