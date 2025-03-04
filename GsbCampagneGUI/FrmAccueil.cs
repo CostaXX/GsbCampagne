@@ -24,7 +24,7 @@ namespace GsbCampagneGUI
 
         private void activeMenus() 
         {
-            if (salarieAuthentifie.Role.Libelle == "Directeur commercial" || salarieAuthentifie.Role.Libelle == "Directeur financier")
+            if (salarieAuthentifie.Role.Libelle == "Directeur service communication" || salarieAuthentifie.Role.Libelle == "Directeur financier")
             {
                 btnGestionCategorieVIP.Enabled = true;
             }
@@ -36,18 +36,12 @@ namespace GsbCampagneGUI
             btnGestionVIP.Enabled = true;
             if (salarieAuthentifie.Role.Libelle == "Employé service de communication")
             {
-                
+                btnGestionCategorieVIP.Enabled = false;
             }
         }
     
         public void desactiveMenus()
         {
-            //btnGestionAgences.Enabled = false;
-            //btnGestionVIP.Enabled = false;
-            //btnCampagnes.Enabled = false;
-            //btnGestionEvenements.Enabled = false;
-            //btnGestionArtistes.Enabled = false;
-            //btnGestionCourantArtistiques.Enabled = false;
             btnGestionCategorieVIP.Enabled = false;
         }
 
@@ -61,6 +55,7 @@ namespace GsbCampagneGUI
                 formLogin.ShowDialog();
 
                 SessionUtilisateur.UtilisateurConnecte = formLogin.Salarie;
+                salarieAuthentifie = formLogin.Salarie;
             }
 
             if(salarieAuthentifie != null)
